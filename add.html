@@ -18,7 +18,7 @@
     .btn-primary{background:#0b57d0;border-color:#0b57d0}
     .hint{font-size:12px;color:#bbb;margin-top:6px}
     .ok{color:#7bd88f;font-weight:600}
-    /* тёмная тема подсказок */
+    /* тёмная тема выпадашки */
     .pac-container{background:#222!important;color:#eee!important;border:1px solid #333!important;border-radius:8px!important}
     .pac-item{color:#eee!important;padding:6px 10px!important}
     .pac-item:hover{background:#333!important}
@@ -37,8 +37,8 @@
     <div class="row">
       <div>
         <label>Название или длинная ссылка Google Maps</label>
-        <input id="query" type="text" autocomplete="off" placeholder="Например: Buró Árbol Palermo или 'чайхана'"/>
-        <div class="hint">Короткие ссылки <code>maps.app.goo.gl</code> сначала открой, скопируй длинный URL из адресной строки и вставь сюда (или просто пользуйся поиском).</div>
+        <input id="query" type="text" autocomplete="off" placeholder="Например: Buró Árbol Palermo, 'чайхана', 'Buro Arbol'"/>
+        <div class="hint">Короткие ссылки <code>maps.app.goo.gl</code> сначала открой и скопируй длинный URL из адресной строки — либо просто пользуйся поиском.</div>
       </div>
       <div>
         <label>Категория</label>
@@ -99,85 +99,50 @@
 </main>
 
 <script>
-/* ключ подставляется из Secrets — см. workflow */
+/* Если используешь Secrets — оставь плейсхолдер. Для локальной проверки можно временно вставить реальный ключ. */
 const GOOGLE_KEY = "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI";
 
 const $ = id => document.getElementById(id);
 const setStatus = (t, ok=false)=> { $('status').innerHTML = ok? `<span class="ok">${t}</span>` : t; };
+const BA = {lat:-34.6037,lng:-58.3816};
 
 window.addEventListener('DOMContentLoaded', () => {
+  if (GOOGLE_KEY.startsWith("__MAPS_PUBLIC_KEY__")) {
+    console.warn("⚠️ Похоже, секрет не подставился. Для проверки временно вставь реальный ключ в константу GOOGLE_KEY или настрой workflow подстановки.");
+  }
   const url = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&libraries=places&language=ru&region=AR&v=weekly&loading=async&callback=initPlaces`;
   const s = document.createElement('script'); s.src=url; s.async=true; s.defer=true; document.head.appendChild(s);
 });
 
 let PlaceClass, AutocompleteClass, Token;
-const BA_CENTER = {lat:-34.6037, lng:-58.3816};
 
 async function initPlaces(){
   const { Place, Autocomplete, AutocompleteSessionToken } = await google.maps.importLibrary("places");
   PlaceClass = Place; AutocompleteClass = Autocomplete; Token = new AutocompleteSessionToken();
 
   const input = $('query');
+  if (!(input instanceof HTMLInputElement)) { setStatus('Ошибка: поле ввода не найдено.', false); return; }
+
+  // Новый Autocomplete (без legacy API)
   const ac = new AutocompleteClass(input, {
     fields: ["place_id","displayName","formattedAddress","location","types"],
-    bounds: { east:-58.30, west:-58.55, north:-34.50, south:-34.72 },
+    bounds: {east:-58.30, west:-58.55, north:-34.50, south:-34.72},
     strictBounds: false
   });
   if (ac.setOptions) ac.setOptions({ sessionToken: Token });
 
   ac.addListener("place_changed", async ()=>{
     const lite = ac.getPlace();
-    if (!lite || !lite.place_id){ setStatus("Выбери пункт из списка или нажми «Найти по названию»."); return; }
+    if (!lite || !lite.place_id){ setStatus("Выбери пункт из списка или воспользуйся кнопкой «Найти по названию»."); return; }
     await fetchPlaceById(lite.place_id);
   });
+
+  // Enter запускает поиск по названию (на случай если не выбирают мышкой)
+  input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); document.getElementById('btnSearch').click(); } });
 
   setStatus('Начни вводить и выбери из подсказок, либо нажми «Найти по названию».', true);
 }
 
-/* --- Новый: поиск по названию через Places API v1 Text Search --- */
-$('btnSearch').onclick = async ()=>{
-  const text = $('query').value.trim();
-  if (text.length < 2){ setStatus('Введи название длиннее.', false); return; }
-  setStatus('Ищу по названию…');
-  try{
-    const resp = await fetch(`https://places.googleapis.com/v1/places:searchText?key=${encodeURIComponent(GOOGLE_KEY)}`, {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({
-        textQuery: text,
-        languageCode: 'ru',
-        locationBias: { circle: { center: { latitude: BA_CENTER.lat, longitude: BA_CENTER.lng }, radius: 50000 } }
-      })
-    });
-    const data = await resp.json();
-    const place = (data.places||[])[0];
-    if (!place){ setStatus('Ничего не нашёл. Попробуй точнее: название + район.', false); return; }
-    await fillFromPlacesV1(place);
-    setStatus('Нашёл и заполнил по названию.', true);
-    buildJson();
-  }catch(e){
-    console.error(e); setStatus('Поиск по названию не сработал. Попробуй выбрать из подсказок.', false);
-  }
-};
-
-async function fillFromPlacesV1(p){
-  // данные из REST (v1) → в поля формы
-  $('placeid').value = p.id || '';
-  $('name').value = p.displayName?.text || p.displayName || $('name').value;
-  $('address').value = p.formattedAddress || $('address').value;
-  if (p.location){ $('lat').value = p.location.latitude; $('lng').value = p.location.longitude; }
-  const comp = (p.addressComponents||[]).find(c => (c.types||[]).includes('sublocality') || (c.types||[]).includes('neighborhood'));
-  if (comp?.longText && !$('neighborhood').value) $('neighborhood').value = comp.longText;
-  if (p.internationalPhoneNumber && !$('phone').value) $('phone').value = p.internationalPhoneNumber;
-  if (p.websiteUri && !$('site').value) $('site').value = p.websiteUri;
-  if (!$('photo').value && p.photos?.length && p.photos[0].name){
-    // получить URL фотографии v1
-    const name = p.photos[0].name; // "places/PHOTO_ID"
-    $('photo').value = `https://places.googleapis.com/v1/${name}/media?key=${encodeURIComponent(GOOGLE_KEY)}&maxWidthPx=800`;
-  }
-}
-
-/* --- Детали по place_id через новый Place class (JS SDK) --- */
 async function fetchPlaceById(pid){
   try{
     const place = new PlaceClass({ id: pid, requestedLanguage: 'ru' });
@@ -185,32 +150,64 @@ async function fetchPlaceById(pid){
       fields: ["id","displayName","formattedAddress","location","internationalPhoneNumber","websiteURI","photos","addressComponents"],
       sessionToken: Token
     });
-
-    $('placeid').value = place.id || pid;
-    $('name').value = place.displayName?.text || $('name').value;
-    $('address').value = place.formattedAddress || $('address').value;
-    if (place.location){ $('lat').value = place.location.lat; $('lng').value = place.location.lng; }
-
-    const comp = (place.addressComponents||[]).find(c => (c.types||[]).includes('sublocality') || (c.types||[]).includes('neighborhood'));
-    if (comp?.longText && !$('neighborhood').value) $('neighborhood').value = comp.longText;
-
-    if (place.internationalPhoneNumber && !$('phone').value) $('phone').value = place.internationalPhoneNumber;
-    if (place.websiteURI && !$('site').value) $('site').value = String(place.websiteURI);
-    if (!$('photo').value && place.photos?.length){
-      try { $('photo').value = place.photos[0].createUrl({maxWidth:800,maxHeight:600}); } catch {}
-    }
-
+    fillFormFromPlaceObj({
+      id: place.id,
+      name: place.displayName?.text,
+      address: place.formattedAddress,
+      lat: place.location?.lat,
+      lng: place.location?.lng,
+      phone: place.internationalPhoneNumber,
+      site: place.websiteURI ? String(place.websiteURI) : "",
+      neighborhood: (place.addressComponents||[]).find(c=>(c.types||[]).includes('sublocality')||(c.types||[]).includes('neighborhood'))?.longText || "",
+      photoUrl: (place.photos&&place.photos[0]) ? safePhotoUrl(place.photos[0]) : ""
+    });
     setStatus('Данные подтянулись из подсказки.', true);
     buildJson();
-  } catch(e){
-    console.error(e); setStatus('Не удалось получить детали по месту.', false);
-  }
+  }catch(e){ console.error(e); setStatus('Не удалось получить детали по месту.', false); }
 }
 
-/* --- Fallback: разбор длинного URL --- */
+function safePhotoUrl(photoObj){
+  try { return photoObj.createUrl({maxWidth:800,maxHeight:600}); } catch { return ""; }
+}
+
+/* --- Кнопка «Найти по названию» (Places API v1 REST) --- */
+$('btnSearch').onclick = async ()=>{
+  const text = $('query').value.trim();
+  if (text.length < 2){ setStatus('Введите название длиннее.', false); return; }
+  setStatus('Ищу по названию…');
+  try{
+    const resp = await fetch(`https://places.googleapis.com/v1/places:searchText?key=${encodeURIComponent(GOOGLE_KEY)}`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        textQuery:text,
+        languageCode:'ru',
+        locationBias:{circle:{center:{latitude:BA.lat,longitude:BA.lng},radius:50000}}
+      })
+    });
+    const data = await resp.json();
+    const p = (data.places||[])[0];
+    if(!p){ setStatus('Ничего не найдено. Попробуй точнее: название + район.', false); return; }
+    fillFormFromPlaceObj({
+      id: p.id,
+      name: p.displayName?.text || p.displayName,
+      address: p.formattedAddress,
+      lat: p.location?.latitude,
+      lng: p.location?.longitude,
+      phone: p.internationalPhoneNumber,
+      site: p.websiteUri,
+      neighborhood: (p.addressComponents||[]).find(c=>(c.types||[]).includes('sublocality')||(c.types||[]).includes('neighborhood'))?.longText || "",
+      photoUrl: (p.photos&&p.photos[0]?.name) ? `https://places.googleapis.com/v1/${p.photos[0].name}/media?key=${encodeURIComponent(GOOGLE_KEY)}&maxWidthPx=800` : ""
+    });
+    setStatus('Нашёл и заполнил по названию.', true);
+    buildJson();
+  }catch(e){ console.error(e); setStatus('Поиск по названию не сработал.', false); }
+};
+
+/* --- Парс длинного URL --- */
 $('btnParse').onclick = ()=>{
   const raw = $('query').value.trim();
-  if(!raw){ setStatus('Вставь длинный URL или воспользуйся поиском.', false); return; }
+  if(!raw){ setStatus('Вставь длинный URL или пользуйся поиском.', false); return; }
   try{
     const url = new URL(raw);
     const path = decodeURIComponent(url.pathname);
@@ -227,6 +224,19 @@ $('btnParse').onclick = ()=>{
     buildJson();
   }catch{ setStatus('Не похоже на длинный URL Google Maps.', false); }
 };
+
+/* --- Заполнение формы из объекта --- */
+function fillFormFromPlaceObj({id,name,address,lat,lng,phone,site,neighborhood,photoUrl}){
+  if(id) $('placeid').value = id;
+  if(name && !$('name').value) $('name').value = name;
+  if(address && !$('address').value) $('address').value = address;
+  if(typeof lat==='number') $('lat').value = lat;
+  if(typeof lng==='number') $('lng').value = lng;
+  if(neighborhood && !$('neighborhood').value) $('neighborhood').value = neighborhood;
+  if(phone && !$('phone').value) $('phone').value = phone;
+  if(site && !$('site').value) $('site').value = site;
+  if(photoUrl && !$('photo').value) $('photo').value = photoUrl;
+}
 
 /* --- JSON и отправка --- */
 function buildJson(){
