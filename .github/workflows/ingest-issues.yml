@@ -1,0 +1,46 @@
+name: Ingest place from Issues
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  ingest:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.issue.labels.*.name, 'place:approved')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run ingest script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          TRIGGER: ${{ github.event_name }}
+        run: |
+          node ./scripts/ingest_issue.js
+
+      - name: Commit & push changes (if any)
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/places.js
+            git commit -m "chore: ingest place from #${ISSUE_NUMBER}"
+            git push
+          else
+            echo "No changes to commit."
+          fi
