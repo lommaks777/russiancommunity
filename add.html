@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <!-- add.html v3.1 (REST Places v1 only + FieldMask + photo_url with key) -->
+  <!-- add.html v3.3 — REST Places v1, фото с key, автосброс, категория «Обучение» -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Добавить место — Русская карта БА</title>
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="%230b57d0"/><text x="32" y="40" font-size="28" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif">R</text></svg>' />
   <style>
+    :root{color-scheme:dark}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#0f0f0f;color:#eee}
     header{padding:12px;border-bottom:1px solid #222;background:#111;display:flex;gap:10px;align-items:center}
     header a{color:#9ecbff;text-decoration:none}
@@ -16,7 +17,7 @@
     input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #2a2a2a;background:#181818;color:#eee}
     textarea{min-height:220px}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+    .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     button{padding:10px 14px;border-radius:10px;border:1px solid #2a2a2a;background:#1f1f1f;color:#eee;cursor:pointer}
     .btn-primary{background:#0b57d0;border-color:#0b57d0}
     .hint{font-size:12px;color:#bbb;margin-top:6px}
@@ -29,9 +30,8 @@
 </head>
 <body>
 <header>
-  <div><a href="./">← Назад к карте</a></div>
+  <a href="./">← Назад к карте</a>
   <div style="flex:1"></div>
-  <div>Введи название → выбери из списка <b>или</b> нажми «Найти по названию» → Предпросмотр → Отправить</div>
 </header>
 
 <main>
@@ -39,7 +39,7 @@
     <div class="row">
       <div>
         <label>Название или длинная ссылка Google Maps</label>
-        <input id="query" type="text" autocomplete="off" placeholder="Например: Buró Árbol Palermo, 'чайхана', 'Buro Arbol'"/>
+        <input id="query" type="text" autocomplete="off" placeholder="Например: Buró Árbol Palermo, 'чайхана'"/>
         <div class="hint">Короткие ссылки <code>maps.app.goo.gl</code> сначала открой и скопируй длинный URL из адресной строки — либо просто пользуйся поиском.</div>
       </div>
       <div>
@@ -47,19 +47,20 @@
         <select id="category">
           <option>Кофе</option><option>Рестораны</option><option>Бары</option>
           <option>Кальян</option><option>Спорт</option><option>Работа</option>
-          <option>Магазин</option><option>Ивенты</option><option>Услуги</option><option>Дети</option>
+          <option>Магазин</option><option>Ивенты</option><option>Услуги</option>
+          <option>Дети</option><option>Обучение</option>
         </select>
       </div>
     </div>
     <div class="row3" style="margin-top:8px">
-      <div><button id="btnSearch" class="btn-primary">Найти по названию</button></div>
-      <div><button id="btnParse">Заполнить из ссылки</button></div>
-      <div><button id="btnPreview">Предпросмотр</button></div>
+      <button id="btnSearch" class="btn-primary">Найти по названию</button>
+      <button id="btnParse">Заполнить из ссылки</button>
+      <button id="btnClear">Очистить форму</button>
     </div>
-    <div style="margin-top:8px" class="row3">
-      <div><button id="btnSubmit" class="btn-primary">Отправить в GitHub</button></div>
-      <div><span id="status" class="hint"></span></div>
-      <div></div>
+    <div class="row3" style="margin-top:8px">
+      <button id="btnPreview">Предпросмотр</button>
+      <button id="btnSubmit" class="btn-primary">Отправить в GitHub</button>
+      <span id="status" class="hint"></span>
     </div>
   </div>
 
@@ -101,7 +102,6 @@
 </main>
 
 <script>
-/* ТВОЙ КЛЮЧ — как просил, без плейсхолдера */
 const GOOGLE_KEY = "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI";
 
 const $ = id => document.getElementById(id);
@@ -109,9 +109,19 @@ const setStatus = (t, ok=false)=> { $('status').innerHTML = ok? `<span class="ok
 const BA = {lat:-34.6037, lng:-58.3816};
 
 (function loadMaps() {
-  const url = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&libraries=places&language=ru&region=AR&v=weekly&loading=async&callback=initPlaces&_v=3.1`;
+  const url = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&libraries=places&language=ru&region=AR&v=weekly&loading=async&callback=initPlaces`;
   const s = document.createElement('script'); s.src=url; s.async=true; s.defer=true; document.head.appendChild(s);
 })();
+
+function clearForm(preserveCategory=true, preserveQuery=true){
+  ['name','neighborhood','address','peak','insta','site','phone','photo','lat','lng','placeid','rus','notes'].forEach(id=>{
+    if (id==='rus') { $('rus').value = 3; return; }
+    if (preserveCategory && id==='category') return;
+    if (preserveQuery && id==='query') return;
+    const el = $(id); if (el) el.value = '';
+  });
+  $('json').value = '';
+}
 
 let AutocompleteClass;
 
@@ -120,8 +130,6 @@ async function initPlaces(){
   AutocompleteClass = Autocomplete;
 
   const input = $('query');
-  if (!(input instanceof HTMLInputElement)) { setStatus('Ошибка: поле ввода не найдено.', false); return; }
-
   const ac = new AutocompleteClass(input, {
     bounds: {east:-58.30, west:-58.55, north:-34.50, south:-34.72},
     strictBounds: false
@@ -130,20 +138,23 @@ async function initPlaces(){
   ac.addListener("place_changed", async ()=>{
     const q = input.value.trim();
     if (!q) { setStatus("Введи название.", false); return; }
+    clearForm(true, true);
     await searchByText(q);
   });
 
   input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); $('btnSearch').click(); } });
-  setStatus('Начни вводить и выбери из подсказок, либо нажми «Найти по названию».', true);
+
+  $('btnSearch').onclick = async ()=>{
+    const q = $('query').value.trim();
+    if (q.length<2){ setStatus('Введите название длиннее.', false); return; }
+    clearForm(true, true);
+    await searchByText(q);
+  };
 }
 
-/* --- Поиск по названию через Places API v1 (REST) --- */
-$('btnSearch').onclick = async ()=>{
-  const text = $('query').value.trim();
-  if (text.length < 2){ setStatus('Введите название длиннее.', false); return; }
-  await searchByText(text);
-};
+$('btnClear').onclick = ()=>{ clearForm(); setStatus('Форма очищена.', true); };
 
+/* REST Places v1 */
 async function searchByText(text){
   try{
     setStatus('Ищу по названию…');
@@ -163,58 +174,33 @@ async function searchByText(text){
 
     if (!resp.ok){
       const err = await resp.json().catch(()=>({}));
-      console.error('Places v1 error', resp.status, err);
-      setStatus('Ошибка Places API v1: ' + (err.error?.message || resp.status), false);
+      setStatus('Ошибка Places API: ' + (err.error?.message || resp.status), false);
       return;
     }
-
     const data = await resp.json();
     const p = (data.places||[])[0];
     if(!p){ setStatus('Ничего не найдено. Попробуй точнее: название + район.', false); return; }
     fillFormFromRestPlace(p);
     setStatus('Нашёл и заполнил.', true);
     buildJson();
-  }catch(e){ console.error(e); setStatus('Поиск по названию не сработал (ключ/квоты/домен).', false); }
+  }catch(e){ console.error(e); setStatus('Сеть/ключ/квоты — см. консоль.', false); }
 }
 
 function fillFormFromRestPlace(p){
   if (p.id) $('placeid').value = p.id;
-  if ((p.displayName?.text || p.displayName) && !$('name').value) $('name').value = p.displayName.text || p.displayName;
-  if (p.formattedAddress && !$('address').value) $('address').value = p.formattedAddress;
+  if ((p.displayName?.text || p.displayName)) $('name').value = p.displayName.text || p.displayName;
+  if (p.formattedAddress) $('address').value = p.formattedAddress;
   if (p.location){ $('lat').value = p.location.latitude; $('lng').value = p.location.longitude; }
   const comp = (p.addressComponents||[]).find(c => (c.types||[]).includes('sublocality') || (c.types||[]).includes('neighborhood'));
-  if (comp?.longText && !$('neighborhood').value) $('neighborhood').value = comp.longText;
-  if (p.internationalPhoneNumber && !$('phone').value) $('phone').value = p.internationalPhoneNumber;
-  if (p.websiteUri && !$('site').value) $('site').value = p.websiteUri;
-
-  // ВАЖНО: фото с ключом (иначе <img> получит 403)
-  if (!$('photo').value && p.photos?.length && p.photos[0].name){
+  if (comp?.longText) $('neighborhood').value = comp.longText;
+  if (p.internationalPhoneNumber) $('phone').value = p.internationalPhoneNumber;
+  if (p.websiteUri) $('site').value = p.websiteUri;
+  if (p.photos?.length && p.photos[0].name){
     $('photo').value = `https://places.googleapis.com/v1/${p.photos[0].name}/media?maxWidthPx=800&key=${encodeURIComponent(GOOGLE_KEY)}`;
   }
 }
 
-/* --- Парс длинного URL (fallback) --- */
-$('btnParse').onclick = ()=>{
-  const raw = $('query').value.trim();
-  if(!raw){ setStatus('Вставь длинный URL или пользуйся поиском.', false); return; }
-  try{
-    const url = new URL(raw);
-    const path = decodeURIComponent(url.pathname);
-    const name = path.split('/place/')[1]?.split('/')[0]?.replace(/\+/g,' ').replace(/_/g,' ') || '';
-    if (name && !$('name').value) $('name').value = name;
-
-    const at = raw.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
-    if (at){ $('lat').value = at[1]; $('lng').value = at[2]; }
-
-    const pidMatch = raw.match(/place_id:([A-Za-z0-9_-]+)/i);
-    if (pidMatch) $('placeid').value = pidMatch[1];
-
-    setStatus('Заполнил из ссылки. Проверь и дополни.', true);
-    buildJson();
-  }catch{ setStatus('Не похоже на длинный URL Google Maps.', false); }
-};
-
-/* --- JSON и отправка --- */
+/* JSON и отправка */
 function buildJson(){
   const o = {
     id: Date.now(),
@@ -243,7 +229,7 @@ $('btnSubmit').onclick = ()=>{
   if (!o.name || !o.lat || !o.lng){ setStatus('Нужно минимум: Название + координаты.', false); return; }
   const repo = "lommaks777/-russian-community";
   const title = encodeURIComponent("Новая точка: " + (o.name||"без названия"));
-  const body = encodeURIComponent(["Проверь и добавь в data/places.js","","```json",JSON.stringify(o,null,2),"```"].join("\n"));
+  const body  = encodeURIComponent(["Проверь и добавь в data/places.js","","```json",JSON.stringify(o,null,2),"```"].join("\n"));
   window.open(`https://github.com/${repo}/issues/new?title=${title}&body=${body}`,"_blank");
 };
 </script>
