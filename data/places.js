@@ -88,5 +88,23 @@ window.PLACES = [
     "address": "Guido 1677, C1016AAC C1016AAC, Cdad. Autónoma de Buenos Aires, Аргентина",
     "place_id": "ChIJ9X2_jkPLvJURdWtfKIco1pI",
     "notes": ""
+  },
+  {
+    "id": 1756612843272,
+    "name": "WeWork Espacio de Oficinas & Coworking",
+    "category": "Работа",
+    "subtype": "",
+    "lat": -34.6036651,
+    "lng": -58.377891,
+    "neighborhood": "San Nicolás",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.wework.com/es-LA/buildings/corrientes-800--buenos-aires",
+    "phone": "+54 11 2041-6127",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJk8GIYAjLvJURT2jfEJYBIGI/photos/ATKogpfgRNKtdTRPihOCu78bcOsKR_wJ-3PUteSQzKiHTOVIbZy7iHSR7tVDgehc1imo6lF0sPxfbrrG-ufRzsUj77bUTVvGIkhpL7Ok7jqM45n2iB0AhsIeuMfH0rJayjSVoo0CZcNfA1rNrdZuyApvh7BVms4S38o4WdHDs28axgAIQKoyFhtTOETPVtx_VMYsM4n1OO-vEIbF17jH5WTLbQRfURM8RGolbvUt6k-554muqhe55TOXxG95ZdGhOkxaxoZBB21ypeIGW3U8u-XzfbDuck4Ayy9Yk7GlPjnINhGFAA/media?maxWidthPx=800",
+    "address": "Av. Corrientes 800, C1008 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJk8GIYAjLvJURT2jfEJYBIGI",
+    "notes": ""
   }
 ];
