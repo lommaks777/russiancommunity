@@ -18,20 +18,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Inject secrets into HTML/JS
         run: |
           mkdir dist
           rsync -a --exclude '.github' ./ ./dist/
-          find dist -type f -name "*.html" -o -name "*.js" | xargs -I{} \
-            sed -i \
-              -e 's/__MAPS_PUBLIC_KEY__/${{ secrets.MAPS_PUBLIC_KEY }}/g' \
-              -e 's/__MAP_ID__/${{ secrets.MAP_ID }}/g' {}
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          # замена плейсхолдеров в *.html и *.js
+          find dist -type f \( -name "*.html" -o -name "*.js" \) -print0 | xargs -0 sed -i \
+            -e 's/__MAPS_PUBLIC_KEY__/'"${{ secrets.MAPS_PUBLIC_KEY }}"'/g' \
+            -e 's/__MAP_ID__/'"${{ secrets.MAP_ID }}"'/g'
+      - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
 
   deploy:
