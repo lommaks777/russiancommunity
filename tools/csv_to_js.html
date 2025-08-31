@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CSV → places.js</title>
+  <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin:20px; }
+    textarea { width:100%; height:200px; }
+    .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:10px; }
+    button { padding:8px 12px; cursor:pointer; }
+    pre { background:#f7f7f7; padding:12px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <h3>Конвертер CSV → <code>data/places.js</code></h3>
+  <p>1) Вставь CSV с заголовками колонок <code>id,name,category,subtype,lat,lng,neighborhood,photo_url,russian_presence_score,peak_hours,address,instagram</code><br>
+  2) Нажми «Конвертировать», 3) «Скачать places.js» и замени файл в <code>/data</code>.</p>
+
+  <div class="row">
+    <input type="file" id="file" accept=".csv"/>
+    <button id="sample">Вставить пример</button>
+  </div>
+
+  <textarea id="csv" placeholder="Вставь CSV сюда или выбери файл выше"></textarea>
+  <div class="row">
+    <button id="convert">Конвертировать</button>
+    <button id="download" disabled>Скачать places.js</button>
+  </div>
+
+  <h4>Предпросмотр</h4>
+  <pre id="out"></pre>
+
+<script>
+const csvEl = document.getElementById('csv');
+const outEl = document.getElementById('out');
+const dlBtn = document.getElementById('download');
+
+document.getElementById('file').addEventListener('change', (e)=>{
+  const f = e.target.files[0];
+  if(!f) return;
+  const r = new FileReader();
+  r.onload = () => { csvEl.value = r.result; };
+  r.readAsText(f, 'utf-8');
+});
+
+document.getElementById('sample').onclick = ()=>{
+  csvEl.value = [
+    "id,name,category,subtype,lat,lng,neighborhood,photo_url,russian_presence_score,peak_hours,address,instagram",
+    "1,Кофейня на углу,Кофе,Спешиалти,-34.6037,-58.3816,Microcentro,https://picsum.photos/seed/cafe/400/300,4,Сб–Вс 11:00–15:00,Av. Corrientes 1000,",
+    "2,Падел-клуб,Спорт,Падел,-34.57,-58.43,Nuñez,https://picsum.photos/seed/padel/400/300,5,Будни 18:00–22:00,Av. del Libertador 7000,",
+    "3,Лаунж с кальяном,Кальян,Лаунж,-34.60,-58.39,Recoleta,https://picsum.photos/seed/lounge/400/300,3,Пт–Сб 21:00–01:00,Callao 1200,",
+    "4,Магазин русских продуктов,Магазин,Продукты,-34.59,-58.43,Belgrano,https://picsum.photos/seed/store/400/300,5,Сб 12:00–16:00,Av. Cabildo 2200,",
+    "5,Коворкинг,Работа,Коворкинг,-34.585,-58.40,Palermo,https://picsum.photos/seed/cowork/400/300,2,Пн–Пт 11:00–17:00,Av. Santa Fe 3200,"
+  ].join("\n");
+};
+
+document.getElementById('convert').onclick = ()=>{
+  const csv = csvEl.value.trim();
+  if(!csv){ alert('Вставь CSV'); return; }
+  const res = Papa.parse(csv, { header:true, skipEmptyLines:true });
+  const arr = res.data.map((r, i) => ({
+    id: Number(r.id || i+1),
+    name: (r.name||"").trim(),
+    category: (r.category||"").trim(),
+    subtype: (r.subtype||"").trim(),
+    lat: Number(r.lat),
+    lng: Number(r.lng),
+    neighborhood: (r.neighborhood||"").trim(),
+    photo_url: (r.photo_url||"").trim(),
+    russian_presence_score: Number(r.russian_presence_score||0),
+    peak_hours: (r.peak_hours||"").trim(),
+    address: (r.address||"").trim(),
+    instagram: (r.instagram||"").trim()
+  }));
+  const js = "window.PLACES = " + JSON.stringify(arr, null, 2) + ";\n";
+  outEl.textContent = js;
+  dlBtn.disabled = false;
+  dlBtn.onclick = ()=>{
+    const blob = new Blob([js], {type:'application/javascript'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'places.js';
+    document.body.appendChild(a); a.click();
+    setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 100);
+  };
+};
+</script>
+</body>
+</html>
