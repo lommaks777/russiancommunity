@@ -1,10 +1,10 @@
 name: Fix photo_url (append API key)
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   push:
     paths:
-      - data/places.json
+      - 'data/places.json'
 
 permissions:
   contents: write
@@ -15,43 +15,49 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Append key to Google Places media URLs if missing
+      - name: Use Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Patch photo_url and rebuild places.js
         env:
           API_KEY: "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
         run: |
-          set -e
-          mkdir -p data
-          if [ -f data/places.json ]; then
-            node - <<'NODE'
-            const fs=require('fs'), p='data/places.json';
-            const key=process.env.API_KEY;
-            let arr=[]; try{ arr=JSON.parse(fs.readFileSync(p,'utf8')) }catch{}
-            let changed=false;
-            for (const x of arr) {
-              if (!x || !x.photo_url) continue;
-              if (/^https:\/\/places\.googleapis\.com\/v1\/.+\/media/i.test(x.photo_url) ||
-                  /^https:\/\/places\.googleapis\.com\/v1\/.+\/media/i.test(x.photo_url) ||
-                  /^https:\/\/places\.googleapis\.com\/v1\/.+\/media/i.test(x.photo_url)) {
-                if (!/[?&]key=/.test(x.photo_url)) {
-                  x.photo_url += (x.photo_url.includes('?') ? '&' : '?') + 'key=' + encodeURIComponent(key);
-                  changed=true;
-                }
-              }
-            }
-            if (changed) {
-              fs.writeFileSync(p, JSON.stringify(arr,null,2));
-              fs.writeFileSync('data/places.js', 'window.PLACES = ' + JSON.stringify(arr.filter(x=>x.approved===true)) + ';\n');
-              console.log('Updated photo URLs and rebuilt places.js');
-            } else {
-              console.log('No photo_url to update');
-            }
-NODE
+          set -euo pipefail
+          if [ ! -f data/places.json ]; then
+            echo "data/places.json not found, nothing to do."
+            exit 0
           fi
+
+          node -e "
+          const fs=require('fs');
+          const key=process.env.API_KEY;
+          const jsonPath='data/places.json';
+          let arr=[];
+          try { arr=JSON.parse(fs.readFileSync(jsonPath,'utf8')); } catch {}
+          if(!Array.isArray(arr)) arr=[];
+          let changed=false;
+          const re=/^https:\/\/places\.googleapis\.com\/v1\/.+\/media/i;
+          arr.forEach(x=>{
+            if(!x || !x.photo_url) return;
+            if(re.test(x.photo_url) && !/[?&]key=/.test(x.photo_url)){
+              x.photo_url += (x.photo_url.includes('?') ? '&' : '?') + 'key=' + encodeURIComponent(key);
+              changed=true;
+            }
+          });
+          if(changed){
+            fs.writeFileSync(jsonPath, JSON.stringify(arr,null,2));
+          }
+          const approved=arr.filter(x=>x && x.approved===true);
+          fs.writeFileSync('data/places.js', 'window.PLACES = ' + JSON.stringify(approved) + '\\n');
+          console.log('Patched:', changed, 'approved count:', approved.length);
+          "
 
       - name: Commit and push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/places.json data/places.js || true
-          git commit -m "fix: append key to Google Places photo_url and rebuild" || echo "No changes"
+          git commit -m "fix: add key to photo_url and rebuild places.js" || echo "No changes"
           git push || true
