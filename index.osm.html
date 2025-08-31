@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Русская карта БА — OSM fallback</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<style>
+  html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+  .app{display:grid;grid-template-rows:auto 1fr;height:100%}
+  header{padding:10px 12px;border-bottom:1px solid #222;background:#111;color:#eee;display:flex;gap:10px;align-items:center}
+  header .btn{padding:6px 10px;background:#222;border:1px solid #333;border-radius:14px;color:#ddd;cursor:pointer}
+  header .btn.active{background:#0b57d0;border-color:#0b57d0;color:#fff}
+  #map{height:100%}
+  .pinlabel{background:rgba(24,24,24,.9);color:#eaeaea;border:1px solid #333;border-radius:14px;padding:2px 8px;font-size:12px;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div><strong>Русская карта БА</strong></div>
+    <button id="heat" class="btn">Плотность русских</button>
+    <button id="route" class="btn">Маршрут пятницы</button>
+  </header>
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+<script src="./data/places.js"></script>
+<script src="./data/routes.js"></script>
+<script>
+const map = L.map('map', {zoomControl:true}).setView([-34.6037,-58.3816], 12);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
+
+const cluster = L.markerClusterGroup({ chunkedLoading:true });
+const labelLayer = L.layerGroup().addTo(map);
+
+function addMarkers(){
+  cluster.clearLayers(); labelLayer.clearLayers();
+  (window.PLACES||[]).forEach(p=>{
+    const m = L.marker([p.lat, p.lng]);
+    m.bindPopup(`
+      <div style="width:240px">
+        <img src="${p.photo_url||'https://picsum.photos/seed/spot/600/400'}" style="width:100%;height:140px;object-fit:cover;border-radius:6px;margin-bottom:6px"/>
+        <div style="font-weight:700">${p.name||'Без названия'}</div>
+        <div style="font-size:12px;color:#888">${(p.subtype||p.category||'Место')} • ${p.neighborhood||''}</div>
+        <div style="margin-top:6px;font-size:12px;background:#f3f3f3;border-radius:10px;display:inline-block;padding:2px 6px">Русских: ${(p.russian_score||0)}/5</div>
+        <div style="font-size:12px;color:#666">Пик: ${p.peak_hours||'—'}</div>
+      </div>
+    `);
+    cluster.addLayer(m);
+
+    const lbl = L.divIcon({className:'', html:`<div class="pinlabel">${p.name||'Место'}</div>`});
+    L.marker([p.lat, p.lng],{icon:lbl, interactive:false}).addTo(labelLayer);
+  });
+  map.addLayer(cluster);
+}
+addMarkers();
+
+// Heatmap
+let heatLayer=null;
+document.getElementById('heat').onclick = ()=>{
+  if(!heatLayer){
+    const pts = (window.PLACES||[]).map(p=>[p.lat, p.lng, Math.max(0,Math.min(1,(p.russian_score||0)/5))]);
+    heatLayer = L.heatLayer(pts, {radius:28, blur:18, maxZoom:15});
+    heatLayer.addTo(map);
+    event.target.classList.add('active');
+  } else {
+    if(map.hasLayer(heatLayer)){ map.removeLayer(heatLayer); event.target.classList.remove('active'); }
+    else { heatLayer.addTo(map); event.target.classList.add('active'); }
+  }
+};
+
+// Route friday
+let line=null;
+document.getElementById('route').onclick = ()=>{
+  const ids = (window.ROUTES && window.ROUTES.friday)||[];
+  const pts = ids.map(id => (window.PLACES||[]).find(p=>p.id===id)).filter(Boolean).map(p=>[p.lat,p.lng]);
+  if(!pts.length){ alert('Маршрут пятницы пуст.'); return; }
+  if(line){ if(map.hasLayer(line)){ map.removeLayer(line); event.target.classList.remove('active'); return; } }
+  line = L.polyline(pts, {color:'#0b57d0', weight:4, opacity:0.9}).addTo(map);
+  map.fitBounds(line.getBounds().pad(0.2));
+  event.target.classList.add('active');
+};
+</script>
+</body>
+</html>
