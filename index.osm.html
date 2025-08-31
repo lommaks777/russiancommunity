@@ -13,7 +13,20 @@
   header .btn{padding:6px 10px;background:#222;border:1px solid #333;border-radius:14px;color:#ddd;cursor:pointer}
   header .btn.active{background:#0b57d0;border-color:#0b57d0;color:#fff}
   #map{height:100%}
-  .pinlabel{background:rgba(24,24,24,.9);color:#eaeaea;border:1px solid #333;border-radius:14px;padding:2px 8px;font-size:12px;white-space:nowrap}
+  /* стиль бейджа-подписи */
+  .pinlabel {
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 0 4px rgba(0,0,0,0.5);
+    pointer-events: none;
+    text-align: center;
+  }
 </style>
 </head>
 <body>
@@ -42,6 +55,7 @@ const labelLayer = L.layerGroup().addTo(map);
 function addMarkers(){
   cluster.clearLayers(); labelLayer.clearLayers();
   (window.PLACES||[]).forEach(p=>{
+    // Маркер
     const m = L.marker([p.lat, p.lng]);
     m.bindPopup(`
       <div style="width:240px">
@@ -54,8 +68,13 @@ function addMarkers(){
     `);
     cluster.addLayer(m);
 
-    const lbl = L.divIcon({className:'', html:`<div class="pinlabel">${p.name||'Место'}</div>`});
-    L.marker([p.lat, p.lng],{icon:lbl, interactive:false}).addTo(labelLayer);
+    // Подпись рядом с маркером
+    const lbl = L.divIcon({
+      className:'',
+      html:`<div class="pinlabel">${p.name||'Место'}</div>`
+    });
+    const labelMarker = L.marker([p.lat, p.lng],{icon:lbl,interactive:false});
+    labelLayer.addLayer(labelMarker);
   });
   map.addLayer(cluster);
 }
