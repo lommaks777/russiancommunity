@@ -8,7 +8,7 @@
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#0f0f0f;color:#eee}
     header{padding:12px;border-bottom:1px solid #222;background:#111;display:flex;gap:10px;align-items:center}
     header a{color:#9ecbff;text-decoration:none}
-    main{max-width:840px;margin:20px auto;padding:0 16px}
+    main{max-width:920px;margin:20px auto;padding:0 16px}
     .card{background:#121212;border:1px solid #222;border-radius:12px;padding:16px;margin-bottom:16px}
     label{font-size:13px;color:#aaa;display:block;margin-bottom:4px}
     input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #2a2a2a;background:#181818;color:#eee}
@@ -16,7 +16,6 @@
     .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
     button{padding:10px 14px;border-radius:10px;border:1px solid #2a2a2a;background:#1f1f1f;color:#eee;cursor:pointer}
     .btn-primary{background:#0b57d0;border-color:#0b57d0}
-    .muted{font-size:12px;color:#888}
     .hint{font-size:12px;color:#bbb;margin-top:6px}
     .ok{color:#7bd88f;font-weight:600}
   </style>
@@ -25,15 +24,15 @@
 <header>
   <div><a href="./">← Назад к карте</a></div>
   <div style="flex:1"></div>
-  <div>Шаги: 1) Вставь ссылку Google Maps или название → 2) Найти → 3) Проверить → 4) Отправить</div>
+  <div>Вставь ссылку или заполни вручную → Предпросмотр → Отправить</div>
 </header>
 <main>
   <div class="card">
     <div class="row">
       <div>
-        <label>Ссылка Google Maps или название места</label>
-        <input id="query" placeholder="Вставь ссылку или введи название и район (например, 'Padel Palermo')" />
-        <div class="hint">Можно просто вставить «Поделиться» ссылку из Google Maps.</div>
+        <label>Ссылка Google Maps или название</label>
+        <input id="query" placeholder="Вставь длинную ссылку Google Maps (из адресной строки) или заполни поля ниже"/>
+        <div class="hint">Короткие ссылки <code>maps.app.goo.gl</code> нажми и раскрой в новой вкладке, затем скопируй длинный URL с адресной строки.</div>
       </div>
       <div>
         <label>Категория</label>
@@ -44,18 +43,8 @@
         </select>
       </div>
     </div>
-    <div class="row">
-      <div>
-        <label>Подтип (опционально)</label>
-        <input id="subtype" placeholder="Спешиалти, падел, лаунж..." />
-      </div>
-      <div>
-        <label>Плотность русских (0–5)</label>
-        <input id="rus" type="number" min="0" max="5" step="1" value="3"/>
-      </div>
-    </div>
     <div class="row3" style="margin-top:8px">
-      <div><button id="btnFind" class="btn-primary">Найти в Google</button></div>
+      <div><button id="btnParse" class="btn-primary">Заполнить из ссылки</button></div>
       <div><button id="btnPreview">Предпросмотр</button></div>
       <div><button id="btnSubmit" class="btn-primary">Отправить в GitHub</button></div>
     </div>
@@ -77,138 +66,65 @@
     </div>
     <div class="row">
       <div><label>Телефон</label><input id="phone" placeholder="+54..." /></div>
-      <div><label>Фото (кастомная обложка, опц.)</label><input id="photo" placeholder="https://..." /></div>
+      <div><label>Фото (обложка, опц.)</label><input id="photo" placeholder="https://..." /></div>
     </div>
     <div class="row">
       <div><label>lat</label><input id="lat" /></div>
       <div><label>lng</label><input id="lng" /></div>
     </div>
     <div class="row">
-      <div><label>place_id (заполняется автоматически)</label><input id="placeid" /></div>
-      <div><label>Заметка (опционально)</label><input id="notes" /></div>
+      <div><label>place_id (если знаешь)</label><input id="placeid" /></div>
+      <div><label>Плотность русских (0–5)</label><input id="rus" type="number" min="0" max="5" step="1" value="3"/></div>
     </div>
-    <div class="hint">Данные подтянутся из Google, но можно поправить вручную перед отправкой.</div>
+    <div class="row">
+      <div><label>Заметка (опционально)</label><input id="notes" /></div>
+      <div></div>
+    </div>
   </div>
 
   <div class="card">
-    <label>Сформированный JSON</label>
-    <textarea id="json" rows="8" readonly></textarea>
-    <div class="hint">Кнопка «Отправить в GitHub» откроет новый Issue с этим JSON — просто нажми Submit.</div>
+    <label>JSON</label>
+    <textarea id="json" rows="10" readonly></textarea>
+    <div class="hint">Кнопка «Отправить в GitHub» создаст Issue с этим JSON — просто нажми Submit.</div>
   </div>
 </main>
 
 <script>
-const GOOGLE_KEY = "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI";
-let mapSvc;
-
-// подгружаем библиотеку Maps JS (только places)
-(function(){
-  const s = document.createElement('script');
-  s.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&libraries=places&v=weekly&callback=_init`;
-  s.async = true; document.head.appendChild(s);
-})();
-window._init = function(){
-  const dummyMap = document.createElement('div'); // сервису нужен контекст карты, но карта нам не нужна
-  dummyMap.style.display='none'; document.body.appendChild(dummyMap);
-  const map = new google.maps.Map(dummyMap, {center:{lat:-34.6037,lng:-58.3816},zoom:12});
-  mapSvc = new google.maps.places.PlacesService(map);
-}
-
 const $ = id => document.getElementById(id);
 const setStatus = (t, ok=false)=> { $('status').innerHTML = ok? `<span class="ok">${t}</span>` : t; };
 
-$('btnFind').onclick = async ()=>{
-  const q = $('query').value.trim();
-  if(!q){ setStatus('Вставь ссылку или введи название.'); return; }
-  setStatus('Ищу в Google…');
+$('btnParse').onclick = ()=>{
+  const raw = $('query').value.trim();
+  if(!raw){ setStatus('Вставь длинную ссылку или заполни поля ниже.'); return; }
 
-  // 1) пытаемся вытащить place_id из ссылки (если это share-url вида ...?q=place_id:XXXX)
-  const pid = extractPlaceId(q);
-  if (pid) {
-    fetchDetailsByPlaceId(pid);
-    return;
+  // Вытаскиваем из длинного URL: name (из /place/...), lat/lng из @lat,lng, address из query/formatted
+  try{
+    const url = new URL(raw);
+    const path = decodeURIComponent(url.pathname);
+    const name = path.split('/place/')[1]?.split('/')[0]?.replace(/\+/g,' ').replace(/_/g,' ') || '';
+    if (name && !$('name').value) $('name').value = name;
+
+    const at = raw.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+    if (at){ $('lat').value = at[1]; $('lng').value = at[2]; }
+
+    const q = url.searchParams.get('query');
+    if (q && q.includes(',')) $('address').value = q;
+
+    const pidMatch = raw.match(/place_id:([A-Za-z0-9_-]+)/i);
+    if (pidMatch) $('placeid').value = pidMatch[1];
+
+    setStatus('Готово: вытащил данные из ссылки. Проверь и дополни.', true);
+  }catch(e){
+    setStatus('Не похоже на длинный URL Google Maps. Открой короткую ссылку, скопируй длинную из адресной строки и вставь сюда.');
   }
-
-  // 2) иначе FindPlace по тексту
-  mapSvc.findPlaceFromQuery({
-    query: q,
-    fields: ['place_id','name','geometry','formatted_address']
-  }, (res, status)=>{
-    if (status === google.maps.places.PlacesServiceStatus.OK && res && res.length){
-      const it = res[0];
-      $('placeid').value = it.place_id || '';
-      $('name').value = it.name || '';
-      $('address').value = it.formatted_address || '';
-      if (it.geometry && it.geometry.location){
-        $('lat').value = it.geometry.location.lat();
-        $('lng').value = it.geometry.location.lng();
-      }
-      // тянем дополнительные поля
-      fetchDetailsByPlaceId(it.place_id);
-    } else {
-      setStatus('Не нашёл по запросу. Попробуй другое название или укажи район.', false);
-    }
-  });
 };
 
-function extractPlaceId(url){
-  try {
-    const u = new URL(url);
-    // варианты:
-    // ...?q=place_id:ChIJ...  или  .../place/?q=place_id:ChIJ...
-    const q = u.searchParams.get('q');
-    if (q && q.startsWith('place_id:')) return q.split('place_id:')[1];
-    // иногда place_id встречается в path:
-    const m = url.match(/place_id:([A-Za-z0-9_-]+)/);
-    if (m) return m[1];
-  } catch(e){}
-  return null;
-}
-
-function fetchDetailsByPlaceId(pid){
-  mapSvc.getDetails({
-    placeId: pid,
-    fields: [
-      'name','rating','user_ratings_total','photos','website',
-      'international_phone_number','url','geometry','formatted_address','address_components'
-    ]
-  }, (d, status)=>{
-    if (status === google.maps.places.PlacesServiceStatus.OK && d){
-      $('placeid').value = d.place_id || '';
-      $('name').value = d.name || $('name').value;
-      $('address').value = d.formatted_address || $('address').value;
-      if (d.geometry && d.geometry.location){
-        $('lat').value = d.geometry.location.lat();
-        $('lng').value = d.geometry.location.lng();
-      }
-      // извлекаем район (sublocality, neighborhood)
-      const comp = (d.address_components||[]).find(c=>c.types.includes('sublocality')||c.types.includes('neighborhood'));
-      if (comp && !$('neighborhood').value) $('neighborhood').value = comp.long_name;
-
-      // если нет кастомной обложки — поставим первую фотку
-      if (!$('photo').value && d.photos && d.photos.length){
-        $('photo').value = d.photos[0].getUrl({maxWidth:800,maxHeight:600});
-      }
-      // телефон/сайт
-      if (d.international_phone_number && !$('phone').value) $('phone').value = d.international_phone_number;
-      if (d.website && !$('site').value) $('site').value = d.website;
-
-      setStatus('Нашёл! Данные подтянулись. Проверь и отправляй.', true);
-      buildJsonPreview();
-    } else {
-      setStatus('Не удалось получить детали по place_id.', false);
-    }
-  });
-}
-
-$('btnPreview').onclick = buildJsonPreview;
-
-function buildJsonPreview(){
+function buildJson(){
   const obj = {
-    id: Date.now(), // временный id — ты потом не используешь его напрямую
+    id: Date.now(),
     name: $('name').value.trim(),
     category: $('category').value,
-    subtype: $('subtype').value.trim(),
+    subtype: '',
     lat: Number($('lat').value),
     lng: Number($('lng').value),
     neighborhood: $('neighborhood').value.trim(),
@@ -223,24 +139,18 @@ function buildJsonPreview(){
     notes: $('notes').value.trim()
   };
   $('json').value = JSON.stringify(obj, null, 2);
-  setStatus('Готов предварительный JSON. Нажми «Отправить в GitHub».', true);
   return obj;
 }
-
+$('btnPreview').onclick = ()=>{ buildJson(); setStatus('Предпросмотр готов.', true); };
 $('btnSubmit').onclick = ()=>{
-  const obj = buildJsonPreview();
-  // собираем ссылку «создать issue» в твоём репозитории:
+  const obj = buildJson();
+  if (!obj.name || !obj.category || !obj.lat || !obj.lng){
+    setStatus('Нужно минимум: Название, Категория, lat и lng.', false); return;
+  }
   const repo = "lommaks777/-russian-community";
   const title = encodeURIComponent("Новая точка: " + (obj.name||"без названия"));
-  const body = encodeURIComponent([
-    "Пожалуйста, проверь и добавь в data/places.js",
-    "",
-    "```json",
-    JSON.stringify(obj, null, 2),
-    "```"
-  ].join("\n"));
-  const url = `https://github.com/${repo}/issues/new?title=${title}&body=${body}`;
-  window.open(url, "_blank");
+  const body = encodeURIComponent(["Проверь и добавь в data/places.js","","```json",JSON.stringify(obj,null,2),"```"].join("\n"));
+  window.open(`https://github.com/${repo}/issues/new?title=${title}&body=${body}`, "_blank");
 };
 </script>
 </body>
