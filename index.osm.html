@@ -2,31 +2,28 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Русская карта БА — OSM fallback</title>
+<title>Русская карта БА — OSM</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 <style>
   html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
   .app{display:grid;grid-template-rows:auto 1fr;height:100%}
-  header{padding:10px 12px;border-bottom:1px solid #222;background:#111;color:#eee;display:flex;gap:10px;align-items:center}
+  header{padding:10px 12px;border-bottom:1px solid #222;background:#111;color:#eee;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
   header .btn{padding:6px 10px;background:#222;border:1px solid #333;border-radius:14px;color:#ddd;cursor:pointer}
   header .btn.active{background:#0b57d0;border-color:#0b57d0;color:#fff}
   #map{height:100%}
-  /* стиль бейджа-подписи */
-  .pinlabel {
-    background: rgba(0,0,0,0.75);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 6px;
-    padding: 2px 6px;
-    font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
-    box-shadow: 0 0 4px rgba(0,0,0,0.5);
-    pointer-events: none;
-    text-align: center;
+
+  /* ПИН-СОБЫТИЯ: иконка + подпись в одном бейдже */
+  .pinwrap{
+    display:flex;align-items:center;gap:6px;
+    background:rgba(0,0,0,.85);color:#fff;border:1px solid rgba(255,255,255,.2);
+    border-radius:14px;padding:4px 8px;font-size:13px;font-weight:600;white-space:nowrap;
+    box-shadow:0 2px 6px rgba(0,0,0,.35);pointer-events:none;
   }
+  .pin-emoji{font-size:16px;line-height:1}
+  .pin-name{max-width:220px;overflow:hidden;text-overflow:ellipsis}
+  @media (max-width:600px){ .pin-name{max-width:140px} }
 </style>
 </head>
 <body>
@@ -52,10 +49,22 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'�
 const cluster = L.markerClusterGroup({ chunkedLoading:true });
 const labelLayer = L.layerGroup().addTo(map);
 
+// эмодзи по категориям
+const CAT_EMOJI = {
+  "Кофе":"☕","Рестораны":"🍽","Бары":"🍸","Кальян":"💨",
+  "Спорт":"🎾","Работа":"💼","Магазин":"🛒","Ивенты":"🎉","Услуги":"🧰","Дети":"🧒"
+};
+function makePinHtml(p){
+  const e = CAT_EMOJI[p.category] || "📍";
+  const name = p.name || "Место";
+  return `<div class="pinwrap"><span class="pin-emoji">${e}</span><span class="pin-name">${name}</span></div>`;
+}
+
 function addMarkers(){
   cluster.clearLayers(); labelLayer.clearLayers();
+
   (window.PLACES||[]).forEach(p=>{
-    // Маркер
+    // обычный маркер (для попапа)
     const m = L.marker([p.lat, p.lng]);
     m.bindPopup(`
       <div style="width:240px">
@@ -68,42 +77,39 @@ function addMarkers(){
     `);
     cluster.addLayer(m);
 
-    // Подпись рядом с маркером
-    const lbl = L.divIcon({
-      className:'',
-      html:`<div class="pinlabel">${p.name||'Место'}</div>`
-    });
-    const labelMarker = L.marker([p.lat, p.lng],{icon:lbl,interactive:false});
-    labelLayer.addLayer(labelMarker);
+    // «надпись-пин» — клики не перехватывает, просто красиво подписывает
+    const icon = L.divIcon({className:'', html: makePinHtml(p)});
+    L.marker([p.lat, p.lng], {icon, interactive:false}).addTo(labelLayer);
   });
+
   map.addLayer(cluster);
 }
 addMarkers();
 
 // Heatmap
 let heatLayer=null;
-document.getElementById('heat').onclick = ()=>{
+document.getElementById('heat').onclick = (ev)=>{
   if(!heatLayer){
     const pts = (window.PLACES||[]).map(p=>[p.lat, p.lng, Math.max(0,Math.min(1,(p.russian_score||0)/5))]);
     heatLayer = L.heatLayer(pts, {radius:28, blur:18, maxZoom:15});
     heatLayer.addTo(map);
-    event.target.classList.add('active');
+    ev.target.classList.add('active');
   } else {
-    if(map.hasLayer(heatLayer)){ map.removeLayer(heatLayer); event.target.classList.remove('active'); }
-    else { heatLayer.addTo(map); event.target.classList.add('active'); }
+    if(map.hasLayer(heatLayer)){ map.removeLayer(heatLayer); ev.target.classList.remove('active'); }
+    else { heatLayer.addTo(map); ev.target.classList.add('active'); }
   }
 };
 
 // Route friday
 let line=null;
-document.getElementById('route').onclick = ()=>{
+document.getElementById('route').onclick = (ev)=>{
   const ids = (window.ROUTES && window.ROUTES.friday)||[];
   const pts = ids.map(id => (window.PLACES||[]).find(p=>p.id===id)).filter(Boolean).map(p=>[p.lat,p.lng]);
   if(!pts.length){ alert('Маршрут пятницы пуст.'); return; }
-  if(line){ if(map.hasLayer(line)){ map.removeLayer(line); event.target.classList.remove('active'); return; } }
+  if(line){ if(map.hasLayer(line)){ map.removeLayer(line); ev.target.classList.remove('active'); return; } }
   line = L.polyline(pts, {color:'#0b57d0', weight:4, opacity:0.9}).addTo(map);
   map.fitBounds(line.getBounds().pad(0.2));
-  event.target.classList.add('active');
+  ev.target.classList.add('active');
 };
 </script>
 </body>
