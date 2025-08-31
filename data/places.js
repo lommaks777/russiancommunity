@@ -18,6 +18,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756612911538,
+    "name": "Cafe Babalu",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5974035,
+    "lng": -58.373145199999996,
+    "neighborhood": "Retiro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/cafe.babalu",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJK-zGMQDLvJURg-bG5PKYdzw/photos/ATKogpfVcgff-KD1748gGQ_Sq2Y5iMgj19lwUpjJHSsnZoz_5-zJ2zpDyiKTt8NiD-_XhxkTKV-5U2JyrlF3z6eMRIRFFo9eY3wcQD5dd8evijr4XHzVpTzH3ptS8JlegcTpJamwIwrVGX9T82oBjDtA4xyY5wL_ac8vJ5F8atIoOcX8rMEV_amRL2KEf2p7BurA-jpxpZ2xDBQK9uiM1WwGu6crijBBOEgVqt16esfLNSxdWe9EkPSn3E4uLIelaIifyTB30UCgiI8x1PRtVe0-QIuyl-8MFPk73uetM8gt5dPuoQ/media?maxWidthPx=800",
+    "address": "Paraguay 412, C1057AAD C1057AAD, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJK-zGMQDLvJURg-bG5PKYdzw",
+    "notes": ""
+  },
+  {
     "id": 1756612662025,
     "name": "Chaijaná",
     "category": "Кофе",
