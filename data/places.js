@@ -36,6 +36,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756612519473,
+    "name": "Ivan Juan",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5805787,
+    "lng": -58.432367400000004,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/ivanjuan_ba",
+    "phone": "+54 11 3302-8558",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJt2nCra-1vJURF5nWoSYKs2E/photos/ATKogpdEYAXyhu_-jLE8NLqITwqeVGRrU8Dsyin_OZCvhst_tl4JWWq3kbYXAWOKFTcmQQGYQ4JQ6OYfe9YFIypivIfFsweWpCloDbZ3Vs_YCj3HlxGbaLV5qzO3QLpuVX4gn0St71rK31ZnV2I6lhX5uV3wnPEjAJ7EpdaNDpaFW4DpVGSmuLAmKo5Xm4S9Chq9JowaLUvZvMBPB5P5LIJmK5ALqVfaZCaGYXNzc_aQ8mmzA1ViqVnj3Cmdfci3eLa2HTASt2w6EG3XxqOzFIPgY67PnmtPyhVRkbJBJNt2-JMvxg/media?maxWidthPx=800",
+    "address": "Fitz Roy 2168, C1425FVB C1425FVA, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJt2nCra-1vJURF5nWoSYKs2E",
+    "notes": ""
+  },
+  {
     "id": 1756611784552,
     "name": "Консульский отдел посольства Российской федерации",
     "category": "Кофе",
