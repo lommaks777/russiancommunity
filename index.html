@@ -3,50 +3,36 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Русская карта Буэнос-Айреса</title>
+  <title>Русская карта БА</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="%230b57d0"/><text x="32" y="40" font-size="28" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif">R</text></svg>' />
   <style>
-    html,body {height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    .app{display:grid;grid-template-rows:auto 1fr;height:100%}
-    header{padding:10px 12px;border-bottom:1px solid #222;background:#111;color:#eee;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    header .title{font-weight:700}
-    header .btn{padding:6px 10px;background:#222;border:1px solid #333;border-radius:14px;color:#ddd;cursor:pointer}
-    header .btn.active{background:#0b57d0;border-color:#0b57d0;color:#fff}
-    header .spacer{flex:1}
-    #map{width:100%;height:100%}
-    .infowrap{width:260px}
-    .infoimg{width:100%;height:140px;object-fit:cover;display:block}
-    .infosec{padding:10px}
-    .infotitle{font-weight:700;margin-bottom:4px}
-    .infometa{font-size:12px;color:#888}
-    .photos{display:flex;gap:6px;margin-top:8px}
-    .photos img{width:78px;height:58px;object-fit:cover;border-radius:6px}
-    .links{margin-top:8px;font-size:13px;display:flex;gap:10px;flex-wrap:wrap}
-    .links a{color:#9ecbff;text-decoration:none}
-    .badge{display:inline-block;background:#222;color:#eee;border:1px solid #333;font-size:12px;border-radius:10px;padding:2px 6px;margin-top:6px}
-
-    .pin{display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.85);border:1px solid rgba(255,255,255,.2);
-         border-radius:14px;padding:4px 8px;color:#fff;font-size:13px;font-weight:600;white-space:nowrap;
-         box-shadow:0 2px 6px rgba(0,0,0,.35);backdrop-filter:blur(3px)}
-    .pin .dot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(0,0,0,.35)}
-    .pin .name{max-width:200px;overflow:hidden;text-overflow:ellipsis}
-    @media (max-width:600px){ .pin .name{max-width:140px} }
+    :root { color-scheme: dark; }
+    body, html { margin:0; padding:0; height:100%; background:#0f0f0f; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:#eee; }
+    #map { width:100%; height:100%; }
+    header {
+      position: fixed; top:0; left:0; right:0; z-index:1000;
+      background:#111; border-bottom:1px solid #222; display:flex; gap:12px; align-items:center;
+      padding:10px 16px; font-size:15px;
+    }
+    header a { color:#9ecbff; text-decoration:none; font-weight:500; }
+    header a:hover { text-decoration:underline; }
+    .map-container { width:100%; height:100%; position:absolute; top:44px; left:0; right:0; bottom:0; }
+    .gm-style-iw-chr { display:none!important; } /* убираем кнопку 'x' внутри инфо */
   </style>
 </head>
 <body>
-<div class="app">
-  <header>
-    <div class="title">Русская карта БА</div>
-    <button id="toggleHeat" class="btn">Плотность русских</button>
-    <button id="toggleRoute" class="btn">Маршрут пятницы</button>
-    <div class="spacer"></div>
-    <a class="btn" href="./add.html">Добавить своё место</a>
-  </header>
+<header>
+  <div style="flex:1;font-weight:600">Русская карта БА</div>
+  <a href="add.html">Добавить место</a>
+</header>
+
+<div class="map-container">
   <div id="map"></div>
 </div>
 
-<!-- ДАННЫЕ -->
-<script src="./data/places.js"></script>
-<script src="./data/routes.js"></script>
+<!-- Данные о точках -->
+<script src="data/places.js"></script>
+<!-- Логика карты -->
 <script src="map.js"></script>
 
 </body>
