@@ -36,6 +36,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756611784552,
+    "name": "Консульский отдел посольства Российской федерации",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5910192,
+    "lng": -58.38849569999999,
+    "neighborhood": "Barrio Norte",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://argentina.mid.ru/es/",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ9X2_jkPLvJURdWtfKIco1pI/photos/ATKogpfHKZebiqCgeNffmO1iK4ZsLSaKEV-h0e21XvbJjlqLRHoKGzNj2eBDTYlBcwRKnQcoKoBHtA7epSEs4VGwTNysZvG80lCjelcXaJMKOA3veTvVpMbxtXn05eyLMYOg7_dUrO7bEorChfo3TIkJSAAqrbV6XSFCZdMoLm6UNlibNEaMPuT-hPprL-QODX2-xjEgpyXUlmKRFswnLiUYNipQ-mll3d-69B6quJxMTXJX0Bu6p1TspeIp2nmSqNhzFxRwflAuD33aMa_NTAi_mjKp-tzZVsWsCF4G6gNj6xIhkiVjdioerPMSOsXjH7ZRqK7Ez154NoseJIkDbwWwkVZw0pUPD6QnS06bMaOb_a1wHUv05ykK1hF8S_eYja9yJQi7owpyUqlR5-HYa14h3VMuBlaX4uKBeWscyTVHIBI8Ww/media?maxWidthPx=800",
+    "address": "Guido 1677, C1016AAC C1016AAC, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ9X2_jkPLvJURdWtfKIco1pI",
+    "notes": ""
+  },
+  {
     "id": 1,
     "name": "Кофейня на углу",
     "category": "Кофе",
