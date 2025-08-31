@@ -1,0 +1,115 @@
+name: Build places from Issues → data/places.js
+
+on:
+  issues:
+    types: [opened, edited, reopened, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  build:
+    # Запускаемся, если:
+    #  - на issue повесили label 'approved' (внимание: правильно написано!)
+    #  - ИЛИ в тексте issue есть блок ```json ... ```
+    if: >
+      (github.event.action == 'labeled' && github.event.label.name == 'approved')
+      || contains(github.event.issue.body, '```json')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Merge places from Issue
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_LABELS: ${{ toJson(github.event.issue.labels) }}
+          REPO: ${{ github.repository }}
+        run: |
+          node -e "
+          const fs=require('fs'), path=require('path');
+
+          // --- INPUTS ---
+          const body=process.env.ISSUE_BODY||'';
+          const labels=JSON.parse(process.env.ISSUE_LABELS||'[]').map(l=>l.name.toLowerCase());
+          const approved = labels.includes('approved') || /\"approved\"\s*:\s*true/i.test(body);
+
+          // --- PARSE JSON из блока ```json ... ```
+          const m = body.match(/```json\s*([\s\S]*?)```/i);
+          if(!m){ console.error('❌ В issue нет блока ```json ... ```'); process.exit(1); }
+          let item;
+          try{ item = JSON.parse(m[1]); } catch(e){ console.error('❌ JSON не парсится:', e.message); process.exit(1); }
+
+          // --- ВАЛИДАЦИЯ МИНИМУМА ---
+          const req=['name','lat','lng','category'];
+          const miss=req.filter(k=>!(k in item) || item[k]==='' || item[k]===null || Number.isNaN(item[k]));
+          if(miss.length){ console.error('❌ Не хватает полей:', miss.join(', ')); process.exit(1); }
+
+          // пометим approved в объекте, если лейбл есть
+          if(approved) item.approved = true;
+
+          // --- ПУТИ ---
+          const dataDir=path.join(process.cwd(),'data');
+          const jsonFile=path.join(dataDir,'places.json');
+          const jsFile=path.join(dataDir,'places.js');
+
+          if(!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
+
+          // --- ЧИТАЕМ СТАРЫЕ ДАННЫЕ ---
+          let arr=[];
+          if(fs.existsSync(jsonFile)){
+            try{ arr = JSON.parse(fs.readFileSync(jsonFile,'utf8')); if(!Array.isArray(arr)) arr=[]; }catch{}
+          }
+
+          // --- ДЕДУП: по place_id, иначе по (name+lat+lng) ---
+          const keyOf = (x)=> (x.place_id ? 'pid:'+x.place_id : `nlc:${(x.name||'').trim().toLowerCase()}@${Number(x.lat).toFixed(6)},${Number(x.lng).toFixed(6)}`);
+          const incomingKey = keyOf(item);
+
+          const out=[];
+          let replaced=false;
+          for(const x of arr){
+            if(keyOf(x)===incomingKey){ out.push({...x, ...item}); replaced=true; }
+            else out.push(x);
+          }
+          if(!replaced) out.push(item);
+
+          // --- ФИЛЬТРУЕМ по approved (на карту попадут только approved === true)
+          const approvedOnly = out.filter(x => x.approved === true);
+
+          // --- ПИШЕМ ФАЙЛЫ ---
+          fs.writeFileSync(jsonFile, JSON.stringify(out,null,2));
+          fs.writeFileSync(jsFile, 'window.PLACES = ' + JSON.stringify(approvedOnly) + ';\\n');
+
+          console.log('✅ places.json записан, элементов всего:', out.length);
+          console.log('✅ places.js записан, на карту попадёт:', approvedOnly.length);
+          "
+
+      - name: Commit & Push data files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/places.json data/places.js
+          git commit -m "build: update places from issue #${ISSUE_NUMBER}" || echo "No changes to commit"
+          git push
+
+      - name: Comment back to Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue_number = context.issue.number;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              body: '✅ Точка добавлена/обновлена. Если не видишь на карте — обнови страницу с очисткой кэша (Ctrl/⌘+Shift+R).'
+            });
