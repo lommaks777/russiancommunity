@@ -36,6 +36,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756612242145,
+    "name": "Touchdown Bowling Metaponto",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.61139000000001,
+    "lng": -58.371376999999995,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.parrilladonjulio.com/",
+    "phone": "+39 331 178 6681",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJW4I29DhpRxMREFWlu7Yh6LY/photos/ATKogpe1fgIkvRsxN8h762bJ61y4BLlRUZvE2LmL-Hct4TtbpRz8Sn4Hy8OfrNaPO3J1qE_aAtm8u58MYxeCkifaltzqTyhhCQiBxy1l91PyPainxobMcl31EX4DoMTucapfqaAKrpvj_V6JO8_ve3Mhv_G5sdsvdx8WejlAyA7h47v4sUx5-bf-ngFuAl525jSldO5MizoXZFDGu19B04zN5zd0rDscJJECskSp0jifXzq9OPu_wEQx9QebiuRG_961iFLxZd031iS20kZocZg35JSirRnftO1OMAVmE45tBbD4vg/media?maxWidthPx=800",
+    "address": "Uscita Pantanello, S.da Statale 106 Jonica, 75012 Metaponto MT, Италия",
+    "place_id": "ChIJ4fx-dNg1o5URmGkFTFCgGWg",
+    "notes": ""
+  },
+  {
     "id": 1756605688495,
     "name": "Tronador - Villa Ortuzar",
     "category": "Кофе",
