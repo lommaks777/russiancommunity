@@ -124,5 +124,23 @@ window.PLACES = [
     "address": "Av. Corrientes 800, C1008 Cdad. Autónoma de Buenos Aires, Аргентина",
     "place_id": "ChIJk8GIYAjLvJURT2jfEJYBIGI",
     "notes": ""
+  },
+  {
+    "id": 1756659110442,
+    "name": "Algorithmics Belgrano | Escuela internacional de programación para niños",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.556420599999996,
+    "lng": -58.463153999999996,
+    "neighborhood": "Belgrano",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://belgrano.alg.academy/",
+    "phone": "+54 11 6693-5876",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJzRb1GYS3vJURDvDr0i-qaFk/photos/ATKogpd537-HeVoUv0qnChLHMbOvS7UArtkwRGaU2pOwsn8GsNm2QWtse-B_qHid03-vS5OOBuxdYao3-GRjZnK-JTQKalwrc7iG9aRdhmV7Kv4dkyJXt9pQI51XKrHOvvALoWZKdZbeaiPVx7obCmHfKMeG-P9vpZnLK4kLOuShSUxHKTe-HAyIxavyfHV4aYeiYG22lfww66FoVLFB4qrBbujWY75MzYaxBES4KGjHIookZVQ46J2FvPwdKYyrFaR0XAcU3K3Rke4uS5hdn7A4zJb0SH9YYyPieNqbGvG7Vu0MFw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Cdad. de la Paz 2846, C1428 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJzRb1GYS3vJURDvDr0i-qaFk",
+    "notes": ""
   }
 ];
