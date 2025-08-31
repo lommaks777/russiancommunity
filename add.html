@@ -12,13 +12,14 @@
     .card{background:#121212;border:1px solid #222;border-radius:12px;padding:16px;margin-bottom:16px}
     label{font-size:13px;color:#aaa;display:block;margin-bottom:4px}
     input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #2a2a2a;background:#181818;color:#eee}
+    textarea{min-height:220px}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
     button{padding:10px 14px;border-radius:10px;border:1px solid #2a2a2a;background:#1f1f1f;color:#eee;cursor:pointer}
     .btn-primary{background:#0b57d0;border-color:#0b57d0}
     .hint{font-size:12px;color:#bbb;margin-top:6px}
     .ok{color:#7bd88f;font-weight:600}
-    /* тёмная тема выпадашки */
+    /* тёмная тема выпадашки автокомплита */
     .pac-container{background:#222!important;color:#eee!important;border:1px solid #333!important;border-radius:8px!important}
     .pac-item{color:#eee!important;padding:6px 10px!important}
     .pac-item:hover{background:#333!important}
@@ -29,7 +30,7 @@
 <header>
   <div><a href="./">← Назад к карте</a></div>
   <div style="flex:1"></div>
-  <div>Введи название → выбери из списка ИЛИ нажми «Найти по названию» → Предпросмотр → Отправить</div>
+  <div>Введи название → выбери из списка <b>или</b> нажми «Найти по названию» → Предпросмотр → Отправить</div>
 </header>
 
 <main>
@@ -99,17 +100,14 @@
 </main>
 
 <script>
-/* Если используешь Secrets — оставь плейсхолдер. Для локальной проверки можно временно вставить реальный ключ. */
-const GOOGLE_KEY = "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI";
+/* Ключ подставляется из GitHub Secrets в workflow. Для локальной проверки можно временно вставить реальный ключ. */
+const GOOGLE_KEY = "__MAPS_PUBLIC_KEY__";
 
 const $ = id => document.getElementById(id);
 const setStatus = (t, ok=false)=> { $('status').innerHTML = ok? `<span class="ok">${t}</span>` : t; };
-const BA = {lat:-34.6037,lng:-58.3816};
+const BA = {lat:-34.6037, lng:-58.3816};
 
 window.addEventListener('DOMContentLoaded', () => {
-  if (GOOGLE_KEY.startsWith("__MAPS_PUBLIC_KEY__")) {
-    console.warn("⚠️ Похоже, секрет не подставился. Для проверки временно вставь реальный ключ в константу GOOGLE_KEY или настрой workflow подстановки.");
-  }
   const url = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&libraries=places&language=ru&region=AR&v=weekly&loading=async&callback=initPlaces`;
   const s = document.createElement('script'); s.src=url; s.async=true; s.defer=true; document.head.appendChild(s);
 });
@@ -123,9 +121,9 @@ async function initPlaces(){
   const input = $('query');
   if (!(input instanceof HTMLInputElement)) { setStatus('Ошибка: поле ввода не найдено.', false); return; }
 
-  // Новый Autocomplete (без legacy API)
+  // Новый Autocomplete (JS SDK): используем ИМЕНА ПОЛЕЙ для JS-версии
   const ac = new AutocompleteClass(input, {
-    fields: ["place_id","displayName","formattedAddress","location","types"],
+    fields: ["place_id","name","formatted_address","geometry","types"],
     bounds: {east:-58.30, west:-58.55, north:-34.50, south:-34.72},
     strictBounds: false
   });
@@ -133,44 +131,58 @@ async function initPlaces(){
 
   ac.addListener("place_changed", async ()=>{
     const lite = ac.getPlace();
-    if (!lite || !lite.place_id){ setStatus("Выбери пункт из списка или воспользуйся кнопкой «Найти по названию»."); return; }
+    if (!lite || !lite.place_id){ setStatus("Выбери пункт из списка или нажми «Найти по названию»."); return; }
     await fetchPlaceById(lite.place_id);
   });
 
-  // Enter запускает поиск по названию (на случай если не выбирают мышкой)
-  input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); document.getElementById('btnSearch').click(); } });
+  // Enter запускает поиск по названию (если пользователь не выбирает из списка)
+  input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); $('btnSearch').click(); } });
+
+  // Подсказка про секрет, если забыли подменить
+  if (GOOGLE_KEY.startsWith('__MAPS_PUBLIC_KEY__')) {
+    console.warn('⚠️ Похоже, секрет не подставился. Для проверки можно временно вставить реальный ключ в константу GOOGLE_KEY.');
+  }
 
   setStatus('Начни вводить и выбери из подсказок, либо нажми «Найти по названию».', true);
 }
 
+/* Детали по place_id через JS SDK (старые названия полей) */
 async function fetchPlaceById(pid){
   try{
     const place = new PlaceClass({ id: pid, requestedLanguage: 'ru' });
     await place.fetchFields({
-      fields: ["id","displayName","formattedAddress","location","internationalPhoneNumber","websiteURI","photos","addressComponents"],
+      fields: ["place_id","name","formatted_address","geometry","international_phone_number","website","photos","address_components"],
       sessionToken: Token
     });
-    fillFormFromPlaceObj({
-      id: place.id,
-      name: place.displayName?.text,
-      address: place.formattedAddress,
-      lat: place.location?.lat,
-      lng: place.location?.lng,
-      phone: place.internationalPhoneNumber,
-      site: place.websiteURI ? String(place.websiteURI) : "",
-      neighborhood: (place.addressComponents||[]).find(c=>(c.types||[]).includes('sublocality')||(c.types||[]).includes('neighborhood'))?.longText || "",
-      photoUrl: (place.photos&&place.photos[0]) ? safePhotoUrl(place.photos[0]) : ""
-    });
+
+    fillFormFromJsPlace(place);
     setStatus('Данные подтянулись из подсказки.', true);
     buildJson();
-  }catch(e){ console.error(e); setStatus('Не удалось получить детали по месту.', false); }
+  } catch(e){
+    console.error(e);
+    setStatus('Не удалось получить детали по месту.', false);
+  }
 }
 
-function safePhotoUrl(photoObj){
-  try { return photoObj.createUrl({maxWidth:800,maxHeight:600}); } catch { return ""; }
+function fillFormFromJsPlace(place){
+  if (place.place_id) $('placeid').value = place.place_id;
+  if (place.name && !$('name').value) $('name').value = place.name;
+  if (place.formatted_address && !$('address').value) $('address').value = place.formatted_address;
+  if (place.geometry?.location){
+    $('lat').value = place.geometry.location.lat();
+    $('lng').value = place.geometry.location.lng();
+  }
+  const comp = (place.address_components||[]).find(c => (c.types||[]).includes('sublocality') || (c.types||[]).includes('neighborhood'));
+  if (comp?.long_name && !$('neighborhood').value) $('neighborhood').value = comp.long_name;
+
+  if (place.international_phone_number && !$('phone').value) $('phone').value = place.international_phone_number;
+  if (place.website && !$('site').value) $('site').value = place.website;
+  if (!$('photo').value && place.photos?.length){
+    try { $('photo').value = place.photos[0].getUrl({maxWidth:800,maxHeight:600}); } catch {}
+  }
 }
 
-/* --- Кнопка «Найти по названию» (Places API v1 REST) --- */
+/* Кнопка «Найти по названию» — REST v1 (новые имена полей) */
 $('btnSearch').onclick = async ()=>{
   const text = $('query').value.trim();
   if (text.length < 2){ setStatus('Введите название длиннее.', false); return; }
@@ -187,24 +199,28 @@ $('btnSearch').onclick = async ()=>{
     });
     const data = await resp.json();
     const p = (data.places||[])[0];
-    if(!p){ setStatus('Ничего не найдено. Попробуй точнее: название + район.', false); return; }
-    fillFormFromPlaceObj({
-      id: p.id,
-      name: p.displayName?.text || p.displayName,
-      address: p.formattedAddress,
-      lat: p.location?.latitude,
-      lng: p.location?.longitude,
-      phone: p.internationalPhoneNumber,
-      site: p.websiteUri,
-      neighborhood: (p.addressComponents||[]).find(c=>(c.types||[]).includes('sublocality')||(c.types||[]).includes('neighborhood'))?.longText || "",
-      photoUrl: (p.photos&&p.photos[0]?.name) ? `https://places.googleapis.com/v1/${p.photos[0].name}/media?key=${encodeURIComponent(GOOGLE_KEY)}&maxWidthPx=800` : ""
-    });
+    if(!p){ setStatus('Ничего не найдено. Попробуйте точнее: название + район.', false); return; }
+    fillFormFromRestPlace(p);
     setStatus('Нашёл и заполнил по названию.', true);
     buildJson();
   }catch(e){ console.error(e); setStatus('Поиск по названию не сработал.', false); }
 };
 
-/* --- Парс длинного URL --- */
+function fillFormFromRestPlace(p){
+  if (p.id) $('placeid').value = p.id;
+  if ((p.displayName?.text || p.displayName) && !$('name').value) $('name').value = p.displayName.text || p.displayName;
+  if (p.formattedAddress && !$('address').value) $('address').value = p.formattedAddress;
+  if (p.location){ $('lat').value = p.location.latitude; $('lng').value = p.location.longitude; }
+  const comp = (p.addressComponents||[]).find(c => (c.types||[]).includes('sublocality') || (c.types||[]).includes('neighborhood'));
+  if (comp?.longText && !$('neighborhood').value) $('neighborhood').value = comp.longText;
+  if (p.internationalPhoneNumber && !$('phone').value) $('phone').value = p.internationalPhoneNumber;
+  if (p.websiteUri && !$('site').value) $('site').value = p.websiteUri;
+  if (!$('photo').value && p.photos?.length && p.photos[0].name){
+    $('photo').value = `https://places.googleapis.com/v1/${p.photos[0].name}/media?key=${encodeURIComponent(GOOGLE_KEY)}&maxWidthPx=800`;
+  }
+}
+
+/* Парс длинного URL (fallback) */
 $('btnParse').onclick = ()=>{
   const raw = $('query').value.trim();
   if(!raw){ setStatus('Вставь длинный URL или пользуйся поиском.', false); return; }
@@ -225,20 +241,7 @@ $('btnParse').onclick = ()=>{
   }catch{ setStatus('Не похоже на длинный URL Google Maps.', false); }
 };
 
-/* --- Заполнение формы из объекта --- */
-function fillFormFromPlaceObj({id,name,address,lat,lng,phone,site,neighborhood,photoUrl}){
-  if(id) $('placeid').value = id;
-  if(name && !$('name').value) $('name').value = name;
-  if(address && !$('address').value) $('address').value = address;
-  if(typeof lat==='number') $('lat').value = lat;
-  if(typeof lng==='number') $('lng').value = lng;
-  if(neighborhood && !$('neighborhood').value) $('neighborhood').value = neighborhood;
-  if(phone && !$('phone').value) $('phone').value = phone;
-  if(site && !$('site').value) $('site').value = site;
-  if(photoUrl && !$('photo').value) $('photo').value = photoUrl;
-}
-
-/* --- JSON и отправка --- */
+/* JSON и отправка */
 function buildJson(){
   const o = {
     id: Date.now(),
