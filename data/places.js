@@ -1,6 +1,6 @@
-// Примерный набор мест. Добавляй свои объекты по этому же шаблону.
-// Обязательные поля: id, name, category, lat, lng
-// Рекомендуемые: subtype, neighborhood, photo_url, russian_presence_score (0..5), peak_hours, address, instagram
+// Шаблон мест. Для рейтинга/фото с Google нужно заполнить place_id.
+// russian_score: твоя оценка "плотности русских" 0..5 (для теплокарты).
+// Примерные точки — замени на реальные.
 window.PLACES = [
   {
     id: 1,
@@ -10,11 +10,12 @@ window.PLACES = [
     lat: -34.6037,
     lng: -58.3816,
     neighborhood: "Microcentro",
-    photo_url: "https://picsum.photos/seed/cafe/400/300",
-    russian_presence_score: 4,
+    russian_score: 4,
     peak_hours: "Сб–Вс 11:00–15:00",
-    address: "Av. Corrientes 1000",
-    instagram: ""
+    instagram: "",
+    website: "",
+    phone: "",
+    place_id: "" // вставь реальный place_id чтобы подтянуть рейтинг/фото/сайт/телефон
   },
   {
     id: 2,
@@ -24,11 +25,12 @@ window.PLACES = [
     lat: -34.5700,
     lng: -58.4300,
     neighborhood: "Nuñez",
-    photo_url: "https://picsum.photos/seed/padel/400/300",
-    russian_presence_score: 5,
+    russian_score: 5,
     peak_hours: "Будни 18:00–22:00",
-    address: "Av. del Libertador 7000",
-    instagram: ""
+    instagram: "",
+    website: "",
+    phone: "",
+    place_id: ""
   },
   {
     id: 3,
@@ -38,11 +40,12 @@ window.PLACES = [
     lat: -34.6000,
     lng: -58.3900,
     neighborhood: "Recoleta",
-    photo_url: "https://picsum.photos/seed/lounge/400/300",
-    russian_presence_score: 3,
+    russian_score: 3,
     peak_hours: "Пт–Сб 21:00–01:00",
-    address: "Callao 1200",
-    instagram: ""
+    instagram: "",
+    website: "",
+    phone: "",
+    place_id: ""
   },
   {
     id: 4,
@@ -52,11 +55,12 @@ window.PLACES = [
     lat: -34.5900,
     lng: -58.4300,
     neighborhood: "Belgrano",
-    photo_url: "https://picsum.photos/seed/store/400/300",
-    russian_presence_score: 5,
+    russian_score: 5,
     peak_hours: "Сб 12:00–16:00",
-    address: "Av. Cabildo 2200",
-    instagram: ""
+    instagram: "",
+    website: "",
+    phone: "",
+    place_id: ""
   },
   {
     id: 5,
@@ -66,10 +70,11 @@ window.PLACES = [
     lat: -34.5850,
     lng: -58.4000,
     neighborhood: "Palermo",
-    photo_url: "https://picsum.photos/seed/cowork/400/300",
-    russian_presence_score: 2,
+    russian_score: 2,
     peak_hours: "Пн–Пт 11:00–17:00",
-    address: "Av. Santa Fe 3200",
-    instagram: ""
+    instagram: "",
+    website: "",
+    phone: "",
+    place_id: ""
   }
 ];
