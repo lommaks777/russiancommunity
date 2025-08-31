@@ -4,6 +4,8 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Добавить место — Русская карта БА</title>
+  <!-- встроенный favicon, чтобы не было 404 -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="%230b57d0"/><text x="32" y="40" font-size="28" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif">R</text></svg>' />
   <style>
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#0f0f0f;color:#eee}
     header{padding:12px;border-bottom:1px solid #222;background:#111;display:flex;gap:10px;align-items:center}
@@ -100,8 +102,8 @@
 </main>
 
 <script>
-/* Ключ подставляется из GitHub Secrets в workflow. Для локальной проверки можно временно вставить реальный ключ. */
-const GOOGLE_KEY = "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI";
+/* Ключ подставляется из GitHub Secrets при деплое. Для локальной проверки можно временно вписать реальный ключ. */
+const GOOGLE_KEY = "__MAPS_PUBLIC_KEY__";
 
 const $ = id => document.getElementById(id);
 const setStatus = (t, ok=false)=> { $('status').innerHTML = ok? `<span class="ok">${t}</span>` : t; };
@@ -112,82 +114,45 @@ window.addEventListener('DOMContentLoaded', () => {
   const s = document.createElement('script'); s.src=url; s.async=true; s.defer=true; document.head.appendChild(s);
 });
 
-let PlaceClass, AutocompleteClass, Token;
+let AutocompleteClass; // только для подсказок
 
 async function initPlaces(){
-  const { Place, Autocomplete, AutocompleteSessionToken } = await google.maps.importLibrary("places");
-  PlaceClass = Place; AutocompleteClass = Autocomplete; Token = new AutocompleteSessionToken();
+  const { Autocomplete } = await google.maps.importLibrary("places");
+  AutocompleteClass = Autocomplete;
 
   const input = $('query');
   if (!(input instanceof HTMLInputElement)) { setStatus('Ошибка: поле ввода не найдено.', false); return; }
 
-  // Новый Autocomplete (JS SDK): используем ИМЕНА ПОЛЕЙ для JS-версии
+  // Подсказки (никаких полей не просим — детали возьмём через REST v1)
   const ac = new AutocompleteClass(input, {
-    fields: ["place_id","name","formatted_address","geometry","types"],
+    // не указываем fields, чтобы избежать несовместимости версий
     bounds: {east:-58.30, west:-58.55, north:-34.50, south:-34.72},
     strictBounds: false
   });
-  if (ac.setOptions) ac.setOptions({ sessionToken: Token });
 
+  // Когда выбрали подсказку — запускаем наш REST-поиск по текущему тексту
   ac.addListener("place_changed", async ()=>{
-    const lite = ac.getPlace();
-    if (!lite || !lite.place_id){ setStatus("Выбери пункт из списка или нажми «Найти по названию»."); return; }
-    await fetchPlaceById(lite.place_id);
+    const q = input.value.trim();
+    if (!q) { setStatus("Введи название.", false); return; }
+    await searchByText(q);
   });
 
-  // Enter запускает поиск по названию (если пользователь не выбирает из списка)
+  // Enter тоже запускает поиск
   input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); $('btnSearch').click(); } });
-
-  // Подсказка про секрет, если забыли подменить
-  if (GOOGLE_KEY.startsWith('__MAPS_PUBLIC_KEY__')) {
-    console.warn('⚠️ Похоже, секрет не подставился. Для проверки можно временно вставить реальный ключ в константу GOOGLE_KEY.');
-  }
 
   setStatus('Начни вводить и выбери из подсказок, либо нажми «Найти по названию».', true);
 }
 
-/* Детали по place_id через JS SDK (старые названия полей) */
-async function fetchPlaceById(pid){
-  try{
-    const place = new PlaceClass({ id: pid, requestedLanguage: 'ru' });
-    await place.fetchFields({
-      fields: ["place_id","name","formatted_address","geometry","international_phone_number","website","photos","address_components"],
-      sessionToken: Token
-    });
-
-    fillFormFromJsPlace(place);
-    setStatus('Данные подтянулись из подсказки.', true);
-    buildJson();
-  } catch(e){
-    console.error(e);
-    setStatus('Не удалось получить детали по месту.', false);
-  }
-}
-
-function fillFormFromJsPlace(place){
-  if (place.place_id) $('placeid').value = place.place_id;
-  if (place.name && !$('name').value) $('name').value = place.name;
-  if (place.formatted_address && !$('address').value) $('address').value = place.formatted_address;
-  if (place.geometry?.location){
-    $('lat').value = place.geometry.location.lat();
-    $('lng').value = place.geometry.location.lng();
-  }
-  const comp = (place.address_components||[]).find(c => (c.types||[]).includes('sublocality') || (c.types||[]).includes('neighborhood'));
-  if (comp?.long_name && !$('neighborhood').value) $('neighborhood').value = comp.long_name;
-
-  if (place.international_phone_number && !$('phone').value) $('phone').value = place.international_phone_number;
-  if (place.website && !$('site').value) $('site').value = place.website;
-  if (!$('photo').value && place.photos?.length){
-    try { $('photo').value = place.photos[0].getUrl({maxWidth:800,maxHeight:600}); } catch {}
-  }
-}
-
-/* Кнопка «Найти по названию» — REST v1 (новые имена полей) */
+/* --- Поиск по названию через Places API v1 (REST) --- */
 $('btnSearch').onclick = async ()=>{
   const text = $('query').value.trim();
   if (text.length < 2){ setStatus('Введите название длиннее.', false); return; }
-  setStatus('Ищу по названию…');
+  await searchByText(text);
+};
+
+async function searchByText(text){
   try{
+    setStatus('Ищу по названию…');
     const resp = await fetch(`https://places.googleapis.com/v1/places:searchText?key=${encodeURIComponent(GOOGLE_KEY)}`, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
@@ -199,15 +164,15 @@ $('btnSearch').onclick = async ()=>{
     });
     const data = await resp.json();
     const p = (data.places||[])[0];
-    if(!p){ setStatus('Ничего не найдено. Попробуйте точнее: название + район.', false); return; }
+    if(!p){ setStatus('Ничего не найдено. Попробуй точнее: название + район.', false); return; }
     fillFormFromRestPlace(p);
-    setStatus('Нашёл и заполнил по названию.', true);
+    setStatus('Нашёл и заполнил.', true);
     buildJson();
-  }catch(e){ console.error(e); setStatus('Поиск по названию не сработал.', false); }
-};
+  }catch(e){ console.error(e); setStatus('Поиск по названию не сработал (ключ/квоты/домен).', false); }
+}
 
 function fillFormFromRestPlace(p){
-  if (p.id) $('placeid').value = p.id;
+  if (p.id) $('placeid').value = p.id; // v1 id
   if ((p.displayName?.text || p.displayName) && !$('name').value) $('name').value = p.displayName.text || p.displayName;
   if (p.formattedAddress && !$('address').value) $('address').value = p.formattedAddress;
   if (p.location){ $('lat').value = p.location.latitude; $('lng').value = p.location.longitude; }
@@ -220,7 +185,7 @@ function fillFormFromRestPlace(p){
   }
 }
 
-/* Парс длинного URL (fallback) */
+/* --- Парс длинного URL (fallback) --- */
 $('btnParse').onclick = ()=>{
   const raw = $('query').value.trim();
   if(!raw){ setStatus('Вставь длинный URL или пользуйся поиском.', false); return; }
@@ -241,7 +206,7 @@ $('btnParse').onclick = ()=>{
   }catch{ setStatus('Не похоже на длинный URL Google Maps.', false); }
 };
 
-/* JSON и отправка */
+/* --- JSON и отправка в Issue --- */
 function buildJson(){
   const o = {
     id: Date.now(),
@@ -258,7 +223,7 @@ function buildJson(){
     phone: $('phone').value.trim(),
     photo_url: $('photo').value.trim(),
     address: $('address').value.trim(),
-    place_id: $('placeid').value.trim(),
+    place_id: $('placeid').value.trim(),   // тут теперь v1 id (например: places/XXXXXXXX)
     notes: $('notes').value.trim()
   };
   $('json').value = JSON.stringify(o, null, 2);
