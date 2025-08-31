@@ -1,5 +1,23 @@
 window.PLACES = [
   {
+    "id": 1756605821269,
+    "name": "Buró Árbol",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5850784,
+    "lng": -58.4391158,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 0,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://linktr.ee/buroarbol",
+    "phone": "+54 11 5888-7013",
+    "photo_url": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sATKogpfk8v1bF4ypV053P42jIYuhSkSt4KXFollUZsekxETbY7zSM2SVLb3edA-d9uMgyf9br0C5l-hTRP06eyjZ2o4uHsxF7vSX5DG-v9e0fYvGve4zwBSP6rp1c7RY_brY5WtrCosxsiODOqSNREV226wdUkRsN1L14GekupArxV6ZOiHzmIjokU-CckuA1pNEIrGaTrRgQXQeYidkFGrGt-lUWZfWq7MA_ALS-hlj47H1wp2aRm37BRAlBt8oJDl6anv0HYsqZ4wKVxWtJatmntnfcQuBsBENOculPknk6Ol0Ew&3u800&4u600&5m1&2e1&callback=none&r_url=http%3A%2F%2Frussian-community.com%2Fadd.html&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI&token=111178",
+    "address": "José A. Cabrera 5700, C1414BHF Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "",
+    "notes": ""
+  },
+  {
     "id": 1756605688495,
     "name": "Tronador - Villa Ortuzar",
     "category": "Кофе",
