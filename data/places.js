@@ -18,6 +18,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756612662025,
+    "name": "Chaijaná",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5815619,
+    "lng": -58.434769700000004,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.chaijana.com/",
+    "phone": "+54 11 3053-7933",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJy0Pqc0y1vJURbB4iHLoF65c/photos/ATKogpe3EFFWeVOEkNNDlw_sTPPiS0S39xK5sryKh2jtR5ZUnb0982MdOfDEUpK_2J9tvlRKUzhPD1Wz-GNkhctkBoCw8YRl8uP6Wq4Hm7HDm3hHyjzGdiS5UicjmkdIH8z7cyNBYgl9RGfcFcSxf0e2MDTVjAblDq-DHtL9REFsIlSTh3jrxQ_BEaN3xTbEvaGfLOz6WVWR-lPPfMqZQEl7mblpU37auaMazNQSrR8SYa7pRL4GrUBrsQlVUGd8FrRDwTW2sXvq6cdYfyelnYMzNm8SOwYstwtCxS4a5YphArqeb7E2CNpFDANpX4ZWlydV2ufWc9vdGH0yYrhwc-QwX_JaB2IpLFj9yFXb2if1fgiqzZtZ_jHNfPmjO4AerFSdKYpBU2NH8ecWYkfYAxa8CuvU11xyRXUCEsPK82ejN0RqC_QQAjfpJL8SYuFIfA/media?maxWidthPx=800",
+    "address": "Bonpland 1965, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJy0Pqc0y1vJURbB4iHLoF65c",
+    "notes": ""
+  },
+  {
     "id": 1756612421427,
     "name": "Gafarov Sauna/Spa/Русские Бани",
     "category": "Кофе",
