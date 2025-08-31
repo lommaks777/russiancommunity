@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Русская карта Буэнос-Айреса</title>
+
+  <!-- Leaflet + MarkerCluster CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+  <style>
+    :root {
+      --border:#eaeaea;
+      --muted:#666;
+    }
+    html,body { height:100%; margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .app { display:grid; grid-template-rows:auto 1fr; height:100%; }
+    header { padding:10px 12px; border-bottom:1px solid var(--border); display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    header strong { font-weight:700; }
+    #filters { display:flex; gap:8px; flex-wrap:wrap; }
+    .chip { padding:6px 10px; border:1px solid #ddd; border-radius:16px; cursor:pointer; user-select:none; font-size:14px; }
+    .chip.active { background:#222; color:#fff; border-color:#222; }
+    .mapwrap { display:grid; grid-template-columns: 1fr 360px; height: calc(100vh - 60px); }
+    #map { width:100%; height:100%; }
+    aside { border-left:1px solid var(--border); overflow:auto; }
+    .card { display:flex; gap:10px; padding:10px; border-bottom:1px solid #f0f0f0; cursor:pointer; }
+    .card img { width:96px; height:72px; object-fit:cover; border-radius:6px; background:#f5f5f5; }
+    .title { font-weight:600; }
+    .meta { font-size:12px; color:var(--muted); }
+    .score { font-size:12px; padding:2px 6px; border-radius:10px; background:#f6f6f6; display:inline-block; margin-top:4px; }
+    .empty { padding:16px; color:var(--muted); }
+    @media (max-width: 900px) { .mapwrap { grid-template-columns: 1fr; } aside { display:none; } }
+  </style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <strong>Русская карта БА</strong>
+    <div id="filters"></div>
+  </header>
+
+  <div class="mapwrap">
+    <div id="map"></div>
+    <aside id="list"></aside>
+  </div>
+</div>
+
+<!-- Leaflet + MarkerCluster JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+<!-- ДАННЫЕ (подключаются из data/places.js) -->
+<script src="./data/places.js"></script>
+
+<!-- Приложение -->
+<script>
+const map = L.map('map', { scrollWheelZoom: true }).setView([-34.6037, -58.3816], 12);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{ attribution:'© OpenStreetMap' }).addTo(map);
+const cluster = L.markerClusterGroup({ chunkedLoading:true });
+
+const listBox = document.getElementById('list');
+const filterBox = document.getElementById('filters');
+
+function uniq(arr){ return [...new Set(arr)]; }
+
+// Динамически собираем категории из данных + добавляем спец-фильтр
+const categories = (() => {
+  const base = (window.PLACES||[]).map(p => p.category).filter(Boolean);
+  const set = ["Все", ...uniq(base), "Где много русских"];
+  return set;
+})();
+
+let currentFilter = "Все";
+
+function renderChips(){
+  filterBox.innerHTML='';
+  categories.forEach(cat=>{
+    const el=document.createElement('span');
+    el.className='chip'+(cat===currentFilter?' active':'');
+    el.textContent=cat;
+    el.onclick=()=>{ currentFilter=cat; renderChips(); render(); };
+    filterBox.appendChild(el);
+  });
+}
+
+function filteredPlaces(){
+  const arr = (window.PLACES||[]);
+  if(currentFilter==="Все") return arr;
+  if(currentFilter==="Где много русских") return arr.filter(p => (p.russian_presence_score||0) >= 4);
+  return arr.filter(p => p.category === currentFilter);
+}
+
+function starScore(n){ return "★".repeat(n||0); }
+
+function renderList(items){
+  listBox.innerHTML='';
+  if(!items.length){
+    const div = document.createElement('div');
+    div.className='empty';
+    div.textContent='Пока нет мест под этот фильтр.';
+    listBox.appendChild(div);
+    return;
+  }
+  items.forEach(p=>{
+    const card = document.createElement('div');
+    card.className='card';
+    card.innerHTML=`
+      <img src="${p.photo_url||'https://picsum.photos/seed/na/400/300'}" alt="">
+      <div>
+        <div class="title">${p.name||'Без названия'}</div>
+        <div class="meta">${p.neighborhood||''} • ${(p.subtype||p.category||'Место')}</div>
+        <div class="score">Русских: ${p.russian_presence_score||0}/5</div>
+        <div class="meta">Пик: ${p.peak_hours||'—'}</div>
+      </div>
+    `;
+    card.onclick = () => {
+      map.setView([p.lat, p.lng], 15);
+      L.popup().setLatLng([p.lat, p.lng]).setContent(popupHtml(p)).openOn(map);
+    };
+    listBox.appendChild(card);
+  });
+}
+
+function popupHtml(p){
+  return `
+    <div style="width:220px">
+      <img src="${p.photo_url||'https://picsum.photos/seed/na/400/300'}" style="width:100%;height:120px;object-fit:cover;border-radius:6px;margin-bottom:6px" />
+      <div style="font-weight:600">${p.name||'Без названия'}</div>
+      <div style="font-size:12px;color:#666">${p.neighborhood||''} • ${(p.subtype||p.category||'Место')}</div>
+      <div style="margin-top:6px;font-size:12px">Русских: ${starScore(p.russian_presence_score||0)}</div>
+      <div style="font-size:12px;color:#666">Пик: ${p.peak_hours||"—"}</div>
+      ${p.instagram?`<div style="margin-top:6px;font-size:12px"><a href="${p.instagram}" target="_blank" rel="noopener">Instagram</a></div>`:''}
+      ${p.address?`<div style="margin-top:6px;font-size:12px;color:#666">${p.address}</div>`:''}
+    </div>
+  `;
+}
+
+function render(){
+  cluster.clearLayers();
+  const items = filteredPlaces();
+  items.forEach(p=>{
+    const m = L.marker([p.lat, p.lng]);
+    m.bindPopup(popupHtml(p));
+    cluster.addLayer(m);
+  });
+  map.addLayer(cluster);
+  if(items.length){
+    const bounds = L.latLngBounds(items.map(p=>[p.lat,p.lng]));
+    map.fitBounds(bounds.pad(0.2), { animate:false });
+  }
+  renderList(items);
+}
+
+renderChips();
+render();
+</script>
+</body>
+</html>
