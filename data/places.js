@@ -1,6 +1,7 @@
-// Шаблон мест. Для рейтинга/фото с Google нужно заполнить place_id.
-// russian_score: твоя оценка "плотности русских" 0..5 (для теплокарты).
-// Примерные точки — замени на реальные.
+// Твои места. Поля:
+// id, name, category, subtype, lat, lng, neighborhood,
+// russian_score (0..5), peak_hours, instagram, website, phone,
+// photo_url, address, place_id (для рейтинга/фото/сайта/телефона из Google)
 window.PLACES = [
   {
     id: 1,
@@ -15,7 +16,9 @@ window.PLACES = [
     instagram: "",
     website: "",
     phone: "",
-    place_id: "" // вставь реальный place_id чтобы подтянуть рейтинг/фото/сайт/телефон
+    photo_url: "https://picsum.photos/seed/cafe/800/600",
+    address: "Av. Corrientes 1000",
+    place_id: "" // если укажешь — подтянем рейтинг/фото/сайт/телефон из Google
   },
   {
     id: 2,
@@ -30,6 +33,8 @@ window.PLACES = [
     instagram: "",
     website: "",
     phone: "",
+    photo_url: "https://picsum.photos/seed/padel/800/600",
+    address: "Av. del Libertador 7000",
     place_id: ""
   },
   {
@@ -45,6 +50,8 @@ window.PLACES = [
     instagram: "",
     website: "",
     phone: "",
+    photo_url: "https://picsum.photos/seed/lounge/800/600",
+    address: "Callao 1200",
     place_id: ""
   },
   {
@@ -60,6 +67,8 @@ window.PLACES = [
     instagram: "",
     website: "",
     phone: "",
+    photo_url: "https://picsum.photos/seed/store/800/600",
+    address: "Av. Cabildo 2200",
     place_id: ""
   },
   {
@@ -75,6 +84,8 @@ window.PLACES = [
     instagram: "",
     website: "",
     phone: "",
+    photo_url: "https://picsum.photos/seed/cowork/800/600",
+    address: "Av. Santa Fe 3200",
     place_id: ""
   }
 ];
