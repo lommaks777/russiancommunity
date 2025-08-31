@@ -7,17 +7,17 @@
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="%230b57d0"/><text x="32" y="40" font-size="28" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif">R</text></svg>' />
   <style>
     :root { color-scheme: dark; }
-    body, html { margin:0; padding:0; height:100%; background:#0f0f0f; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:#eee; }
-    #map { width:100%; height:100%; }
+    html, body { height:100%; margin:0; background:#0f0f0f; color:#eee; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; }
     header {
       position: fixed; top:0; left:0; right:0; z-index:1000;
-      background:#111; border-bottom:1px solid #222; display:flex; gap:12px; align-items:center;
-      padding:10px 16px; font-size:15px;
+      background:#111; border-bottom:1px solid #222;
+      display:flex; gap:12px; align-items:center; padding:10px 16px; font-size:15px;
     }
     header a { color:#9ecbff; text-decoration:none; font-weight:500; }
     header a:hover { text-decoration:underline; }
-    .map-container { width:100%; height:100%; position:absolute; top:44px; left:0; right:0; bottom:0; }
-    .gm-style-iw-chr { display:none!important; } /* убираем кнопку 'x' внутри инфо */
+    .wrap { position:absolute; top:44px; left:0; right:0; bottom:0; }
+    #map  { width:100%; height:100%; }
+    .err { position:fixed; left:10px; bottom:10px; background:#1e1e1e; border:1px solid #333; color:#f66; padding:8px 10px; border-radius:8px; font-size:12px; max-width:90vw; display:none; }
   </style>
 </head>
 <body>
@@ -26,14 +26,102 @@
   <a href="add.html">Добавить место</a>
 </header>
 
-<div class="map-container">
-  <div id="map"></div>
-</div>
+<div class="wrap"><div id="map"></div></div>
+<div id="err" class="err"></div>
 
-<!-- Данные о точках -->
+<!-- Данные точек (генерируются Actions). Файл ДОЛЖЕН существовать -->
 <script src="data/places.js"></script>
-<!-- Логика карты -->
-<script src="map.js"></script>
 
+<script>
+/* === Встроенный map.js === */
+const GOOGLE_KEY = "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI";
+const MAP_ID     = "573d7da16cb24e9ec7c4e07e";
+const BA_CENTER  = { lat:-34.6037, lng:-58.3816 };
+
+const CATEGORY_EMOJI = {
+  "Кофе":"☕","Рестораны":"🍽️","Бары":"🍸","Кальян":"💨","Спорт":"🏟️","Работа":"💼",
+  "Магазин":"🛍️","Ивенты":"🎉","Услуги":"🧰","Дети":"👶","Обучение":"🎓"
+};
+
+const ERR = (t)=>{ const el=document.getElementById('err'); el.textContent=t; el.style.display='block'; };
+
+(function loadMaps(){
+  // если data/places.js не успел загрузиться — не критично
+  if (!Array.isArray(window.PLACES)) window.PLACES = [];
+  const url = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&v=weekly&libraries=marker&language=ru&region=AR&loading=async&callback=initMap`;
+  const s = document.createElement('script');
+  s.src=url; s.defer=true; s.async=true;
+  s.onerror = ()=>ERR('Не удалось загрузить Google Maps JS (проверь ключ/домен/интернет).');
+  document.head.appendChild(s);
+})();
+
+function withKeyForPlacesMedia(url){
+  if (!url) return "";
+  try{
+    const u = new URL(url);
+    if (u.hostname === "places.googleapis.com" && u.pathname.includes("/v1/") && u.pathname.endsWith("/media")){
+      if (!u.searchParams.has("key")) u.searchParams.set("key", GOOGLE_KEY);
+      return u.toString();
+    }
+  }catch{}
+  return url;
+}
+
+async function initMap(){
+  try{
+    const {Map} = await google.maps.importLibrary("maps");
+    const {AdvancedMarkerElement, PinElement} = await google.maps.importLibrary("marker");
+
+    const map = new Map(document.getElementById("map"), {
+      center: BA_CENTER, zoom: 12, mapId: MAP_ID, clickableIcons: false
+    });
+
+    const infowin = new google.maps.InfoWindow();
+
+    (window.PLACES || []).forEach(p => {
+      const emoji = CATEGORY_EMOJI[p.category] || "📍";
+
+      const glyph = document.createElement("div");
+      glyph.textContent = emoji;
+      glyph.style.fontSize = "22px";
+      glyph.style.lineHeight = "22px";
+
+      const pin = new PinElement({
+        glyph, background: "#111", borderColor:"#444", glyphColor:"#fff", scale: 1.1
+      });
+
+      const marker = new AdvancedMarkerElement({
+        map, position:{lat:+p.lat,lng:+p.lng}, content: pin.element, title: p.name
+      });
+
+      const photo = withKeyForPlacesMedia(p.photo_url);
+      const img = photo
+        ? `<img src="${photo}" alt="" style="width:100%;max-height:180px;object-fit:cover;border-radius:10px"
+                 onerror="this.remove()">`
+        : "";
+
+      const site  = p.website   ? `<div><a href="${p.website}" target="_blank" rel="noopener">Сайт</a></div>` : "";
+      const insta = p.instagram ? `<div><a href="${p.instagram}" target="_blank" rel="noopener">Instagram</a></div>` : "";
+      const phone = p.phone     ? `<div>☎ ${p.phone}</div>` : "";
+
+      const html = `
+        <div style="width:320px">
+          ${img}
+          <div style="margin-top:8px;font-weight:700;font-size:18px">${emoji} ${p.name || ""}</div>
+          <div style="color:#999;margin:2px 0">${p.address || ""}</div>
+          ${site}${insta}${phone}
+        </div>`;
+
+      marker.addListener("click", () => {
+        infowin.setContent(html);
+        infowin.open({anchor: marker, map});
+      });
+    });
+  }catch(e){
+    console.error(e);
+    ERR('Карта не инициализировалась. Открой консоль (F12) → Console: проверь ошибки ключа/ограничений.');
+  }
+}
+</script>
 </body>
 </html>
