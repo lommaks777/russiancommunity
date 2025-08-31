@@ -1,0 +1,57 @@
+name: Fix photo_url (append API key)
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - data/places.json
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Append key to Google Places media URLs if missing
+        env:
+          API_KEY: "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+        run: |
+          set -e
+          mkdir -p data
+          if [ -f data/places.json ]; then
+            node - <<'NODE'
+            const fs=require('fs'), p='data/places.json';
+            const key=process.env.API_KEY;
+            let arr=[]; try{ arr=JSON.parse(fs.readFileSync(p,'utf8')) }catch{}
+            let changed=false;
+            for (const x of arr) {
+              if (!x || !x.photo_url) continue;
+              if (/^https:\/\/places\.googleapis\.com\/v1\/.+\/media/i.test(x.photo_url) ||
+                  /^https:\/\/places\.googleapis\.com\/v1\/.+\/media/i.test(x.photo_url) ||
+                  /^https:\/\/places\.googleapis\.com\/v1\/.+\/media/i.test(x.photo_url)) {
+                if (!/[?&]key=/.test(x.photo_url)) {
+                  x.photo_url += (x.photo_url.includes('?') ? '&' : '?') + 'key=' + encodeURIComponent(key);
+                  changed=true;
+                }
+              }
+            }
+            if (changed) {
+              fs.writeFileSync(p, JSON.stringify(arr,null,2));
+              fs.writeFileSync('data/places.js', 'window.PLACES = ' + JSON.stringify(arr.filter(x=>x.approved===true)) + ';\n');
+              console.log('Updated photo URLs and rebuilt places.js');
+            } else {
+              console.log('No photo_url to update');
+            }
+NODE
+          fi
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/places.json data/places.js || true
+          git commit -m "fix: append key to Google Places photo_url and rebuild" || echo "No changes"
+          git push || true
