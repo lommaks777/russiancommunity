@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="ru">
 <head>
+  <!-- add.html v3 (REST Places v1 only + FieldMask) -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Добавить место — Русская карта БА</title>
-  <!-- встроенный favicon, чтобы не было 404 -->
+  <!-- встроенный favicon: убирает 404 на /favicon.ico -->
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="%230b57d0"/><text x="32" y="40" font-size="28" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif">R</text></svg>' />
   <style>
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#0f0f0f;color:#eee}
@@ -102,19 +103,21 @@
 </main>
 
 <script>
-/* Ключ подставляется из GitHub Secrets при деплое. Для локальной проверки можно временно вписать реальный ключ. */
+/* Для проверки можно временно вписать реальный ключ: const GOOGLE_KEY = "AIza..."; 
+   Для продакшена оставь плейсхолдер и подставляй из GitHub Secrets. */
 const GOOGLE_KEY = "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI";
 
 const $ = id => document.getElementById(id);
 const setStatus = (t, ok=false)=> { $('status').innerHTML = ok? `<span class="ok">${t}</span>` : t; };
 const BA = {lat:-34.6037, lng:-58.3816};
 
-window.addEventListener('DOMContentLoaded', () => {
-  const url = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&libraries=places&language=ru&region=AR&v=weekly&loading=async&callback=initPlaces`;
+/* Лёгкий автокомплит только для подсказок (без полей) */
+(function loadMaps() {
+  const url = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&libraries=places&language=ru&region=AR&v=weekly&loading=async&callback=initPlaces&_v=3`;
   const s = document.createElement('script'); s.src=url; s.async=true; s.defer=true; document.head.appendChild(s);
-});
+})();
 
-let AutocompleteClass; // только для подсказок
+let AutocompleteClass;
 
 async function initPlaces(){
   const { Autocomplete } = await google.maps.importLibrary("places");
@@ -123,22 +126,22 @@ async function initPlaces(){
   const input = $('query');
   if (!(input instanceof HTMLInputElement)) { setStatus('Ошибка: поле ввода не найдено.', false); return; }
 
-  // Подсказки (никаких полей не просим — детали возьмём через REST v1)
   const ac = new AutocompleteClass(input, {
-    // не указываем fields, чтобы избежать несовместимости версий
     bounds: {east:-58.30, west:-58.55, north:-34.50, south:-34.72},
     strictBounds: false
   });
 
-  // Когда выбрали подсказку — запускаем наш REST-поиск по текущему тексту
   ac.addListener("place_changed", async ()=>{
     const q = input.value.trim();
     if (!q) { setStatus("Введи название.", false); return; }
     await searchByText(q);
   });
 
-  // Enter тоже запускает поиск
   input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); $('btnSearch').click(); } });
+
+  if (GOOGLE_KEY.startsWith('__MAPS_PUBLIC_KEY__')) {
+    console.warn('⚠️ Похоже, секрет не подставился. Для проверки временно вставь реальный ключ в GOOGLE_KEY.');
+  }
 
   setStatus('Начни вводить и выбери из подсказок, либо нажми «Найти по названию».', true);
 }
@@ -153,15 +156,28 @@ $('btnSearch').onclick = async ()=>{
 async function searchByText(text){
   try{
     setStatus('Ищу по названию…');
-    const resp = await fetch(`https://places.googleapis.com/v1/places:searchText?key=${encodeURIComponent(GOOGLE_KEY)}`, {
+    const resp = await fetch(`https://places.googleapis.com/v1/places:searchText`, {
       method:'POST',
-      headers:{'Content-Type':'application/json'},
+      headers:{
+        'Content-Type':'application/json',
+        'X-Goog-Api-Key': GOOGLE_KEY,
+        /* ОБЯЗАТЕЛЬНО: какие поля хотим получить */
+        'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress,places.location,places.addressComponents,places.internationalPhoneNumber,places.websiteUri,places.photos'
+      },
       body:JSON.stringify({
         textQuery:text,
         languageCode:'ru',
         locationBias:{circle:{center:{latitude:BA.lat,longitude:BA.lng},radius:50000}}
       })
     });
+
+    if (!resp.ok){
+      const err = await resp.json().catch(()=>({}));
+      console.error('Places v1 error', resp.status, err);
+      setStatus('Ошибка Places API v1: ' + (err.error?.message || resp.status), false);
+      return;
+    }
+
     const data = await resp.json();
     const p = (data.places||[])[0];
     if(!p){ setStatus('Ничего не найдено. Попробуй точнее: название + район.', false); return; }
@@ -172,7 +188,7 @@ async function searchByText(text){
 }
 
 function fillFormFromRestPlace(p){
-  if (p.id) $('placeid').value = p.id; // v1 id
+  if (p.id) $('placeid').value = p.id; // v1 id (вид: places/XXXXXXXX)
   if ((p.displayName?.text || p.displayName) && !$('name').value) $('name').value = p.displayName.text || p.displayName;
   if (p.formattedAddress && !$('address').value) $('address').value = p.formattedAddress;
   if (p.location){ $('lat').value = p.location.latitude; $('lng').value = p.location.longitude; }
@@ -181,7 +197,7 @@ function fillFormFromRestPlace(p){
   if (p.internationalPhoneNumber && !$('phone').value) $('phone').value = p.internationalPhoneNumber;
   if (p.websiteUri && !$('site').value) $('site').value = p.websiteUri;
   if (!$('photo').value && p.photos?.length && p.photos[0].name){
-    $('photo').value = `https://places.googleapis.com/v1/${p.photos[0].name}/media?key=${encodeURIComponent(GOOGLE_KEY)}&maxWidthPx=800`;
+    $('photo').value = `https://places.googleapis.com/v1/${p.photos[0].name}/media?maxWidthPx=800`;
   }
 }
 
@@ -223,7 +239,7 @@ function buildJson(){
     phone: $('phone').value.trim(),
     photo_url: $('photo').value.trim(),
     address: $('address').value.trim(),
-    place_id: $('placeid').value.trim(),   // тут теперь v1 id (например: places/XXXXXXXX)
+    place_id: $('placeid').value.trim(),
     notes: $('notes').value.trim()
   };
   $('json').value = JSON.stringify(o, null, 2);
