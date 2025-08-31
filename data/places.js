@@ -18,6 +18,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756612421427,
+    "name": "Gafarov Sauna/Spa/Русские Бани",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.61139000000001,
+    "lng": -58.371376999999995,
+    "neighborhood": "Monserrat",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.gafarovspa.com/",
+    "phone": "+54 9 11 3477-6606",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ4fx-dNg1o5URmGkFTFCgGWg/photos/ATKogpdb_huH1g2YmtdJmxM7Eka8fFL4U_BlVWRtD8EoxQY7Y2tV2e7wYrQZnAFfvTu8tIEHwsCg50eMtL6ETwF9JwNKn2UyHU99IHuM9WTm6kH5S8FESz9krcG1ltkn6XLFxVV-KWE-mOteKuBMah8eBkxTrY0730eAq256TYsn_q-dbkCoVi-skyb0HclNyg4ld9oXfDBMppSV5g46MgpylDPESWwg4w9ys6kP-eMVlXdOR-1JAUiGgwH4FUoEBzALR8gNVpOe9QNw9HIYS2SADoHG7ONgc6mCM9hypD7-1JYy_Yy1MPUY-PYbMq6-2HvQWBEa8Ow1FSEVSqrhrf5cDhVhJgNWTKw9wDRKpXrU20YxBe1TM6whm8JBzbjXzLyWNkt5stTsX2kgBm3fIXT4Kj_OW5UlM7v7QCa8--TrjIpTRA/media?maxWidthPx=800",
+    "address": "Moreno 354, C1091 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ4fx-dNg1o5URmGkFTFCgGWg",
+    "notes": ""
+  },
+  {
     "id": 1756612105192,
     "name": "Touchdown Bowling Metaponto",
     "category": "Кофе",
@@ -33,24 +51,6 @@ window.PLACES = [
     "photo_url": "https://places.googleapis.com/v1/places/ChIJW4I29DhpRxMREFWlu7Yh6LY/photos/ATKogpe1fgIkvRsxN8h762bJ61y4BLlRUZvE2LmL-Hct4TtbpRz8Sn4Hy8OfrNaPO3J1qE_aAtm8u58MYxeCkifaltzqTyhhCQiBxy1l91PyPainxobMcl31EX4DoMTucapfqaAKrpvj_V6JO8_ve3Mhv_G5sdsvdx8WejlAyA7h47v4sUx5-bf-ngFuAl525jSldO5MizoXZFDGu19B04zN5zd0rDscJJECskSp0jifXzq9OPu_wEQx9QebiuRG_961iFLxZd031iS20kZocZg35JSirRnftO1OMAVmE45tBbD4vg/media?maxWidthPx=800",
     "address": "Uscita Pantanello, S.da Statale 106 Jonica, 75012 Metaponto MT, Италия",
     "place_id": "ChIJoYl36oa1vJURWWhqD9z3UV8",
-    "notes": ""
-  },
-  {
-    "id": 1756612242145,
-    "name": "Touchdown Bowling Metaponto",
-    "category": "Кофе",
-    "subtype": "",
-    "lat": -34.61139000000001,
-    "lng": -58.371376999999995,
-    "neighborhood": "Palermo",
-    "russian_score": 3,
-    "peak_hours": "",
-    "instagram": "",
-    "website": "https://www.parrilladonjulio.com/",
-    "phone": "+39 331 178 6681",
-    "photo_url": "https://places.googleapis.com/v1/places/ChIJW4I29DhpRxMREFWlu7Yh6LY/photos/ATKogpe1fgIkvRsxN8h762bJ61y4BLlRUZvE2LmL-Hct4TtbpRz8Sn4Hy8OfrNaPO3J1qE_aAtm8u58MYxeCkifaltzqTyhhCQiBxy1l91PyPainxobMcl31EX4DoMTucapfqaAKrpvj_V6JO8_ve3Mhv_G5sdsvdx8WejlAyA7h47v4sUx5-bf-ngFuAl525jSldO5MizoXZFDGu19B04zN5zd0rDscJJECskSp0jifXzq9OPu_wEQx9QebiuRG_961iFLxZd031iS20kZocZg35JSirRnftO1OMAVmE45tBbD4vg/media?maxWidthPx=800",
-    "address": "Uscita Pantanello, S.da Statale 106 Jonica, 75012 Metaponto MT, Италия",
-    "place_id": "ChIJ4fx-dNg1o5URmGkFTFCgGWg",
     "notes": ""
   },
   {
