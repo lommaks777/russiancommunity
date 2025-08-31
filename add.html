@@ -1,11 +1,10 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <!-- add.html v3 (REST Places v1 only + FieldMask) -->
+  <!-- add.html v3.1 (REST Places v1 only + FieldMask + photo_url with key) -->
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Добавить место — Русская карта БА</title>
-  <!-- встроенный favicon: убирает 404 на /favicon.ico -->
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="%230b57d0"/><text x="32" y="40" font-size="28" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif">R</text></svg>' />
   <style>
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:#0f0f0f;color:#eee}
@@ -22,7 +21,6 @@
     .btn-primary{background:#0b57d0;border-color:#0b57d0}
     .hint{font-size:12px;color:#bbb;margin-top:6px}
     .ok{color:#7bd88f;font-weight:600}
-    /* тёмная тема выпадашки автокомплита */
     .pac-container{background:#222!important;color:#eee!important;border:1px solid #333!important;border-radius:8px!important}
     .pac-item{color:#eee!important;padding:6px 10px!important}
     .pac-item:hover{background:#333!important}
@@ -103,17 +101,15 @@
 </main>
 
 <script>
-/* Для проверки можно временно вписать реальный ключ: const GOOGLE_KEY = "AIza..."; 
-   Для продакшена оставь плейсхолдер и подставляй из GitHub Secrets. */
+/* ТВОЙ КЛЮЧ — как просил, без плейсхолдера */
 const GOOGLE_KEY = "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI";
 
 const $ = id => document.getElementById(id);
 const setStatus = (t, ok=false)=> { $('status').innerHTML = ok? `<span class="ok">${t}</span>` : t; };
 const BA = {lat:-34.6037, lng:-58.3816};
 
-/* Лёгкий автокомплит только для подсказок (без полей) */
 (function loadMaps() {
-  const url = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&libraries=places&language=ru&region=AR&v=weekly&loading=async&callback=initPlaces&_v=3`;
+  const url = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&libraries=places&language=ru&region=AR&v=weekly&loading=async&callback=initPlaces&_v=3.1`;
   const s = document.createElement('script'); s.src=url; s.async=true; s.defer=true; document.head.appendChild(s);
 })();
 
@@ -138,11 +134,6 @@ async function initPlaces(){
   });
 
   input.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); $('btnSearch').click(); } });
-
-  if (GOOGLE_KEY.startsWith('__MAPS_PUBLIC_KEY__')) {
-    console.warn('⚠️ Похоже, секрет не подставился. Для проверки временно вставь реальный ключ в GOOGLE_KEY.');
-  }
-
   setStatus('Начни вводить и выбери из подсказок, либо нажми «Найти по названию».', true);
 }
 
@@ -161,7 +152,6 @@ async function searchByText(text){
       headers:{
         'Content-Type':'application/json',
         'X-Goog-Api-Key': GOOGLE_KEY,
-        /* ОБЯЗАТЕЛЬНО: какие поля хотим получить */
         'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress,places.location,places.addressComponents,places.internationalPhoneNumber,places.websiteUri,places.photos'
       },
       body:JSON.stringify({
@@ -188,7 +178,7 @@ async function searchByText(text){
 }
 
 function fillFormFromRestPlace(p){
-  if (p.id) $('placeid').value = p.id; // v1 id (вид: places/XXXXXXXX)
+  if (p.id) $('placeid').value = p.id;
   if ((p.displayName?.text || p.displayName) && !$('name').value) $('name').value = p.displayName.text || p.displayName;
   if (p.formattedAddress && !$('address').value) $('address').value = p.formattedAddress;
   if (p.location){ $('lat').value = p.location.latitude; $('lng').value = p.location.longitude; }
@@ -196,8 +186,10 @@ function fillFormFromRestPlace(p){
   if (comp?.longText && !$('neighborhood').value) $('neighborhood').value = comp.longText;
   if (p.internationalPhoneNumber && !$('phone').value) $('phone').value = p.internationalPhoneNumber;
   if (p.websiteUri && !$('site').value) $('site').value = p.websiteUri;
+
+  // ВАЖНО: фото с ключом (иначе <img> получит 403)
   if (!$('photo').value && p.photos?.length && p.photos[0].name){
-    $('photo').value = `https://places.googleapis.com/v1/${p.photos[0].name}/media?maxWidthPx=800`;
+    $('photo').value = `https://places.googleapis.com/v1/${p.photos[0].name}/media?maxWidthPx=800&key=${encodeURIComponent(GOOGLE_KEY)}`;
   }
 }
 
@@ -222,7 +214,7 @@ $('btnParse').onclick = ()=>{
   }catch{ setStatus('Не похоже на длинный URL Google Maps.', false); }
 };
 
-/* --- JSON и отправка в Issue --- */
+/* --- JSON и отправка --- */
 function buildJson(){
   const o = {
     id: Date.now(),
