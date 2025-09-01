@@ -322,5 +322,23 @@ window.PLACES = [
     "address": "Balcarce 329, C1064AAH Cdad. Autónoma de Buenos Aires, Аргентина",
     "place_id": "ChIJ7xxL6xY1o5UR-uLk0Vq0tqA",
     "notes": ""
+  },
+  {
+    "id": 1756743903043,
+    "name": "Mint Lounge",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.584225200000006,
+    "lng": -58.420840999999996,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/mint_lounge_ar",
+    "phone": "+54 9 11 6681-8821",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ3_FlSI61vJURJ0JHQyus850/photos/ATKogpeWK5NdHukwe8EMNIrKkeB5HWQllqRkZIxWKuRF0Uh-MPOxZ8IWwNL4IH3Bunetbak23HtEzgcD2BAjiVvyWOQg66sRgIdH81bwNQJftENEVMP2-NglAf_X-JJ1b9TcDd_KPq-3LcjKVLbS9IakMMi9DOHKly0em7n9adMt11jXCaric15V4wYRlJNrjsaR_r2_tEyoBRyvXLKL0mpgf2UOYEz9HTcWO9un1GDPWMNcx86RKEPPzcqQ--DtQJRPVJGG0rFUo-oZO4tdgvAXp91AwrupKKcYig0PBCN5nltwSQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Pje. Virasoro 2367, C1425FDA Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ3_FlSI61vJURJ0JHQyus850",
+    "notes": ""
   }
 ];
