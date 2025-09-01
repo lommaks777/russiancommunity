@@ -286,5 +286,23 @@ window.PLACES = [
     "address": "Cdad. de la Paz 2846, C1428 Cdad. Autónoma de Buenos Aires, Аргентина",
     "place_id": "ChIJzRb1GYS3vJURDvDr0i-qaFk",
     "notes": ""
+  },
+  {
+    "id": 1756743615425,
+    "name": "Henry_Barber",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.6116131,
+    "lng": -58.3706847,
+    "neighborhood": "Monserrat",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://dikidi.net/1780304",
+    "phone": "+54 11 2765-3514",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ7xxL6xY1o5UR-uLk0Vq0tqA/photos/ATKogpfCH2RUBatQISemaZk8dGx9ePMkxDigKhMFmaQ2UUmxdzE5roCsS1lBLkaLbSeXn3Vz3TklRTEeQMTl2PiTr8IyLW3cwI-TYoDRSBiNYYeBbFs4vle_vnf0t1hhTEWOnr8y3CKQ46Q93FbAllEBjOSw3MvyGr2I8rnuGHNNnwFgf64qOvKekZZOGx-vEYsIYpfkEZCvODEp3WGkwI2exOaoocT3J-iAXEKFtFE4vksEKnTOKQ3ncvfezBIBlST7GxJNb4nurPDdO1Viqj2Ac9BoM_Gv9rpw3R9G7eOyaLkXmQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Balcarce 329, C1064AAH Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ7xxL6xY1o5UR-uLk0Vq0tqA",
+    "notes": ""
   }
 ];
