@@ -288,6 +288,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744121427,
+    "name": "Дикая природа Аргентины",
+    "category": "Обучение",
+    "subtype": "",
+    "lat": -34.6166092,
+    "lng": -58.3564354,
+    "neighborhood": "Puerto Madero",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/argentina_nature",
+    "phone": "+54 9 11 7127-8842",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJEeCLg8A1o5URtbtZC7UEQF0/photos/ATKogpeEBzPtkGShKHHRTZW98yc6UgbSoioo2ZKMCwudvi7wUwwwaM7D1gMw-bQtm5jKmJK3TJ77P_RQp3BoEJ0yXNEqYEjaMmMHMD7Cib5UHvhZWCwGIdinOwBU1owUuF-5nrpBQk4Cp1GerKdcib5s2OOGxVrjrTR40h-YriJ9CWsygKUA2TD7xvBpzHAyfraqQgIb-_SUKlmQ8_pSJoHQN7KpGQHN4AlsUQAOsaixh1vGHJNtr_fT5sUhOz81wBsawXnzgeXRldNTUtnhDFXmaYic1kU9v2_lZ5lChM-qkapn-A/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Costanera sur, C1107 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJEeCLg8A1o5URtbtZC7UEQF0",
+    "notes": ""
+  },
+  {
     "id": 1756612843272,
     "name": "WeWork Espacio de Oficinas & Coworking",
     "category": "Работа",
