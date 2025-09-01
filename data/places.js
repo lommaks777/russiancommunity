@@ -198,6 +198,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756743205660,
+    "name": "Парк Лас Эрас",
+    "category": "Спорт",
+    "subtype": "",
+    "lat": -34.5838884,
+    "lng": -58.408831899999996,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://mapa.buenosaires.gob.ar/informacion/?lat=-34.584018&lng=-58.408708&zl=15&modo=transporte&dir=Parque+Las+Heras&ilat=-34.584018&ilng=-58.408708&fid=espacios_verdes_publicos|1107",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJzUXgvH21vJURmgmG5hpUBCc/photos/ATKogpedPCYDEir01snS9gAC21-bNn1q21pJvyMC8f5CvMpdbecVoe2mRGGG0gybkpTsH8jTyMy9cZkTeweyV5_3IiorYsaH2OiR3QbVbDIA2UNn6JyfB9fzGThislZn_QYiVbjNSuy42lKzEK_q5Vb_BSld8B5ZAR91qBw5Ef-nSjGbKoF_577hJZ8CROwaoGRMtD6T1ffhDsH215AE0WOrlkrLVc-Rid0-MnBsnO03ckU2a9G7mPGXAHCDDRx0HEb1YmnupLlV5XMd9f6auOFWQqs0dYX7vLmRbrEr-wlXGMxkI7Q2otQpDjY2gB5oWirV6vF_R3GTeEVcke-pfXU5UkmvBl9RY8kbSHsgm-e07fuUvUWlb_cG9NMOgfwz5GPLsKVTGDY4mUaNIJrpW6GOOdohE1hk9AXq9UBCYKGXJrCp9Wco/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "French, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJzUXgvH21vJURmgmG5hpUBCc",
+    "notes": ""
+  },
+  {
     "id": 1756659110442,
     "name": "Algorithmics Belgrano | Escuela internacional de programación para niños",
     "category": "Услуги",
