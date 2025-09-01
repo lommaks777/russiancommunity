@@ -306,6 +306,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745480373,
+    "name": "Ciao Cacao Specialty coffee",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5824408,
+    "lng": -58.4422545,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://menusa.app/11f06800dd7aae69a90916e19cb63237",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ9SAGg4m1vJURTgnbaa593To/photos/ATKogpcFpJXHiUgtjognR4IOc843ui_hKBqqx6tVriwKYSuHV-iNrCyauf3wVEInH8AdJgTHQzj98Tsq4fjfMoha9kRo03zyTDHHRWwkxagaDFasd75-WTreyVPNg5mqTiohVaNOowCTnUb6i3muQfUPdj8CYXLkKabtll-TOPHRd3SQqQIzTW8JNIk3tet1ryEnS6MGPVUPvEJv7YTHIOZGhggwf6RrHhIYlSDoUnkG1BR6ZsJkPF0oqQxIeU_CTyoQ0tcqvEEqkFjRbRh-dbwM_SO12BqwIpFAQWUl76AsuKoSow/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Arévalo 1506, C1414CQF Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ9SAGg4m1vJURTgnbaa593To",
+    "notes": ""
+  },
+  {
     "id": 1756612421427,
     "name": "Gafarov Sauna/Spa/Русские Бани",
     "category": "Кофе",
