@@ -252,6 +252,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756743655195,
+    "name": "Taproom DaLi Brewery",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.5876355,
+    "lng": -58.41827670000001,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ-xK3KgC1vJUR7WJg4tvRZmc/photos/ATKogpd-3jemgHDvdtS9ibyRfRfFazSFo3lm-lZH3WuYWhC0YdKiqpE92PyKYbGsr1S9Rl1blQMQFe-9KUprCKuT0hjgoIwi4b5rxFS8Crsv52XxG11vSJ9yKzQKPTASDDu9jJkJmwguSiHuKPjpbs6I7fekrOHueJEhw22yBDSeS3lXVYz_CMcnwinnp6Di0eMEbu_vHmgeNkkkRAM0_jCDsszWmph8fjz4HYqQQi-JSJKyA3KZuGfwDz2Z3HjG13_767sneHhqjdEH8Z2V5TgojXcxzA9W_l9iXvlcbQxmNFiFK_wCzNxLF4U69WRdRpyEYlfUfLkYxmaYZncfBI7zdN9lzqbNDY1OYay25xseAHjAUsoaPe65f00cU6EcKa6RdcwnZIJKaOLVnDLzQv41vDtw5kjmEQFWApYFHcJsywyi7190-sGQZUV85pqy2mEp/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Aráoz 2272, C1425DGH C1425DGH, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ-xK3KgC1vJUR7WJg4tvRZmc",
+    "notes": ""
+  },
+  {
     "id": 1756743205660,
     "name": "Парк Лас Эрас",
     "category": "Спорт",
