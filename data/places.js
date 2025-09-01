@@ -360,6 +360,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745208703,
+    "name": "frijoles y mermelada",
+    "category": "Магазин",
+    "subtype": "",
+    "lat": -34.610622,
+    "lng": -58.3733784,
+    "neighborhood": "Monserrat",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://frijolesymermelada.empretienda.com.ar/",
+    "phone": "+54 9 11 5016-8773",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJzYwIY8DLvJUR37iSl--2k1s/photos/ATKogpdbFJ485IU7rdw4tQ8xGnM1QWxwPnDQKTuhxNN1PJV-xFMhM_Z_4ovqk6bS36BV59h1GqnDfHPEm_0WMqOUbWjRoQEPWY0_kJls9nabjh8Q0UORp733HWggcmAe3lvuQvek535NfC56gelU-6LzhZ2-yMbYuUPpcrmBxDO-3Wavt2JE3C7jad30xb5b1zSVNQ1MGRHT93z6EDwUyGYGQXivL1x5QEgMX3e--UpTjayd8FJWaN9fyLsidzCE2eeBzlwdjRZIBMioCdSdLysBpReQnONM863vevX7ZW3o1jB8dQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Bolívar 228, C1066AAF Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJzYwIY8DLvJUR37iSl--2k1s",
+    "notes": ""
+  },
+  {
     "id": 1756744656207,
     "name": "No cualquier verdura - organic store and cafe",
     "category": "Магазин",
