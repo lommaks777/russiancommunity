@@ -630,6 +630,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745505690,
+    "name": "Alicia y el Gato",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.565191399999996,
+    "lng": -58.4546041,
+    "neighborhood": "Belgrano",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/aliciayelgato",
+    "phone": "+54 11 7214-3333",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ6cb2UgC1vJURrovI22WlLT8/photos/ATKogpe1Sdp6ndrIKsiuIzfHLUB6fAlIIGJACfTdaCyL7847JitgjHquxrZxPf-aPB7hoeqkP-OTltMEuLoiiQ8X1HYKLOCrHosMMCAMkPQIa7cSQSVXhYyyLWY-eVLTBiCLu9zXES-f1r3qXdXWqESOBY8WomwNIjj0UYUB8CVgLGUMc_sQLUcWmw4tUFWoqREjwLd4OdAcYvH8CQpuepe3QUflvM0mnyPORgjEL_3P_RCLuSck27i5Y55ul31wffTA110JpUC6Zy2FYEKwwMbYi3I0nzozLITqeYHV-6kL3vC5xw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "La Pampa 2430, C1428EAR Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ6cb2UgC1vJURrovI22WlLT8",
+    "notes": ""
+  },
+  {
     "id": 1756744949659,
     "name": "Barís",
     "category": "Рестораны",
