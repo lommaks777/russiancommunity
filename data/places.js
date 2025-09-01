@@ -450,6 +450,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744815865,
+    "name": "AMO Estudio fotográfico sin fotógrafo",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.5895839,
+    "lng": -58.404146999999995,
+    "neighborhood": "Barrio Norte",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/amo.estudio?igsh=b2NteGhyYmJmcGw1",
+    "phone": "+54 9 11 2174-4314",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJd671hlLLvJURlxdeqoz4Hhg/photos/ATKogpeDMF8n_LnmsTKx6CRkgEzEB3ty-At14vVXSvveqvphH7GA3Hnl9quGtW0Zp1RdLJdtm7DnOHgeLDDf2d-izc7nY8xuRm8pSw_CEu1ewb-ouyveeNzXozFZdMCcqVY8y3JmvR97jJrkVl0uOK7Gz7dTXHhP_SZ76Vmv00iV2YGzbsaguzIHbxAiUEkUOUOPIRdsOFutgFlgb_9Djf--Y4uibC_WT7U0tM3O3aruPP6VtHH1fp1LbasIHnsMu7BXL4Caw8CGtGvoktbOoHZxke05Jt7Xdij90H2tVo0Gl8wUlg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Juncal 2699, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJd671hlLLvJURlxdeqoz4Hhg",
+    "notes": ""
+  },
+  {
     "id": 1756743615425,
     "name": "Henry_Barber",
     "category": "Услуги",
