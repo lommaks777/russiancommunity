@@ -18,6 +18,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744048423,
+    "name": "TEKŌ Beer Culture Kiosk & Bar",
+    "category": "Бары",
+    "subtype": "",
+    "lat": -34.6106249,
+    "lng": -58.397595300000006,
+    "neighborhood": "Balvanera",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/teko_ba?igsh=MW13cTdvcTNxYzh4cA==",
+    "phone": "+54 11 6205-0252",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJGZoZ9ejKvJURRNtlaZphZ9Y/photos/ATKogpdQAQGosE-xC3t_FcCDJCNlZY-rWtXFHD2nYGFs1bvvqHtvaDzhWy59UL5GFdzrsnMTCuF5HUCa80MfK-sB68C8aUz_UZs0YbRAZ5myVI-p1cvPE-OQx9wOWk2EXH_qGWMW_E7ecKPFz0QDDWVaStTb0LIk5mIQxY2yP_l5wD-oJJt0CxqQBlIWwL7ObqZ0bd-EDqL198GCv_mACUZjEYWFsopJFeCdnTiejfKxqEwLDdY9DN-KOL9NXk7Z4w5Dv6L7Twh7PBo7fhiBdIb5n9hfA2MoPQwykN6ew6W3bwiQry4xy_HrpDxVnxm_EukXvFpuupWPTG02XKMA1Zm3AYduIo1CDECdmNEg86jHIhLx-pe251uo29QaV9SLs5s6TNE38PlpMvZPdo0TxoCnrSuNT-KoA_4kBB6_ylgG6mxAW-df/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Hipólito Yrigoyen 2201, C1089 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJGZoZ9ejKvJURRNtlaZphZ9Y",
+    "notes": ""
+  },
+  {
     "id": 1756743141642,
     "name": "DARKSKY Hookah Lounge",
     "category": "Кальян",
