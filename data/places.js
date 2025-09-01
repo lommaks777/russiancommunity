@@ -90,6 +90,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756743041644,
+    "name": "UMKA Café de especialidad y postres rusos",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5840582,
+    "lng": -58.43803679999999,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/umka.argentina",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJKWalrVO1vJURax31spn3QQI/photos/ATKogpevYzXUSx0LTzNm6i8TOpGEtesKdWeEaag7J02LAXLX6_pZwKGIqW83bEM02JfTJoCaliB1LPFmxvdmKcV3NKGtyZpEOODcxMp4o03AoPoTc-KApxrAm89RjRQRKNqMStW6gDsXjS6s4TsB7Ew_7UdAvEl02F6SSg1XVGEX7YtrtRS_ovCaFwfpgUNvQCbutqzVGJ9sFJLUCrxSL2XywRi12gRRysU7xFpWuolxRgPVd9M2gIpx20BFB03ik8UJPhzOACD5ZLqvvN_pkB8I4f10f4wfzuVvmXCJurXYRtPla1t6LPEcqahoMyfRZKGIyXkeysvpwUmC8uzTSraJOp1GG_vClhXrHVDUH4kUf7PGE_55zXb1ORVog5MKC4WLp2tEOEGLzNlbHP6_3Lw42gTng3ccFLvTUY_oLO9DgclOJQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Bonpland 1611, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJKWalrVO1vJURax31spn3QQI",
+    "notes": ""
+  },
+  {
     "id": 1756611784552,
     "name": "Консульский отдел посольства Российской федерации",
     "category": "Кофе",
