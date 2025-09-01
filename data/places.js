@@ -234,6 +234,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745144318,
+    "name": "hermana de las focas amiga de los peces",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.609648299999996,
+    "lng": -58.37363549999999,
+    "neighborhood": "Monserrat",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/hermana_de_las_focas",
+    "phone": "+54 9 11 5016-8773",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJc7UBdsLLvJURUeAasmDSJyk/photos/ATKogpe6B8Aw9jLwZt_NrOl8oj63lTma5BsyYLoqTveLMLRKZfJdVYacIc4AcGvQCStBmF43tGMT_yg1W2mhN8QAZurLtAdq1FKmhwmnmc0TRrS9LH5APmAvwekgDbbDFV4eogjYSf5Ldtmx8nEQQbkrlY9jvJvEjTQUZKQlsXMnPmC3vBmik6yA7TWVHINNqyUVv4IYeQttvWTfxPDhrkKZfF9g4kN9Wm-863e2F_WpHdHj1tQbSuYtp2Fc7ZP9HD-0FGNJc_W2W1vFYn6dMdwKkG-kNUsjzXhD24DGNcuHuh_cCw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Bolívar 153, C1066 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJc7UBdsLLvJURUeAasmDSJyk",
+    "notes": ""
+  },
+  {
     "id": 1756612519473,
     "name": "Ivan Juan",
     "category": "Кофе",
