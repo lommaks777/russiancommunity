@@ -1,5 +1,23 @@
 window.PLACES = [
   {
+    "id": 1756743109541,
+    "name": "Babushka bar",
+    "category": "Бары",
+    "subtype": "",
+    "lat": -34.5842357,
+    "lng": -58.4138804,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 9 11 3771-8558",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJK_CiRo21vJURNx6MCSbCFlo/photos/ATKogpej0TJ8n5SHE0EOHqgb168rFCcd0n-CKBSWPJwuzHQvhRsJa0L9ycoYQqKjVbgLpL5B9LinU_3EioHuHA4dxdnEKKO5VQxBVyl-PIKuLys8OKeWjGZMDO7IB48p6_R4ei4-7fw2-ZD4xO463G8Mubx2gGK9FaWmhVXaiSAKSvBG1j8Z4zZxghSlnzIbumvjL_NkpnTX7ffB8U-L_rPdY78XmWBCIPIWmMPEIBwjYgnr7etgp7j09InEhbcLM5R8tZ4qirbHhdZiJpmI2elFXCa6dg3s4WwSPfpUBa3NlHgGW0LWXEUPzwg6qKhcebmt52inU6iyNYV_S5iH3MpH4U8SxkQ3TsS6iu46QpOiUzCMrGVKC19Lyami2yNwnDhkt_MH6XT9vzJzVHD-Hom0qUPWKXFqGDVRcOJk-5ELrBs5OQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Beruti 3759, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJK_CiRo21vJURNx6MCSbCFlo",
+    "notes": ""
+  },
+  {
     "id": 1756605821269,
     "name": "Buró Árbol",
     "category": "Кофе",
