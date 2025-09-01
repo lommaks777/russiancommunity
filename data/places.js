@@ -234,6 +234,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744656207,
+    "name": "No cualquier verdura - organic store and cafe",
+    "category": "Магазин",
+    "subtype": "",
+    "lat": -34.582254899999995,
+    "lng": -58.4409261,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://menu.fu.do/ncvpalermo",
+    "phone": "+54 11 3273-6065",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJM4J11lW1vJURwg3_bv1T868/photos/ATKogpfx3_eDji5C_0l74p9FiZ2PwyzL4wx_mEDtq0wtD7Mm106eNC0YmjjOE75M9duvcKz_ryeRCFP613ZBaEHBe3sIuyEO8Rs2tKLpclXe2agrWvBLA3DvAhuO-VAkfN004RDuaHhbJIkk2PChtGAvhx56w_j09ATJVjXzQvg-24uauf_IwiuzZmbnjqIreetMGxZPiOFLmTfqGThmQIP730PbLH3Ug3Ib8jq9Dl2mfbKJb8FUI87w7ezOyoY5d_dqZKFk8y_a9d8vss5v2IB5ht4LgkwhEjO5J7lf4PKCP1MSTA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Gorriti 5950, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJM4J11lW1vJURwg3_bv1T868",
+    "notes": ""
+  },
+  {
     "id": 1756743984595,
     "name": "Russian food store Avoskya",
     "category": "Магазин",
