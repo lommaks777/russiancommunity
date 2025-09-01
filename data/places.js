@@ -234,6 +234,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745055328,
+    "name": "PATO CON BOTAS café de especialidad",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.6012012,
+    "lng": -58.3957754,
+    "neighborhood": "Balvanera",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJW9EyTwDLvJURwWgTcxqHNTw/photos/ATKogpcs0gFwhF8blQmEOc-BZ3dYR9ZpBroGksF79wcrl6semB1772kD8kBm6yqbyvhhTFni_2eRKOUjRBOY4Bu76-Kfo_iStQkEyccLEB6qyzMfmcOoxevFDY3ZBVT5niCeF81UlCXRYnALSfzeGLiTgNgvFAlu4x0UOCHuAlZxnkism7ks0yiluwOmEYuLW8ipe84Ybv-3RNETQQKFENHP7umWM6KqXXnCgALnfeohy3gluArE_ZcsnAaitU1PKMIu2UrKexbJtfHZN4jIBNhYbaS4A7wmLkeEuEveKS2sBk8oVtt5DzD50HnjapziuG5XGRyJep81rXnRbo1IiJyI1POdFBq1S_UqrWshwOmjhSJHtrPUyz5tYCUQWg9OcLjAzCCF5Srs0bXR13HMBrNTT-4W0s2PTUtgOUMRZxV3hUQv7g/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Ayacucho 678, C1026AAF C1026AAF, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJW9EyTwDLvJURwWgTcxqHNTw",
+    "notes": ""
+  },
+  {
     "id": 1756743558657,
     "name": "Rossini Pasteleria Cafeteria",
     "category": "Кофе",
