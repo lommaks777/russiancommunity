@@ -18,6 +18,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756743141642,
+    "name": "DARKSKY Hookah Lounge",
+    "category": "Кальян",
+    "subtype": "",
+    "lat": -34.5870892,
+    "lng": -58.432415299999995,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/darkskyhookah?igsh=ZDU3aHB4YXh4cXN5&utm_source=qr",
+    "phone": "+54 11 6759-2064",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJTVOlBI61vJURuIrmOmcBAk8/photos/ATKogpdF6jqfn9lYDLUpqe_EUfmqH2zynM9WWuKXWpqKkUYJHfuUgbMNZXFTDqtnTUk1AwJsRxh72jtFO1vSnzSzWEljGFHc1gY_mv3cFDkxkDtowHBzfC3uxSl0je6xUBUMmU72GK8ADKWbI8fYSlbdE_DwOkuWrd9Yigq1PmOpn77wq-S4I9aUcQ08-2GtPjlU60rtM1CA3_ayu_pLFlrxzcF--BLz6w1pXKYCsR4lOh-p9iVUF88LssubmPzrpPexxGTHy5cBHZLfG6Ln45KdvtzT73IspI0lOLcAkAKndQZ-yg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Honduras 5255, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJTVOlBI61vJURuIrmOmcBAk8",
+    "notes": ""
+  },
+  {
     "id": 1756605821269,
     "name": "Buró Árbol",
     "category": "Кофе",
