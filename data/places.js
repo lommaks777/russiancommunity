@@ -90,6 +90,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745232974,
+    "name": "VR Arena",
+    "category": "Дети",
+    "subtype": "",
+    "lat": -34.604407699999996,
+    "lng": -58.4112055,
+    "neighborhood": "Balvanera",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://vrarena.ar/",
+    "phone": "+54 9 11 7104-0040",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJrQcQxS_LvJUR5oqdTmp7bTQ/photos/ATKogpdWXl8yKVYh5G9BO3dsQttQjVAjo3cw3WH_nQ7EXN1JIzb7VGmPEvF_-mTiyrvSMu64ONWXpSsOYUqjUeC8hmDgyBHXHR7kYRs4cjZZHMWAxUT-2Tww1pbYe8e17Rfakpk6C6SZ-8JlxYK7CwyptU2WHRg3J5IY4M_UfdQTK95ropx6YJ77cHQUXOy813DPaR0O6wxUcHbZWWIzWD2ZksYkziP78eVuPIgGoHLhwpYSsyJmhDLS1rb9vM9Fhg6gWE4NGJv2k-_Vaf0gwE1XSydm85OTJJTwtpl3is47_8c/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Corrientes 3266, C1193AAR Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJrQcQxS_LvJUR5oqdTmp7bTQ",
+    "notes": ""
+  },
+  {
     "id": 1756743141642,
     "name": "DARKSKY Hookah Lounge",
     "category": "Кальян",
