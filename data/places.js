@@ -36,6 +36,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756743080892,
+    "name": "Cafe Verano",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.577797,
+    "lng": -58.438895900000006,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJXzecbwC1vJURo1WVDUUmRyY/photos/ATKogpcUCprzuAvNG_kqbNKmtVUn5IqR71K5EXmzDapdjqRjDAhZIVMqeHrwUc63j-IIeozV2a0zEvCEexpJ8t_WRz9ZqJzvJUQjSlJQ91XpT61UEjjvdUkpgs72nSY04JQt0HzOt44nZTbVGTiNuDH7AXVraYEm-0Cso523aX_4bL0dQ0_e2Ndv5QgJxSMv-YloA9q9WAvkWGaHJnqY4UlQJv6_m9BVicEY_o2dkMgnJDP68v4s3o700CuYtzrPIuEYpIRES_QxHVww0l-LwWGNGBCNnD0HMTB1YeLutFWlAuaOXx3fUjACPxx23Zol-tcdveBgZJj7ASAGzh58lhDa8CzySBozLxAENvkjQ-CLGiG9MkVfQzU1oW39MqB2FGoLnSC-6YO5auOXZQtUVN5Pc4U9uuqWkVgMccC1cQ9zY23U2h_hqmYvxNzg4klb9BSZ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Dorrego 2187, C1414CLD Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJXzecbwC1vJURo1WVDUUmRyY",
+    "notes": ""
+  },
+  {
     "id": 1756612662025,
     "name": "Chaijaná",
     "category": "Кофе",
