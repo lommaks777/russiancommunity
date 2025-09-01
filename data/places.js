@@ -432,6 +432,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744949659,
+    "name": "Barís",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.596258899999995,
+    "lng": -58.378282,
+    "neighborhood": "Retiro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.facebook.com/baris.kharlamov",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJJ-yJHLbKvJUREmZUpoxH69c/photos/ATKogpebBZ4U5sKVmwSPHDkhRRECONfyfEHR86cjqm4PNxhnTxFoi5Zjoi0PorPmRtdeJ-g4xnM7zGZAr2YiJyqlB5Kb_g9ykBawqfxkfZTj42-7EsGY-QE0SxxsY-8Bkv9nkwlqHuZEeEiSm86Kd7VrPqo4c-W6bMel-nXrD4mlzIkwrkHw4NPvMUYn0p-JU7W2dG6j-Pv0Eo4HNYzID6AyH1G4IBV7KgXTZMijDaI0MJSMX9GOC8rgPKqz5rPbO_0Xl8G3ARlvQdOYChYVtuHSqOcxQcbLhfxOT2zCiHLZhqvx0d0VJE75MTwHVPYw_Dgibw7BM7cTG9F6cq48UblTXa1t2Bl4XvRASqs1DmwSGpK7kLxzCXj7zSEVW7gfnhSTn5t7NnDfeJhQ7b1ppcysJwBtZZEX81FWItw0GKA0sxf-SQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Marcelo Torcuato de Alvear 789, C1058 AAI, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJJ-yJHLbKvJUREmZUpoxH69c",
+    "notes": ""
+  },
+  {
     "id": 1756744078257,
     "name": "Cuchara del mundo",
     "category": "Рестораны",
