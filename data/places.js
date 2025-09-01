@@ -162,6 +162,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744784337,
+    "name": "Che Crepe",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5914844,
+    "lng": -58.405202,
+    "neighborhood": "Barrio Norte",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://checrepe.tilda.ws/",
+    "phone": "+54 11 7174-9132",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJocQjR4rLvJURRPCvk7-mGA0/photos/ATKogpdzX90rBqq75GA_MGAdQ0bck-xJtst_o5G_INugdViMTqN9YUM7EXzrSzRu_T-SHPI9IgPz53Xip4gO-Yu9IlgF05CsEJRLaiAacbVxHv5VJalRx5rlqk9F_43e6BC7dRtufAcT3-bRASN8tTDqvzCQ5gILJXmXA-2V6DjIK1WpcKbIHdRpLN-TbUfGy9wH1dPHDryLAR0OZsvrtsjcomIEZxEJnrMdzVHwel79UxatUWSJuNgWb7K9z-JaYmmB6M_rwiLtP6DBgBkdM4jXRDJOhtyDWF2Hg7fSWoRA_vE1dw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Arenales 2817, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJocQjR4rLvJURRPCvk7-mGA0",
+    "notes": ""
+  },
+  {
     "id": 1756612421427,
     "name": "Gafarov Sauna/Spa/Русские Бани",
     "category": "Кофе",
