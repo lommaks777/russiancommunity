@@ -144,6 +144,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756743558657,
+    "name": "Rossini Pasteleria Cafeteria",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.627549,
+    "lng": -58.462522,
+    "neighborhood": "Flores",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJl7ixFwDLvJURjfagHkIdapw/photos/ATKogpeKChT-lzbrYWu3Tt8H6zphQZLnU9IQwojgCJ0iZNkNGUO0kgpWzKReIREEdwNeZXKgGQCFL8mksMrYyP3R8BgJWrgGnL4bSMRJek6r3blKIptEs_gVtfQdpDQRX3MNfI2nVpfVoY7KIuICyNJ3rY8rtc3_U3x_wVEpIQq7Z-lTDKr_NDqNh71kFDmU25RDBr5Xju_QlZEWRFwUFspj1M9oHbn21ClFQmfTWxq-sS0SVkjeV_5uevuF4uAiN0AqzrKsfq2-HNv6spBPFMG94EXGXvidOalQLuE4QY8-eO9r4nMT2ZNp5ltAh1iGEwXqAVSwsqgxpZYVyWwsDaxCPcu5vsZPetexcIPnIPyKMbskP7PbJf2cG4cmnh9X4_fm3mp9Y-EOK95Xr6gwdGnEmv3xEURx-neO3AtjmRX5xgCXDa4IhaEEizuQeEMmHdZE/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Yerbal 2358, C1406 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJl7ixFwDLvJURjfagHkIdapw",
+    "notes": ""
+  },
+  {
     "id": 1756743041644,
     "name": "UMKA Café de especialidad y postres rusos",
     "category": "Кофе",
