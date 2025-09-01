@@ -540,6 +540,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745114025,
+    "name": "Pizza Nika",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.5949804,
+    "lng": -58.3736878,
+    "neighborhood": "Retiro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJcao87g7LvJURKONsnXIMkNM/photos/ATKogpfvP8B6ODwG3WsmDIvvKdwcAtozOC3X4pWzAbbCN6IH319tMkuHl8woYl-74FampPVYJPzF9tfBuelQ9Gw9_mTN2u69KXNYpheeTHUyGymD7Ry8GKywJHqgN0o0KiD7mpgnd2oJOcleOPhI6bicA9SroZF1vA-Wxw9pLICwdXRZZmJAtd7E_IDMUvFKzs3ETAoEijWCR1bhUCdt-y0gfZXfRiK8lOo1Wz4rJQyVbK8Aq3_7y3WOBVSgyCaxF0GwzwQd76di444Hh-bBxdx9pvAAzeYfFThZsA6c8ONGMqoW6w/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Dr. Ricardo Rojas 451, C1001 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJcao87g7LvJURKONsnXIMkNM",
+    "notes": ""
+  },
+  {
     "id": 1756743655195,
     "name": "Taproom DaLi Brewery",
     "category": "Рестораны",
