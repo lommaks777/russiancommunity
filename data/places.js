@@ -180,6 +180,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745287260,
+    "name": "Birdy Birds Café de especialidad y postres rusos",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.6000668,
+    "lng": -58.4329815,
+    "neighborhood": "Villa Crespo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://menusa.app/11efe2f90eaaf79780fb2161efdfcdae",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJlTkBDdrLvJURW7t_NrgxmRo/photos/ATKogpcn6usi3KQPLTIP74yZ2gggxR7L9L4eus3rYIsUTUDKPVFp8sfSK6eFb8_q-5JA1BQg6TG6iUN4qltc2YsbZSjHqXu1cYO4_E5-4xjdt03fcyLIx9_MEvyu57XgV5AzLQUzOQ3OsguH0pTK1nzMBwhlzdndKjY9YSJEvKWEDPf6Hx8Xse89E8HpzRWThw5yzCeQdjZsGHlboRBLwGCL8a_A1tmx43p6mKg5qvqBzw0u4vPLDf0a1TGE8659_a5zdDKkz3OvfcVbVH-418Aus8jTUrGo2VAfhW7kH27Zmcu7WQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Lavalleja 613, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJlTkBDdrLvJURW7t_NrgxmRo",
+    "notes": ""
+  },
+  {
     "id": 1756605821269,
     "name": "Buró Árbol",
     "category": "Кофе",
