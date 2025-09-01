@@ -216,6 +216,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756743984595,
+    "name": "Russian food store Avoskya",
+    "category": "Магазин",
+    "subtype": "",
+    "lat": -34.6106008,
+    "lng": -58.394726899999995,
+    "neighborhood": "Balvanera",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://instagram.com/avoska.rusa.arg?igshid=OGQ5ZDc2ODk2ZA==&utm_source=qr",
+    "phone": "+54 9 11 6499-2249",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ9RMc5IvLvJURomfoVXq1_KA/photos/ATKogpeipZvvF9iUI-wlWNZChZCfMUFc4vJK2ntJo7mpkA8sTS8WcWU0XuVUlEynhJ1eD5GPfVJMerVE9s9r44s5Kw_3Gg9rHumFQZS3quh4_nx6E2v38LG8q6BplK69v02q8Xo2GFOGhTVhjQChx0RM6EwIMFaZnNm2-EsgxFMWcx1qGVAQqSwkYaNjTyMYeoTO9j5X5cFfQtA5COdbown3JlnoEYOEk4T3qQ3HGWBe0NKFKYbQs-IxdYtkBlqeK56dK16s_mvNSQB33jrXPVB95QdNxiS9eb033WY0M34GaGq275EDnlOYyJL5AXU5uDxvCimQHbFbN0yly3f5r3-KYPSWVUlzG271ytPcBF7Gq7tZSUDrKfTE8zN5dR6U5103mmRoq5Tx8Zm38Ff7hZQl2s-QOjseZwHYd-_DOiDcumPtFA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Hipólito Yrigoyen 2000, C1089AAL, C1089AAL Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ9RMc5IvLvJURomfoVXq1_KA",
+    "notes": ""
+  },
+  {
     "id": 1756743303750,
     "name": "Algorithmics Belgrano | Escuela internacional de programación para niños",
     "category": "Обучение",
