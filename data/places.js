@@ -54,6 +54,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745313915,
+    "name": "BUCAREST Gastro Bar",
+    "category": "Бары",
+    "subtype": "",
+    "lat": -34.597514,
+    "lng": -58.4347148,
+    "neighborhood": "Villa Crespo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://instagram.com/bucarest_bar?utm_source=qr&igshid=NGExMmI2YTkyZg==",
+    "phone": "+54 11 3278-8925",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJCyjZP8TLvJURuvGndAs0y-g/photos/ATKogpd0jx8pzjyzUY1gMn3bbP1mgOOyLEfmxc7kVd-f8r1x0AkcmJx6Dlz_PExCWQDoLjTn7as85bBKJ_dCQMMkgy5eoiep6feWMgHPjsYFf2OQ6PxS058kd8vzdTsiNcaj0YelGUwcOtdbTi1UGseUyBDwzj95FYPZvNvenqUZzZ2If-n-DFmU_wVjAZmdST2llsVLt8ZsHODr1bu3XInP0H6BDS-ikooH7aOq4HZTV0NoNzGBkwrjnNiHgYkFlRy1P-oV33iLxIEMTpOGC20homntEuYfplHwNS5kpPpIOxh_bg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Raúl Scalabrini Ortiz 659, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJCyjZP8TLvJURuvGndAs0y-g",
+    "notes": ""
+  },
+  {
     "id": 1756744899415,
     "name": "Malas Hermanas, Bodegón ruso de cocina de autor",
     "category": "Бары",
