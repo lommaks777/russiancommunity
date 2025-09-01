@@ -342,6 +342,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744926012,
+    "name": "Tolstoyevski",
+    "category": "Магазин",
+    "subtype": "",
+    "lat": -34.5972799,
+    "lng": -58.3843023,
+    "neighborhood": "Barrio Norte",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/tolstoyevski.ba",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJkzQtdgDLvJURMAOz3sAFfa0/photos/ATKogpdGPEpkHpyj8_fhjMBAh1qJsEuRuiWx0k-kq-5Bn3svzx_180vlHB3JE3JKebk6cJcU6Xrv_WLCR6mL37Rd5ZfXdm6qcYYcqglPUaPpLvZWseAf-g2u0ZLG3Fb2crf0DQ9pVMIBomvbA57goma9G_GinrY-ctwPkjwGi4cQLPEzTGDQf8Dr0m18kr7DaDbWsM8JyRW2AdPfldnHfVhaNpC5NV3GI5XItCPliQ0S2pcqOmh2tDEStN-k8N-PVREAkR6PeGuNANH9KCH9DwqMgjiu-zzxDopB5gCtNosrToIHC68UHefXAJMAGkHjw3otOP1XnlbL1EobhjM2xPghJxX1jKuzdW6oL5ncYqPBPl-Jq5_IA8ezVP8X71nsrUfOjo48yDqKHYE6ma--dhTABMDhPePChThYGUxalexHs3mx-Vc/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Libertad 970, C1012 AAT, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJkzQtdgDLvJURMAOz3sAFfa0",
+    "notes": ""
+  },
+  {
     "id": 1756743303750,
     "name": "Algorithmics Belgrano | Escuela internacional de programación para niños",
     "category": "Обучение",
