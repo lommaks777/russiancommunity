@@ -666,6 +666,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745340404,
+    "name": "MUSGO — Fine Dining · Restaurante de Alta Cocina en Palermo",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.5871237,
+    "lng": -58.42694419999999,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://musgoba.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "phone": "+54 9 11 6407-3841",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJBxEgp7a1vJURgyGrFBmbLm4/photos/ATKogpemb1UwYgHjReV2RDhNWUo2L6TMefO4UFTyLsxcu2veEnAuR3CPcFi0kb3rMH8O0RBGzRusZqQaKTL1uUt1xYe_Ot-BUVfV2pa4mABFxlFdf3JmYubZVAOBmiatNozCligrpkqtqnHs2AzELToAONachjqxSa4lrjUh1aIrS1cKRNhnD6XsioJKMG0MZ_9icAhJfPl-RRpnDvNXstU3qAvqZQLXoE-VvDmctdt7Sd8Ov0hxMQ9spT8p4HCcSdl039d_Tu7F7KrK2eYKdAyx74Ph5gaDVtUQiw3kNQ2fYe6-rQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Nicaragua 4758, C1004 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJBxEgp7a1vJURgyGrFBmbLm4",
+    "notes": ""
+  },
+  {
     "id": 1756745114025,
     "name": "Pizza Nika",
     "category": "Рестораны",
