@@ -180,6 +180,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756743303750,
+    "name": "Algorithmics Belgrano | Escuela internacional de programación para niños",
+    "category": "Обучение",
+    "subtype": "",
+    "lat": -34.5547819,
+    "lng": -58.4595762,
+    "neighborhood": "Belgrano",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://belgrano.alg.academy/",
+    "phone": "+54 11 6693-5876",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJLTgveeC1vJURV1qua9JG9-w/photos/ATKogpdnGVBwVUa0tdHcFKCSRiLNBrIdbJHfPj4UnNgI7d6y5jm1yY8azIYhiZF3n_ndqZ_SC_h8CotUYZzSf40i8_etIuZwUljNU5tdLRaXACcTQaUNYhimaN5hzgiGvEGFF5Bb5iZh5b2UhObnXGorNTEFeOlXTTRyUAqFn6qusn23V4kItXDtM62yZ9v9nQzWm9yKRkbXbp-SlEq4uWwSg92Ymv9YhFkOwQml8ZQluw3gPMlXkVqaQuwCtcwR5PGfGGxhMWB9XeAb7KvsVCi2XZzKMS6JSVPgvLs6MlsWLMwC2e2YgSNs_as64TOeuIum_NeMiV4P_c7qkOShID6Wq73RZLq3KmBXKKAWxSxWSthV_hyhjUeTxITjft5SlOZK6Jfd8rydNS-8pF09ONpgSFfdTYDqVePocYi7kt-Qaa8PfQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Cuba 2737, C1428 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJLTgveeC1vJURV1qua9JG9-w",
+    "notes": ""
+  },
+  {
     "id": 1756612843272,
     "name": "WeWork Espacio de Oficinas & Coworking",
     "category": "Работа",
