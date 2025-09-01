@@ -18,6 +18,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744899415,
+    "name": "Malas Hermanas, Bodegón ruso de cocina de autor",
+    "category": "Бары",
+    "subtype": "",
+    "lat": -34.609426899999995,
+    "lng": -58.377443,
+    "neighborhood": "Monserrat",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 11 2616-7774",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJsTzuY7-xvJUR916fTZann6k/photos/ATKogpfAIYU6PnrPChb4TsKFTBG_3VoK9roND8ZZtuKjyNm5tEktYbPbrjdr06RudqwCH1lbS0cHXywIMQ7Y40mQ5pWMjbKpJSQM2R3Zmx4t-fAVkgW7bYMAVYODWGaFTSzffYyvoEGv1quv8GXtgbZwQXQ5Ls655Upa2eVrfvayWzSKDDDvt87kNXZzfJKgE3wwJo0GK_d0zl6hw2ubULXzGllSwvjviVi4tNSO6yAoFZDcJEY_RcDHI9fOUZb0j0sdNc0k28lxcKsjKfTLkRecRKgAUYFCwYssLIDEdYJ4Yh3O1Q/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Hipólito Yrigoyen 782, C1086 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJsTzuY7-xvJUR916fTZann6k",
+    "notes": ""
+  },
+  {
     "id": 1756744048423,
     "name": "TEKŌ Beer Culture Kiosk & Bar",
     "category": "Бары",
