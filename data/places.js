@@ -792,6 +792,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756747276989,
+    "name": "The Golden Windmill",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.617024,
+    "lng": -58.42433679999999,
+    "neighborhood": "Almagro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://instagram.com/elmolino.dorado?utm_medium=copy_link",
+    "phone": "+54 11 6260-7418",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJI8r1yVvKvJUR2NmlOwoPASE/photos/ATKogpepRaJirN8xbvRbzziyzONCkFkE4yy_n8PA_PnyuASsuXHwujBDT-rp34mRlDQSBAxBeZiskfL9t7xuT-U-OEBtHuyczHL51KGZuY7RS20974xHYJgOMBjvIDeoma-2GCNsxjNdtRpFAhnGvDsq-4tMxJIGsM4m7Mm5WvGDQ-zobrcf6SNF4nnGfSWfXuyrh9YEoN2rJL5piNPXEotJYHb-G4RuMS63_s9Agr3kxeC8nDQ1nsDDHg3m9I7Yg6OpQo-6a0kpB-UqpbbM8HJyBOqOx8cH8btxeah8LT-xW_zrjEgZ3XDvsL_vyqSc4ku2qXrjIfI4xTA0TT7kkH10vfAqPAyn9MkzM9RWBixa7_lIm3MUdJNdRT1D6q0DBDYu1P5Nqhdo0_tImbL9SHTh0wc8Jfp7LrSdddlPP4MSkzVw5maHxIBL_ULPJe8_gcgT/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Quito 4100, C1212 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJI8r1yVvKvJUR2NmlOwoPASE",
+    "notes": ""
+  },
+  {
     "id": 1756743205660,
     "name": "Парк Лас Эрас",
     "category": "Спорт",
