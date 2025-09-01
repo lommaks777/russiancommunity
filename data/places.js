@@ -36,6 +36,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756743953501,
+    "name": "GOLDEN HOOKAH Lounge bar",
+    "category": "Кальян",
+    "subtype": "",
+    "lat": -34.588517,
+    "lng": -58.4179834,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ__bpWgDLvJURH3LVrsvPGOw/photos/ATKogpcv1Et9kz49FvaBtJTWfHT5L33UvAJ9pSQK19aTQ2uV8E34gH91nYpIjBL2nrmm7MWynPhQ-5dTOp01w-eIDkICRxY-gK1N_m5hzJM1DzgkNxb3qkOWK1lK7UBRYM0JyK1DM2DaHbJ8AD3O3kc1U8znh0vgyVpIEDCp0YUPWEhuez-DDb-qqvBo4ZW8bURhhQwfC1-OhT73WmngddrwCsUhhldnRw7ZGSsh0-TXWxNN1CvSMVKgiuSdrYwe47kmLOT758o64TbvMmvmbqTiiJRdzCqjlWaeroY36dES2l3SDR8lGkQahtWjww-Ma-mohABq9FPMw2ELgdRe2j1WORkoJ1JYVC580piwLMF3GzOHDdXOVXFGgBKUjOgexSUVDR-fCAXqLvj19RCmTlgGnaEsTcz-_4tndo1tyJcy1wvRaA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Gral. Lucio Norberto Mansilla 3905, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ__bpWgDLvJURH3LVrsvPGOw",
+    "notes": ""
+  },
+  {
     "id": 1756605821269,
     "name": "Buró Árbol",
     "category": "Кофе",
