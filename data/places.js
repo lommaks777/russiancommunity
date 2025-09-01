@@ -126,6 +126,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745170259,
+    "name": "#BlinBlin",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5974983,
+    "lng": -58.3730048,
+    "neighborhood": "Retiro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 11 5316-0196",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJk3aXDcLLvJURyw7LtSymg30/photos/ATKogpfmNhEY1-K1Mj5FfKsLU-BgYJHN1Omc62HyWHm76g4T4ShLFgBfXQy4l6To64czyOq1HciWdmCCbHDZSH3CzxZnsPnUolgxBYK6Ca4lY0323zsUQbF2AydmPy3erp9xcanGFGhxJvq77DaEUHwhYsQe5ZTuOL52MqwyYNrND6xezE69rErmNAfgJoVzWh7TN52T5GIe5bImzFWchxUCLTME34ycH9cLnGf2NApfd6l1BEEaF-ljNd_seW4M9QeVxRgcAxa-OSBxobaqycK-jqWzKSVYaDEJY394WrJ3LGCElA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Reconquista 886 P. PB. D.0002, C1003 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJk3aXDcLLvJURyw7LtSymg30",
+    "notes": ""
+  },
+  {
     "id": 1756605821269,
     "name": "Buró Árbol",
     "category": "Кофе",
