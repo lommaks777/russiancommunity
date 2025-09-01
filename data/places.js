@@ -306,6 +306,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744868351,
+    "name": "ST casa",
+    "category": "Магазин",
+    "subtype": "",
+    "lat": -34.5807992,
+    "lng": -58.4339448,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/st_casaa/profilecard/?igsh=aWg1OHljaTV0OWt4",
+    "phone": "+54 11 3232-9825",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJJQUQOf61vJURRkBCjY64Os4/photos/ATKogpe2YFHJTscSirbPembhDumr02o6t8V5ifN-rFTwHH6UyTHdG21asABAQjqYl39YoYwKxemlaAi2rVHIgZbUvoq6-GQlkx_YhtCZ-deS9It4UlaXGMEdj4azK8uegABsZTp6r_tfHiRBSXfOFgPMHYWjgCB1FX41hPDqYDbcUBD9ddeU0mYxZbhAGtLfjHRZ04Vra-FNMjmQJdA_phRb-0V9LtZnq97_KKpBEHmmmo-VLFiG2s_nOoFRRMRJvCMli_h8vBFgO7u8NA2NwuwSPqPXZjrI9x7g7fhiJyvFypNEwA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Bonpland 2029, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJJQUQOf61vJURRkBCjY64Os4",
+    "notes": ""
+  },
+  {
     "id": 1756743303750,
     "name": "Algorithmics Belgrano | Escuela internacional de programación para niños",
     "category": "Обучение",
