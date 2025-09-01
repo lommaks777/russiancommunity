@@ -306,6 +306,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744078257,
+    "name": "Cuchara del mundo",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.6033372,
+    "lng": -58.4682792,
+    "neighborhood": "Villa General Mitre",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://t.me/hOla_carne_and_pescado_Argentina",
+    "phone": "+54 11 3248-7598",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJwZfVVQDJvJURdMP4MT5ODcc/photos/ATKogpeSORzQSQkzRfQKu2L0RKfWbtQgTyt3WATKTqbfrgS3hhJgA4Uuz6H6hm5d0w6hgwwwfzETTKdbzX0hNhP2hZzcxP216w96CWF1K9M6T4UiNjUV-MbXcnoini2hX-fng0Pv9_c0H3bOyNG8UUyqp7QWHkR3kU2PC5r8w-AgnByxiO3O6zjorHSd2u6SzOmpAYGNU-uE2D8fy1ctszp3tzACIG8-eouTrJFpOJRbCZMiLWY8RGHscrlALbWTjhL2AMcYk6_tPqpvuIaBK7WtNZpKuxuyqTqSm9W3xyoAmmgRPg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Sánchez 2205, C1416 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJwZfVVQDJvJURdMP4MT5ODcc",
+    "notes": ""
+  },
+  {
     "id": 1756743655195,
     "name": "Taproom DaLi Brewery",
     "category": "Рестораны",
