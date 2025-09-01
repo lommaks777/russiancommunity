@@ -198,6 +198,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756743522853,
+    "name": "Ballet in B.A.",
+    "category": "Обучение",
+    "subtype": "",
+    "lat": -34.5814341,
+    "lng": -58.4489975,
+    "neighborhood": "Chacarita",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 11 2764-7151",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJnQL85l23vJURWdr5GWmDZLM/photos/ATKogperfZwlhBQ75P66Ez_CSdFuu6SnfTYDupKZa_MkIhR0YNkrG9QFSJA3R8GWgM-oFmK_poyR4h9KWKzQRlOARbAzZqGZq-HpTfOB7d-EZnwH_aVm6eUHB-Tsa1TGV-fGIucErT2HsvCeKoZjVuPENEaH3pE76U33cr1z5ekCax6zL-51Uw2d0IuaOVUQbajlIgXdrV4UKmdZWfLUiAfscHprug3CHmEAwfdBVGPQ7SDPIsVF5eibMPKgIln-JM1AtCKgn5i5vKtsZUFbx5mLrGDllkL20C_Pop3WB0r956VjlVryYWnkecgph0PKuHADDlF_uKBNFKHObYYWHqN7NxIUTLEbQmcgiTXk86wYEo78be-lvm2nNNI86DoayfRHMbtErBh7yoLmTUnxxXxwE_PZwqI4iywdf9yQuBAbtpQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Álvarez Thomas 362, C1430 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJnQL85l23vJURWdr5GWmDZLM",
+    "notes": ""
+  },
+  {
     "id": 1756612843272,
     "name": "WeWork Espacio de Oficinas & Coworking",
     "category": "Работа",
