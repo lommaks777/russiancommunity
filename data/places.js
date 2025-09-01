@@ -360,6 +360,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745392950,
+    "name": "mi oshka (postres rusos: ponchecos)",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.6001725,
+    "lng": -58.43863879999999,
+    "neighborhood": "Villa Crespo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 11 2708-3639",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJn88cUgDLvJUREQ1aQPRxseI/photos/ATKogpfLZ6xKKF9bugX4psNZJPyGFQdcQbKli7w0-oK1hpF8DgDKQX8GhXti6I4sZwRe9aOV_HC4gDwzz1l0K7ZAka3U1hxZ1-CNXDT3tSRs4IUmfpDlkREPrjiy6ibS6IxVadwWIbly8Z_f_whBGo_PWzip_1_7OO1gGFUbpSLvNQJxH8G6dafXN7D48r5vkrJ3Py0u8tR91P5kuEk0eQEUkPsS9kDi3cEwx86toTXMsNeJ5E_Ktj0zOGsXKnXZg6iD-Hs3a2j7Y_zPiydyOHMbFg7f7mkXZRECt0oAsnCzWTPWIsgOnAxDwiZmW5UCooNWH1SDCe3r02333ueWGWaQkdZEPJTjTJTI5Ji-x20cwB9Dw_sXaBHLEmPWYi6twpM504-kBxzd55x5ry7oenzIeDwImyThVPvi2FoTdUoIdpuWR0rjKLtxP_IXIi1BEw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Luis María Drago 482, C1414AIJ C1414AIJ, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJn88cUgDLvJUREQ1aQPRxseI",
+    "notes": ""
+  },
+  {
     "id": 1756745055328,
     "name": "PATO CON BOTAS café de especialidad",
     "category": "Кофе",
