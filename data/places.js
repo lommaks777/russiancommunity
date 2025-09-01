@@ -486,6 +486,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744843508,
+    "name": "Luma Estudio Fotográfico",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.5579029,
+    "lng": -58.4485871,
+    "neighborhood": "Belgrano",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.lumaphoto.me/",
+    "phone": "+54 9 11 6820-4672",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJEb_O7Du1vJURcnZXCG3iGIw/photos/ATKogpdENCkMvZKldyAnZjcA2KAA1kGsaSBUUhNkWfFORHj5dnTftrsIIEA_9Sc27PPO-2O7K786hONSe04fJQZfCen1GIaIsG7ww0MQr9cxepcEMa_sPKl9_2yNhWyOcYJmH274PIy4g-tqNomukmdIUSbp2B9XpFdeABojH7hzWghvYoHuAO8i3ANrygGfoB6oAdiqcLDUNEXbfpuqsOkpuyhW8SLUHRHSmSohUNegsYQ6rOYpe2Cw6aAAPX9IC8I4XgVdUQYthgk9oIS_wylByEn7FCp5WaYv8-rprKMfa7pOD-fZqbiUB70gWPxtCmxLrxSY0hKbF54n10LYhG7au6kRySXl1OxxICiEjBYFD82SLY6jVZ0LzxgRgzjIl0m-nWEKx13Mdyw3ZfRw9SDQu6LBtlu9C0olmqZIXU3HEhkryg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Montañeses 2056, C1428 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJEb_O7Du1vJURcnZXCG3iGIw",
+    "notes": ""
+  },
+  {
     "id": 1756743903043,
     "name": "Mint Lounge",
     "category": "Услуги",
