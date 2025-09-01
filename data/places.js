@@ -36,6 +36,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744747829,
+    "name": "Kidsventors — Club de Tecnologías Creativas",
+    "category": "Дети",
+    "subtype": "",
+    "lat": -34.6133975,
+    "lng": -58.4283552,
+    "neighborhood": "Almagro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://kidsventors.com/",
+    "phone": "+54 11 6014-7949",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJY_kxm_bLvJURpIcgNNyg398/photos/ATKogpc_-LScHD5VyRmbQqLmyrYcx8zVKtfeDnlnb55F5PQuxud2EGcW6tfHFuCsVjSJhFA4akpbO3vDRSiwzJxH26exqm4XogzWU9UUPPiZQqmGi0dA0n5v9RvdfDfEcgmHIX-541SOjini9UkMJw4pKEMiB-ODK8ylyn9gRbyz0fLPToHVVkhST1tbeTnLwumRwZbTfmKm6uJpIFXpdFwn0-NZimeaNwoEoTALs7KEhidVf063dJNEbzZG0_xBZR9aIjywc3riG9fMOG4TmyPIj1clkxrsVriAkq2EOQRAe8xa-w/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Lezica 4406, C1205 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJY_kxm_bLvJURpIcgNNyg398",
+    "notes": ""
+  },
+  {
     "id": 1756743141642,
     "name": "DARKSKY Hookah Lounge",
     "category": "Кальян",
