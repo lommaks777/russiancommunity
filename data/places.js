@@ -324,6 +324,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745535433,
+    "name": "Expresso Oriental",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5869223,
+    "lng": -58.4476807,
+    "neighborhood": "Chacarita",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 9 11 7623-0964",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJL660Nya1vJURnTcyBa-DdDs/photos/ATKogpcoqAILFDK3ZWaVG_KdjqhYwiWJAgT0owm3Np42k4YYVFu0873BilWlRfV3v1oaDnTyoHXnpGPG4fUP-6IytBJppMdY7gf7yC11VwHUEdOv48_99MMeyqgHFFJ-UQbZ8eD_GDxHs5kVHiwFz0DYPekaiFZp3CWQlhR7aCeNF99UFxxFN-oE1rwhVKVGvt41UabPwE-s74fqzxHHKzPfO2gZSy7VMQ3K2WYoW4dftYlXPMXb9Hf_EEjttAj8R-ODFQ2aA8SNMfk74-lT5LlEav0ETfcwAfVANvNaeBeK7EQ7Va6lq793oSnqJZs01mgF_6yTrc-hLVAPN_AwM2R5wBIxGay270hvIo_a0Vv8_M3-E63HvTb7WtdyMrYCke1pUY5-10plV4OCR6Bi7qVbChx42Kzxc2mpBOA83lztfe46aEkP/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Fraga 200, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJL660Nya1vJURnTcyBa-DdDs",
+    "notes": ""
+  },
+  {
     "id": 1756612421427,
     "name": "Gafarov Sauna/Spa/Русские Бани",
     "category": "Кофе",
