@@ -468,6 +468,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756744971610,
+    "name": "Faro",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.5831661,
+    "lng": -58.43934050000001,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://linktr.ee/faro.local",
+    "phone": "+54 9 11 6690-0131",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJhZy5VOO1vJUR2DMFoTD8C5c/photos/ATKogpeSptGaZSkyusGFCg8al2D31CI4xBRIpMwqqyXLCFNEjlH4AYSI02cbJvB3uwsmnZ2xCCJG_7tc7sK4VYgIJyhoCzzzzKYujMYzl2zFmZXCB4lURSaaB3sawFtSSMvyi4EcJJAH4oulKvlZB3B1qVsBmIMdcViW_mltujxKACHaGUm2BIQ-88axRk5fsUej3AkIErQFaNDr2yIHiuoUbcAL30MLCqawLQzzVzrHMrmiDzQCNMQsntIBiN4wen8zP0HE5PVESEew8i_zSPTYZc_t4nGdglsbNZtbo1K-GDNfdQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Gorriti 5801, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJhZy5VOO1vJUR2DMFoTD8C5c",
+    "notes": ""
+  },
+  {
     "id": 1756743655195,
     "name": "Taproom DaLi Brewery",
     "category": "Рестораны",
