@@ -486,6 +486,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745002620,
+    "name": "GYROS-SHAWARMA",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.5946662,
+    "lng": -58.4148862,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://t.me/Gyros_BA",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJHbDdUfHLvJURn70dBRJGn78/photos/ATKogpe-2vZdZh8M8UtnzS1JyzSZdZDdqvQhnJYNNFaXGJS_ASgqF81Jj8CU0LB7d14U_9XpkSK0u6sQmooP7YLu4jYupqDNnejRAtO5yKLes7ANY1nbr74cRUZTmDOw6maTYXhGyk5_Xtnm_jvokEPdJe0QIiZ6MCsQwxvbS8JSa31ciRGpxQJvKI8qOe-Z0l6uuhf_nLcJaQja26tB-oYfin-QQVoYRv6kZ1TY_wm3XI60Av6n6cPMu8jlbi_JRCWiguyUSKdMmcdZrTeA4HNULCkJGG3MsAPt3AlEEJE_76hwTg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Mario Bravo 1298, C1175 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJHbDdUfHLvJURn70dBRJGn78",
+    "notes": ""
+  },
+  {
     "id": 1756743655195,
     "name": "Taproom DaLi Brewery",
     "category": "Рестораны",
