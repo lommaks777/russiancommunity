@@ -18,6 +18,24 @@ window.PLACES = [
     "notes": ""
   },
   {
+    "id": 1756745262271,
+    "name": "Aport",
+    "category": "Бары",
+    "subtype": "",
+    "lat": -34.601057100000006,
+    "lng": -58.4179597,
+    "neighborhood": "Almagro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "http://www.aportdespensa.com/",
+    "phone": "+54 11 6050-2139",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJT7o-dkvLvJURphoTFMdMt04/photos/ATKogpf4k9UIepehjgvN_XXNPan25tuIWWFDvWJ3bxb5R4vFo4jpzS_vTDd7_lg0nBufgxiJAWWKloRwjhuGIZfx-wY41FWyQFemali5XNBoeRV5qhm9_eF9F2VXP-40NA56X3pmyzFNGbSq45q7u-6Dg8WvDOch_GQnkdCTYbJXOoyXBeuiXYqtvF2agT75yjOUtX9VnfYd-hMrgTAUWOb6KrerldVw5xrT2ZTvr4qwRS2THKGSexe0LLnoWqkv5ygUsTzvgNzUWhHJPMt2GoceVax20n_GsDEJJ1uIXIhTlIx8Fw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Bulnes 900, C1176 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJT7o-dkvLvJURphoTFMdMt04",
+    "notes": ""
+  },
+  {
     "id": 1756743109541,
     "name": "Babushka bar",
     "category": "Бары",
