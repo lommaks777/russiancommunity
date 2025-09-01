@@ -1,5 +1,23 @@
 window.PLACES = [
   {
+    "id": 1756745083847,
+    "name": "SHAWA BAR SPB (shawarma ruso)",
+    "category": "Бар",
+    "subtype": "",
+    "lat": -34.6158736,
+    "lng": -58.3917964,
+    "neighborhood": "Balvanera",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/shawabarspb/",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ09cP-KTLvJURiCzUIc1wOOc/photos/ATKogpe930AbkBz0VrWrpIZ9OFUd_H_ZHpMUM0AG2UQpCnGEYnvshNjOoDM9qaRtB6wkvBFuh6yX0mJFQHG9fTY7GLAUbUhqbR5I2oIW-iCTqO55i6VEpD7TEIrbSKB1ge8VCPB_RW-77_wtQAPxhZrw9xyErOtzPLZJuo0DK6ztkwnCtfq4wIjH9IoYoGCu2eT2V2n4y0zKPtNuzYJq0IPaFaLGl2RFQjFlr5WDfjsL3LvCt8fp8YvHMwnxTT6Ql9odyD3lycxS_Q7cvekJaQgwST1hqJ-4b9xIGaSaKympJcqVkw-1x2hD4MMLgosEPxFG5T2K6SRtJwKjhw5qJi_nU7LH9yirN6iPHYezcuID3Gfsiadk4o5vZKmO7qpCiIUHk93iqOzS0oDoMkei7sItua4ojJXdEYJfj8rw52qIdSOpdA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Entre Ríos 615, C1080ABA, C1080 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ09cP-KTLvJURiCzUIc1wOOc",
+    "notes": ""
+  },
+  {
     "id": 1756743109541,
     "name": "Babushka bar",
     "category": "Бары",
