@@ -376,5 +376,23 @@ window.PLACES = [
     "address": "Pje. Virasoro 2367, C1425FDA Cdad. Autónoma de Buenos Aires, Аргентина",
     "place_id": "ChIJ3_FlSI61vJURJ0JHQyus850",
     "notes": ""
+  },
+  {
+    "id": 1756744014778,
+    "name": "Peluquería Letto",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.5655721,
+    "lng": -58.46868849999999,
+    "neighborhood": "Belgrano Residencial",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/aleksandrletto?igsh=MXF6M2NpbGJ3bDB4OQ%3D%3D&utm_source=qr",
+    "phone": "+54 9 11 3352-5787",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJG1t9bKmquyoRoN0frzNN34M/photos/ATKogpdacZG6XhjOtrur9E9GFU4eZqzspJh6B9zJxZPh3NXgs4Mr3TFBwMSezLAre7twhgpa-1q6k1H7_FRRkTdcPvyoICeYOTewB_jZ0CVW8OCUYxbb7v2_ZPkLv6F0dvhNSI8XgqmR7ViMiHHhqSRephESXIT1QeRE-sxMTwOybNqiJ8q_y3UhH6JtCEGemIcWHlP8FmEHsOHdds2ZxHrGkFF2PbPscEbFdu51a3-4kFMqkbZnjljyYHHO03hpqQNdKvBRO_hkzxsqOQFbRCOewSd7fPLLAcLbiEuf3KaPU9Kde-mgwjziPgfVrgZ_sKRCkBDpxftkHHLX6-WRSd3uS65hCngfbuKK369pAdv-EXUt6jQDMJxUVCiiKdh9C41qj7OxnojPRhIZCh2Pivclg7YOr-IiPwqEkpf_kj0E2b4oDaR0/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Superí 2332, C1428 Autónoma de Buenos Aires, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJG1t9bKmquyoRoN0frzNN34M",
+    "notes": ""
   }
 ];
