@@ -1,1 +1,1 @@
-window.EVENTS=[];
+window.EVENTS=[{"id":"Q3Vyc286IEdlc3Rpw7NuIGRl","title":"Curso: Gestión de Residuos de Establecimientos de Salud","description":"Как управлять медицинскими отходами?","url":"https://www.buenosaires.gob.ar/salud/actividades-academicas-para-profesionales-de-la-salud","start":"2025-09-05T11:30:00.000Z","end":"2025-09-05T15:30:00.000Z","venue":{"name":"Ministerio de Salud","address":"Av. Rivadavia 524, Planta Baja – Microcine"},"location":null,"tags":[],"price":{"is_free":false,"text":""}}];
