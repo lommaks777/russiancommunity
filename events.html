@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>События — Русская карта БА</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="%230b57d0"/><text x="32" y="40" font-size="28" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif">R</text></svg>' />
+  <style>
+    :root{color-scheme:dark}
+    html,body{margin:0;height:100%;background:#0f0f0f;color:#eee;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    header{position:fixed;top:0;left:0;right:0;z-index:10;background:#111;border-bottom:1px solid #222;display:flex;gap:12px;align-items:center;padding:10px 16px}
+    header a{color:#9ecbff;text-decoration:none}
+    header a:hover{text-decoration:underline}
+    .content{position:absolute;top:48px;left:0;right:0;bottom:0;display:grid;grid-template-columns:360px 1fr;gap:0}
+    .list{overflow:auto;border-right:1px solid #222}
+    .card{padding:12px 14px;border-bottom:1px solid #222}
+    .title{font-weight:700}
+    .tags{font-size:12px;color:#aaa;margin-top:4px}
+    .row{display:flex;gap:8px;align-items:center;margin-top:6px;flex-wrap:wrap}
+    .pill{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:999px;padding:4px 8px;font-size:12px}
+    .controls{padding:8px;border-bottom:1px solid #222;display:flex;gap:8px;flex-wrap:wrap}
+    select,input{background:#181818;border:1px solid #2a2a2a;color:#eee;border-radius:8px;padding:6px 8px}
+    #map{width:100%;height:100%}
+    .empty{padding:16px;color:#aaa}
+  </style>
+</head>
+<body>
+<header>
+  <a href="./">← На карту</a>
+  <div style="flex:1"></div>
+  <div>События Буэнос-Айреса (автообновление)</div>
+</header>
+
+<div class="content">
+  <div class="list">
+    <div class="controls">
+      <select id="tag">
+        <option value="">Все теги</option>
+        <option>музыка</option><option>концерт</option><option>ярмарка</option>
+        <option>вечеринка</option><option>кино</option><option>театр</option>
+        <option>бесплатно</option><option>детям</option><option>русскоязычное</option>
+      </select>
+      <select id="price">
+        <option value="">Любая цена</option>
+        <option value="free">Только бесплатно</option>
+        <option value="paid">Только платно</option>
+      </select>
+      <input id="q" placeholder="Поиск по названию..." />
+    </div>
+    <div id="items"></div>
+  </div>
+  <div id="map"></div>
+</div>
+
+<script src="data/events.js"></script>
+<script>
+const GOOGLE_KEY = "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI";
+const MAP_ID     = "573d7da16cb24e9ec7c4e07e";
+const BA         = {lat:-34.6037,lng:-58.3816};
+
+const TAG_EMOJI = { музыка:"🎵", концерт:"🎤", ярмарка:"🛍️", вечеринка:"🎉", кино:"🎬", театр:"🎭", бесплатно:"🆓", детям:"👶", русскоязычное:"🇷🇺" };
+
+const $ = id=>document.getElementById(id);
+let map, markers=[], info;
+
+(function loadMaps(){
+  const s=document.createElement('script');
+  s.src=`https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_KEY)}&v=weekly&libraries=marker&language=ru&region=AR&callback=initMap`;
+  s.async=true; s.defer=true; document.head.appendChild(s);
+})();
+
+function emojiFor(ev){
+  if (ev.tags?.length) for (const t of ev.tags){ if (TAG_EMOJI[t]) return TAG_EMOJI[t]; }
+  return "🎟️";
+}
+
+function filtered(){
+  const t=$('tag').value, p=$('price').value, q=$('q').value.trim().toLowerCase();
+  return (window.EVENTS||[]).filter(e=>{
+    const byTag = !t || (e.tags||[]).includes(t);
+    const byPrice = !p || (p==='free' ? e.price?.is_free : !e.price?.is_free);
+    const byQuery = !q || (e.title||'').toLowerCase().includes(q);
+    return byTag && byPrice && byQuery;
+  });
+}
+
+function renderList(){
+  const el=$('items'); el.innerHTML='';
+  const arr=filtered();
+  if (!arr.length){ el.innerHTML=`<div class="empty">Нет событий под фильтр.</div>`; return; }
+  for (const e of arr){
+    const when = new Date(e.start).toLocaleString('ru-RU',{dateStyle:'medium', timeStyle:'short'});
+    const price = e.price?.is_free ? 'Бесплатно' : (e.price?.text || '');
+    const tags = (e.tags||[]).map(t=>`<span class="pill">${TAG_EMOJI[t]||"🏷️"} ${t}</span>`).join(' ');
+    el.insertAdjacentHTML('beforeend', `
+      <div class="card" data-id="${e.id}">
+        <div class="title">${emojiFor(e)} ${e.title||''}</div>
+        <div class="row"><span>${when}</span> <span>•</span> <span>${e.venue?.name||e.venue?.address||''}</span></div>
+        <div class="row"><span>${price}</span></div>
+        <div class="tags">${tags}</div>
+        <div class="row"><a href="${e.url}" target="_blank" rel="noopener">Регистрация / Подробнее</a></div>
+      </div>
+    `);
+  }
+  // клик по карточке — открыть инфо на карте
+  el.querySelectorAll('.card').forEach(c=>{
+    c.onclick=()=>{
+      const ev=(window.EVENTS||[]).find(x=>x.id===c.dataset.id);
+      if (!ev || !ev.location) return;
+      map.panTo(ev.location);
+      google.maps.event.trigger((markers.find(m=>m.__id===ev.id)||{}),'click');
+    };
+  });
+}
+
+async function initMap(){
+  const {Map}=await google.maps.importLibrary('maps');
+  const {AdvancedMarkerElement, PinElement}=await google.maps.importLibrary('marker');
+  map = new Map($('map'), {center:BA, zoom:12, mapId:MAP_ID, clickableIcons:false});
+  info = new google.maps.InfoWindow();
+
+  // markers
+  (window.EVENTS||[]).forEach(e=>{
+    if (!e.location) return;
+    const glyph=document.createElement('div');
+    glyph.textContent = emojiFor(e);
+    glyph.style.fontSize='22px'; glyph.style.lineHeight='22px';
+    const pin = new PinElement({glyph, background:'#111', borderColor:'#444', glyphColor:'#fff', scale:1.1});
+    const m = new AdvancedMarkerElement({map, position:e.location, content:pin.element, title:e.title});
+    m.__id = e.id;
+
+    const when = new Date(e.start).toLocaleString('ru-RU',{dateStyle:'medium', timeStyle:'short'});
+    const price = e.price?.is_free ? 'Бесплатно' : (e.price?.text || '');
+    const tags = (e.tags||[]).join(', ');
+    const html = `
+      <div style="width:300px">
+        <div style="font-weight:700">${emojiFor(e)} ${e.title||''}</div>
+        <div style="color:#9aa; margin:4px 0">${when}${e.venue?.name? ' • '+e.venue.name : ''}</div>
+        ${price? `<div>${price}</div>`:''}
+        ${tags? `<div style="color:#9aa">${tags}</div>`:''}
+        <div style="margin-top:6px"><a href="${e.url}" target="_blank" rel="noopener">Регистрация / Подробнее</a></div>
+      </div>`;
+    m.addListener('click',()=>{ info.setContent(html); info.open({anchor:m,map}); });
+    markers.push(m);
+  });
+
+  // фильтры
+  $('tag').onchange=renderList;
+  $('price').onchange=renderList;
+  $('q').oninput=renderList;
+
+  renderList();
+}
+</script>
+</body>
+</html>
