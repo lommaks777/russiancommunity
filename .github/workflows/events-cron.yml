@@ -1,0 +1,45 @@
+name: Discover & Build BA events
+
+on:
+  schedule:
+    - cron: "0 6 */2 * *"   # каждые 2 дня в 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  events:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: |
+          npm init -y >/dev/null
+          npm i rss-parser node-ical dayjs @googlemaps/google-maps-services-js node-fetch@3 jsdom openai
+
+      - name: Discover sources with GPT + DuckDuckGo
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          node scripts/discover_sources.mjs
+
+      - name: Build events (RSS/ICS + HTML→GPT extraction)
+        env:
+          GOOGLE_KEY: ${{ secrets.GOOGLE_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          node scripts/build_events.mjs
+
+      - name: Commit & push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/event_sources.txt data/events.json data/events.js || true
+          git commit -m "events: auto-refresh" || echo "no changes"
+          git push || true
