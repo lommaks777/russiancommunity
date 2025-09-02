@@ -15,3 +15,9 @@ https://www.malba.org.ar/eventos/
 https://www.malba.org.ar/calendario/
 https://buenosaires.gob.ar/cultura/promocioncultural/programacion-pcb
 https://vivamoscultura.buenosaires.gob.ar
+https://www.palermomio.com.ar/tag/agenda-cultural/feed/
+https://tributosyshows.webnode.com.ar/rss/calendario-de-eventos.xml
+https://www.goethe.de/ins/ar/es/rss/bue/ver.rss
+https://vivamoscultura.buenosaires.gob.ar/ # портал культуры BA
+https://www.malba.org.ar/                   # музей MALBA (афиша)
+https://complejoteatral.gob.ar/             # комплекс театров BA
