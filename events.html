@@ -59,7 +59,6 @@
 const GOOGLE_KEY = "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI";
 const MAP_ID = "573d7da16cb24e9ec7c4e07e";
 const BA = {lat:-34.6037,lng:-58.3816};
-
 const TAG_EMOJI = { музыка:"🎵", концерт:"🎤", ярмарка:"🛍️", вечеринка:"🎉", кино:"🎬", театр:"🎭", бесплатно:"🆓", детям:"👶", русскоязычное:"🇷🇺" };
 const $ = id=>document.getElementById(id);
 
@@ -81,9 +80,13 @@ function whenText(e){
   const t2 = end.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});
   return sameDay ? `${d}, ${t1}${e.end? '–'+t2:''}` : `${d}, ${t1} → ${end.toLocaleString('ru-RU',{day:'2-digit',month:'short'})} ${t2}`;
 }
+function upcomingOnly(arr){
+  const now = Date.now();
+  return arr.filter(e => new Date(e.end || e.start).getTime() >= now); // прошедшие скрываем
+}
 function filtered(){
   const t=$('tag').value, p=$('price').value, q=($('q').value||'').trim().toLowerCase();
-  return (window.EVENTS||[]).filter(e=>{
+  return upcomingOnly(window.EVENTS||[]).filter(e=>{
     const byTag = !t || (e.tags||[]).includes(t);
     const byPrice = !p || (p==='free' ? e.price?.is_free : !e.price?.is_free);
     const byQuery = !q || (e.title||'').toLowerCase().includes(q);
@@ -93,7 +96,7 @@ function filtered(){
 function renderList(){
   const el=$('items'); el.innerHTML='';
   const arr=filtered();
-  if(!arr.length){ el.innerHTML='<div class="empty">Событий пока нет.</div>'; return; }
+  if(!arr.length){ el.innerHTML='<div class="empty">Актуальных событий пока нет.</div>'; return; }
   for(const e of arr){
     const tags=(e.tags||[]).map(t=>`<span class="pill">${TAG_EMOJI[t]||"🏷️"} ${t}</span>`).join(' ');
     const price = e.price?.is_free ? 'Бесплатно' : (e.price?.text || '');
@@ -123,8 +126,8 @@ async function initMap(){
   map=new Map($('map'),{center:BA,zoom:12,mapId:MAP_ID,clickableIcons:false});
   info=new google.maps.InfoWindow();
   markers=[];
-  (window.EVENTS||[]).forEach(e=>{
-    if(!e.location) return; // пин только при координатах
+  upcomingOnly(window.EVENTS||[]).forEach(e=>{
+    if(!e.location) return;
     const glyph=document.createElement('div'); glyph.textContent=emojiFor(e); glyph.style.fontSize='22px'; glyph.style.lineHeight='22px';
     const pin=new PinElement({glyph,background:'#111',borderColor:'#444',glyphColor:'#fff',scale:1.1});
     const m=new AdvancedMarkerElement({map,position:e.location,content:pin.element,title:e.title}); m.__id=e.id;
