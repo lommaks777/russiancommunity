@@ -1,6 +1,5 @@
 // scripts/build_events.mjs
-// Сбор событий: RSS/ICS + HTML→GPT. Улучшены: описание (2 предложения), время, цена,
-// геокод по адресу ИЛИ названию площадки, пины на карте гарантируются чаще.
+// Сбор событий: RSS/ICS + HTML→GPT, перевод описаний на русский, жёсткий фильтр прошедших.
 import fs from 'fs';
 import path from 'path';
 import Parser from 'rss-parser';
@@ -19,9 +18,9 @@ const OUT_JS   = path.join(ROOT, 'data', 'events.js');
 const GOOGLE_KEY = process.env.GOOGLE_KEY || '';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
 const gmaps = GOOGLE_KEY ? new GClient({}) : null;
-const oai = OPENAI_API_KEY ? new OpenAI({ apiKey: OPENAI_API_KEY }) : null;
+const oai   = OPENAI_API_KEY ? new OpenAI({ apiKey: OPENAI_API_KEY }) : null;
 
-const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome Safari events-bot/1.2';
+const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome Safari events-bot/1.3';
 const parser = new Parser({
   customFields: {
     item: [
@@ -34,7 +33,7 @@ const parser = new Parser({
   }
 });
 
-// ========== Хелперы ==========
+// ---------- helpers ----------
 const TAG_RULES = [
   { tag:'музыка',    rx:/\b(music|música|musica|dj|band|live|recital)\b/i },
   { tag:'концерт',   rx:/\b(concert|recital|gig)\b/i },
@@ -44,7 +43,7 @@ const TAG_RULES = [
   { tag:'театр',     rx:/\b(theatre|teatro)\b/i },
   { tag:'детям',     rx:/\b(kids|niñ|infantil|дет(ям|и))\b/i },
   { tag:'русскоязычное', rx:/\b(rus|ruso|русск|russian)\b/i },
-  { tag:'бесплатно', rx:/\b(free|gratis|gratuito|бесплат)\b/i }
+  { tag:'бесплатно', rx:/\b(free|gratis|gratuito|бесплат)/i }
 ];
 function tagify(text){ const tags=[]; for(const r of TAG_RULES) if(r.rx.test(text||'')) tags.push(r.tag); return [...new Set(tags)]; }
 
@@ -58,9 +57,24 @@ function priceFrom(text){
 function firstSentences(str, maxChars=220){
   if (!str) return '';
   const text = str.replace(/\s+/g,' ').trim();
-  const m = text.match(/(.+?[.!?])\s+(.+?[.!?])?/); // 1–2 предложения
+  const m = text.match(/(.+?[.!?])\s+(.+?[.!?])?/);
   const out = (m ? (m[1] + (m[2] ? ' ' + m[2] : '')) : text).slice(0, maxChars);
   return out;
+}
+
+async function translateRu(text){
+  if (!text) return '';
+  if (!oai) return text; // без ключа — оставляем как есть
+  const prompt = `Переведи на русский кратко (1–2 предложения, без воды):\n${text}`;
+  try{
+    const r = await oai.chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [{role:'user', content: prompt}],
+      temperature: 0.2
+    });
+    const t = (r.choices?.[0]?.message?.content || '').trim();
+    return t || text;
+  }catch{ return text; }
 }
 
 async function geocode(query){
@@ -72,7 +86,7 @@ async function geocode(query){
   }catch{ return null; }
 }
 
-// универсальный fetch с фолбэком на r.jina.ai
+// fetch with fallback
 async function fetchText(url, maxBytes = 900_000) {
   const tryOnce = async (u) => {
     const r = await fetch(u, { headers: { 'User-Agent': UA } });
@@ -86,9 +100,8 @@ async function fetchText(url, maxBytes = 900_000) {
   }
 }
 
-// ========== Парсеры ==========
+// ---------- parsers ----------
 async function pullRSS(url){
-  // 1) Нормально через rss-parser
   try{
     const feed = await parser.parseURL(url);
     return (feed.items||[]).map(it => {
@@ -109,7 +122,6 @@ async function pullRSS(url){
       };
     });
   }catch{
-    // 2) Ручной парс RSS как текст
     const xml = await fetchText(url);
     const items = [];
     xml.split(/<item>/i).slice(1).forEach(chunk=>{
@@ -188,7 +200,7 @@ ${text}
   }));
 }
 
-// ========== Main ==========
+// ---------- main ----------
 async function main(){
   const srcs = fs.existsSync(SRC_FILE)
     ? fs.readFileSync(SRC_FILE,'utf8').split('\n').map(s=>s.trim()).filter(Boolean)
@@ -206,33 +218,43 @@ async function main(){
   const now = dayjs();
   const out=[];
   for (const e of events){
+    // нормализуем время
     const start = dayjs(e.start || Date.now());
     const end   = dayjs(e.end || start.add(3,'hour'));
-    if (end.isBefore(now.subtract(6,'hour'))) continue;
 
-    const text = [e.title, e.description, e.venue?.name, e.venue?.address].join(' ');
-    const tags = tagify(text);
-    const price = priceFrom(text);
+    // Жёсткий фильтр прошедших: пропускаем только то, что начинается/идёт в будущем
+    if (end.isBefore(now)) continue;
 
-    // Геокод адреса ИЛИ названия площадки (если адреса нет)
+    // теги/цена
+    const baseText = [e.title, e.description, e.venue?.name, e.venue?.address].join(' ');
+    const tags  = tagify(baseText);
+    const price = priceFrom(baseText);
+
+    // геокод адреса ИЛИ названия площадки
     let loc = null;
     if (e.venue?.address) loc = await geocode(e.venue.address);
     if (!loc && e.venue?.name) loc = await geocode(e.venue.name);
+
+    // перевод описания на русский
+    const ruDesc = await translateRu(firstSentences(e.description||''));
 
     const id = Buffer.from((e.title||'') + (start.toISOString()) + (e.url||''), 'utf8').toString('base64').slice(0,24);
 
     out.push({
       id,
       title: e.title||'',
-      description: firstSentences(e.description||''),
+      description: ruDesc,
       url: e.url||'',
       start: start.toISOString(),
       end: end.toISOString(),
       venue: { name: e.venue?.name||'', address: e.venue?.address||'' },
-      location: loc, // {lat,lng} или null
+      location: loc,
       tags, price
     });
   }
+
+  // на всякий случай отсортируем по дате
+  out.sort((a,b)=> new Date(a.start) - new Date(b.start));
 
   if (!fs.existsSync(path.join(ROOT,'data'))) fs.mkdirSync(path.join(ROOT,'data'),{recursive:true});
   fs.writeFileSync(OUT_JSON, JSON.stringify(out,null,2));
