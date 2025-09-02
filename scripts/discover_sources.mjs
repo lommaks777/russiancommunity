@@ -1,4 +1,4 @@
-// Автопоиск источников событий BA через DuckDuckGo + GPT
+// Автопоиск источников событий Буэнос-Айреса (с "seed" списком) + DuckDuckGo + GPT
 import fs from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
@@ -11,27 +11,59 @@ const OUT_SOURCES = path.join(ROOT, 'data', 'event_sources.txt');
 const openaiKey = process.env.OPENAI_API_KEY || '';
 const oai = openaiKey ? new OpenAI({ apiKey: openaiKey }) : null;
 
-// простейший HTML-поиск через DuckDuckGo (без API-ключа)
-async function ddg(query, n = 10) {
+// --- 1) Надёжные SEED-домены города (agenda/eventos у учреждений) ---
+const SEED_DOMAINS = [
+  'https://www.buenosaires.gob.ar',              // GCBA
+  'https://www.cck.gob.ar',                      // Centro Cultural Kirchner
+  'https://usinadelarte.org',                    // Usina del Arte
+  'https://www.centroculturalrecoleta.org',     // CCR
+  'https://www.teatrocolon.org.ar',             // Teatro Colón
+  'https://complejoteatral.gob.ar',             // Complejo Teatral (San Martín и др.)
+  'https://www.konex.org',                       // Ciudad Cultural Konex
+  'https://www.malba.org.ar',                    // MALBA
+  'https://buenosaires.gob.ar/cultura',         // GCBA Cultura
+  'https://vivamoscultura.buenosaires.gob.ar',  // Портал событий BA
+];
+
+// К типичным путям добавляем и RSS/ICS варианты
+const COMMON_PATHS = [
+  '/agenda','/agenda/','/eventos','/eventos/','/events','/events/','/calendario','/calendario/',
+  '/actividades','/actividades/','/cartelera','/cartelera/','/programacion','/programacion/',
+  '/feed','/rss','/events/rss','/rss.xml','/feed.xml','/calendar.ics','/calendario.ics','/ical','/ics'
+];
+
+// --- 2) DuckDuckGo как дополнение ---
+async function ddg(query, n = 12) {
   const url = `https://duckduckgo.com/html/?q=${encodeURIComponent(query)}&kl=wt-wt&ia=web`;
   const res = await fetch(url, { headers: { 'User-Agent': 'events-bot/1.0' } });
   const html = await res.text();
   const dom = new JSDOM(html);
   const links = [...dom.window.document.querySelectorAll('a.result__a')].map(a => a.href);
-  // fallback: ещё ссылки
-  const more = [...dom.window.document.querySelectorAll('a[href^="http"]')].map(a => a.href);
-  const uniq = [...new Set([...links, ...more])].slice(0, n * 3);
-  return uniq.slice(0, n * 3);
+  const extra = [...dom.window.document.querySelectorAll('a[href^="http"]')].map(a => a.href);
+  return [...new Set([...links, ...extra])].slice(0, n * 3);
 }
 
-function keepDomain(u) {
+function keep(u) {
   try {
     const url = new URL(u);
-    // фильтруем бесполезное
     const bad = ['facebook.com','instagram.com','twitter.com','x.com','t.me','wa.me','youtube.com','linkedin.com','tripadvisor','booking'];
     if (bad.some(b => url.hostname.includes(b))) return false;
-    return true;
+    // только аргентина/локальные сайты
+    const okHost = /\.ar$/.test(url.hostname) || /buenosaires|caba|gob\.ar|konex|malba|cck|recoleta|usinadelarte|colon|complejoteatral/i.test(url.hostname);
+    return okHost;
   } catch { return false; }
+}
+
+async function probeVariants(base) {
+  const out = new Set();
+  for (const p of COMMON_PATHS) {
+    try {
+      const u = new URL(p, base).toString();
+      const r = await fetch(u, { method: 'HEAD' }).catch(()=>null);
+      if (r && (r.ok || r.status === 405)) out.add(u); // HEAD может быть запрещён → 405 ок
+    } catch {}
+  }
+  return [...out];
 }
 
 async function findFeedsOnPage(u) {
@@ -42,36 +74,37 @@ async function findFeedsOnPage(u) {
     const doc = dom.window.document;
     const found = new Set();
 
-    // <link rel="alternate" type="application/rss+xml" ...>
+    // RSS/Atom
     doc.querySelectorAll('link[rel="alternate"]').forEach(l => {
       const type = (l.getAttribute('type') || '').toLowerCase();
       const href = l.getAttribute('href') || '';
       if ((type.includes('rss') || type.includes('atom')) && href) found.add(new URL(href, u).toString());
     });
 
-    // возможные .ics
+    // ICS
     [...doc.querySelectorAll('a[href*=".ics"]')].forEach(a => {
-      const href = a.getAttribute('href');
-      if (href) found.add(new URL(href, u).toString());
+      const href = a.getAttribute('href'); if (href) found.add(new URL(href, u).toString());
     });
 
-    // эвристика: /events, /agenda, /calendar
-    const heur = [...doc.querySelectorAll('a[href]')]
+    // ссылки на agenda/eventos
+    [...doc.querySelectorAll('a[href]')]
       .map(a => a.getAttribute('href'))
-      .filter(h => h && /agenda|events|eventos|calendar|calendario/i.test(h))
-      .map(h => new URL(h, u).toString());
-    return [...new Set([...found, ...heur])];
+      .filter(h => h && /agenda|events|eventos|calendar|calendario|actividades|programacion|cartelera/i.test(h))
+      .map(h => new URL(h, u).toString())
+      .forEach(x => found.add(x));
+
+    return [...found];
   } catch {
     return [];
   }
 }
 
 async function rankWithGPT(candidates) {
-  if (!oai) return candidates.slice(0, 20);
+  if (!oai) return candidates.slice(0, 40);
   const prompt = `
-Ты помощник по OSINT. Дано: список URL, связанных с Буэнос-Айресом (AR).
-Цель: выбрать до 20 лучших источников регулярных СОБЫТИЙ (agenda, calendar, events, afisha) на испанском/английском/русском.
-Отбрасывай соцсети и агрегаторы без календарей.
+Отфильтруй и оставь до 40 лучших URL, где регулярно публикуются СОБЫТИЯ Буэнос-Айреса (AR):
+agenda / eventos / calendar / programación / cartelera / actividades или прямые RSS/ICS.
+Исключи соцсети и нерелевантные.
 Верни ТОЛЬКО список URL, по одному в строке.
 ${candidates.map(u => '- ' + u).join('\n')}
   `.trim();
@@ -79,53 +112,65 @@ ${candidates.map(u => '- ' + u).join('\n')}
   const resp = await oai.chat.completions.create({
     model: 'gpt-4o-mini',
     messages: [{ role: 'user', content: prompt }],
-    temperature: 0.2,
+    temperature: 0.1,
   });
 
   const text = resp.choices[0]?.message?.content || '';
   const urls = text.split(/\s+/).filter(s => /^https?:\/\//i.test(s));
-  return [...new Set(urls)].slice(0, 20);
+  return [...new Set(urls)].slice(0, 40);
 }
 
 async function main() {
+  const baseSet = new Set();
+
+  // 1) жёсткие seed-домены + их типовые пути
+  for (const d of SEED_DOMAINS) {
+    baseSet.add(d);
+    const variants = await probeVariants(d);
+    variants.forEach(v => baseSet.add(v));
+  }
+
+  // 2) DuckDuckGo
   const queries = [
-    'Buenos Aires agenda eventos sitio oficial',
-    'CABA agenda cultural eventos',
+    'site:buenosaires.gob.ar agenda eventos',
+    'Buenos Aires agenda cultural',
     'Buenos Aires eventos calendario',
-    'Buenos Aires feria mercado agenda',
     'Buenos Aires conciertos agenda',
     'Buenos Aires teatro agenda',
-    'agenda cultural Palermo Buenos Aires',
+    'Buenos Aires feria mercado agenda',
+    'agenda Palermo CABA eventos',
   ];
-
-  const rawLinks = new Set();
   for (const q of queries) {
-    const list = await ddg(q, 10);
-    list.filter(keepDomain).forEach(u => rawLinks.add(u));
+    const list = (await ddg(q, 12)).filter(keep);
+    list.forEach(u => baseSet.add(u));
+    // также пробуем варианты путей
+    for (const u of list.slice(0, 10)) {
+      const variants = await probeVariants(u);
+      variants.forEach(v => baseSet.add(v));
+    }
   }
 
-  // находим фиды/календарные страницы
-  const feedOrAgenda = new Set();
-  for (const u of rawLinks) {
+  // 3) С самих страниц ищем RSS/ICS/внутренние agenda
+  const feedish = new Set();
+  for (const u of [...baseSet].slice(0, 60)) { // не уходить слишком глубоко
     const sub = await findFeedsOnPage(u);
-    sub.filter(keepDomain).forEach(x => feedOrAgenda.add(x));
-    // сам u тоже пригодится (если agenda)
-    feedOrAgenda.add(u);
+    sub.filter(keep).forEach(x => feedish.add(x));
+    feedish.add(u);
   }
 
-  // даём GPT отранжировать/почистить
-  const ranked = await rankWithGPT([...feedOrAgenda]);
+  // 4) GPT ранжирование (или без GPT — срез)
+  const ranked = await rankWithGPT([...feedish]);
 
-  // сохраняем
-  const text = ranked.join('\n') + '\n';
+  // 5) Гарантированный fallback: если пусто, берём хотя бы seed-варианты
+  const finalList = ranked.length ? ranked : [...baseSet];
+
+  // Сохраняем
   const dir = path.join(ROOT, 'data');
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-
+  const text = finalList.join('\n') + '\n';
   fs.writeFileSync(OUT_SOURCES, text);
-  console.log('Sources saved:', OUT_SOURCES, '\n', text);
+
+  console.log(`Saved ${finalList.length} source URL(s) to ${OUT_SOURCES}`);
 }
 
-main().catch(e => {
-  console.error(e);
-  process.exit(1);
-});
+main().catch(e => { console.error(e); process.exit(1); });
