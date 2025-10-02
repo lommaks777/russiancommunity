@@ -1,0 +1,17 @@
+{
+  "name": "russian-community-tests",
+  "version": "1.0.0",
+  "description": "Test suite for Russian Community Map project",
+  "main": "test_suite.js",
+  "scripts": {
+    "test": "node test_suite.js",
+    "test:verbose": "node test_suite.js --verbose"
+  },
+  "keywords": ["testing", "javascript", "maps", "community"],
+  "author": "Test Suite",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
+

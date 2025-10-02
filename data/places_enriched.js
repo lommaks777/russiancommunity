@@ -1,0 +1,2550 @@
+window.PLACES = [
+  {
+    "id": 1756745083847,
+    "name": "SHAWA BAR SPB (shawarma ruso)",
+    "category": "Бар",
+    "subtype": "",
+    "lat": -34.6158736,
+    "lng": -58.3917964,
+    "neighborhood": "Balvanera",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/shawabarspb/",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ09cP-KTLvJURiCzUIc1wOOc/photos/ATKogpe930AbkBz0VrWrpIZ9OFUd_H_ZHpMUM0AG2UQpCnGEYnvshNjOoDM9qaRtB6wkvBFuh6yX0mJFQHG9fTY7GLAUbUhqbR5I2oIW-iCTqO55i6VEpD7TEIrbSKB1ge8VCPB_RW-77_wtQAPxhZrw9xyErOtzPLZJuo0DK6ztkwnCtfq4wIjH9IoYoGCu2eT2V2n4y0zKPtNuzYJq0IPaFaLGl2RFQjFlr5WDfjsL3LvCt8fp8YvHMwnxTT6Ql9odyD3lycxS_Q7cvekJaQgwST1hqJ-4b9xIGaSaKympJcqVkw-1x2hD4MMLgosEPxFG5T2K6SRtJwKjhw5qJi_nU7LH9yirN6iPHYezcuID3Gfsiadk4o5vZKmO7qpCiIUHk93iqOzS0oDoMkei7sItua4ojJXdEYJfj8rw52qIdSOpdA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Entre Ríos 615, C1080ABA, C1080 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ09cP-KTLvJURiCzUIc1wOOc",
+    "notes": "",
+    "rating": 4.1,
+    "user_ratings_total": 70,
+    "stars": "★★★★☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Бар",
+    "types": [
+      "бар"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJ09cP-KTLvJURiCzUIc1wOOc/photos/ATKogpe930AbkBz0VrWrpIZ9OFUd_H_ZHpMUM0AG2UQpCnGEYnvshNjOoDM9qaRtB6wkvBFuh6yX0mJFQHG9fTY7GLAUbUhqbR5I2oIW-iCTqO55i6VEpD7TEIrbSKB1ge8VCPB_RW-77_wtQAPxhZrw9xyErOtzPLZJuo0DK6ztkwnCtfq4wIjH9IoYoGCu2eT2V2n4y0zKPtNuzYJq0IPaFaLGl2RFQjFlr5WDfjsL3LvCt8fp8YvHMwnxTT6Ql9odyD3lycxS_Q7cvekJaQgwST1hqJ-4b9xIGaSaKympJcqVkw-1x2hD4MMLgosEPxFG5T2K6SRtJwKjhw5qJi_nU7LH9yirN6iPHYezcuID3Gfsiadk4o5vZKmO7qpCiIUHk93iqOzS0oDoMkei7sItua4ojJXdEYJfj8rw52qIdSOpdA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.277Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745262271,
+    "name": "Aport",
+    "category": "Бары",
+    "subtype": "",
+    "lat": -34.601057100000006,
+    "lng": -58.4179597,
+    "neighborhood": "Almagro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "http://www.aportdespensa.com/",
+    "phone": "+54 11 6050-2139",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJT7o-dkvLvJURphoTFMdMt04/photos/ATKogpf4k9UIepehjgvN_XXNPan25tuIWWFDvWJ3bxb5R4vFo4jpzS_vTDd7_lg0nBufgxiJAWWKloRwjhuGIZfx-wY41FWyQFemali5XNBoeRV5qhm9_eF9F2VXP-40NA56X3pmyzFNGbSq45q7u-6Dg8WvDOch_GQnkdCTYbJXOoyXBeuiXYqtvF2agT75yjOUtX9VnfYd-hMrgTAUWOb6KrerldVw5xrT2ZTvr4qwRS2THKGSexe0LLnoWqkv5ygUsTzvgNzUWhHJPMt2GoceVax20n_GsDEJJ1uIXIhTlIx8Fw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Bulnes 900, C1176 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJT7o-dkvLvJURphoTFMdMt04",
+    "notes": "",
+    "rating": 3.1,
+    "user_ratings_total": 177,
+    "stars": "★★★☆☆",
+    "description": "Трендовый бар с креативными коктейлями и дружелюбной атмосферой.",
+    "short_description": "Современный бар с широким выбором коктейлей и живой музыкой....",
+    "place_type": "Бары",
+    "types": [
+      "бары"
+    ],
+    "price_level": 2,
+    "price_text": "Умеренно",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJT7o-dkvLvJURphoTFMdMt04/photos/ATKogpf4k9UIepehjgvN_XXNPan25tuIWWFDvWJ3bxb5R4vFo4jpzS_vTDd7_lg0nBufgxiJAWWKloRwjhuGIZfx-wY41FWyQFemali5XNBoeRV5qhm9_eF9F2VXP-40NA56X3pmyzFNGbSq45q7u-6Dg8WvDOch_GQnkdCTYbJXOoyXBeuiXYqtvF2agT75yjOUtX9VnfYd-hMrgTAUWOb6KrerldVw5xrT2ZTvr4qwRS2THKGSexe0LLnoWqkv5ygUsTzvgNzUWhHJPMt2GoceVax20n_GsDEJJ1uIXIhTlIx8Fw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743109541,
+    "name": "Babushka bar",
+    "category": "Бары",
+    "subtype": "",
+    "lat": -34.5842357,
+    "lng": -58.4138804,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 9 11 3771-8558",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJK_CiRo21vJURNx6MCSbCFlo/photos/ATKogpej0TJ8n5SHE0EOHqgb168rFCcd0n-CKBSWPJwuzHQvhRsJa0L9ycoYQqKjVbgLpL5B9LinU_3EioHuHA4dxdnEKKO5VQxBVyl-PIKuLys8OKeWjGZMDO7IB48p6_R4ei4-7fw2-ZD4xO463G8Mubx2gGK9FaWmhVXaiSAKSvBG1j8Z4zZxghSlnzIbumvjL_NkpnTX7ffB8U-L_rPdY78XmWBCIPIWmMPEIBwjYgnr7etgp7j09InEhbcLM5R8tZ4qirbHhdZiJpmI2elFXCa6dg3s4WwSPfpUBa3NlHgGW0LWXEUPzwg6qKhcebmt52inU6iyNYV_S5iH3MpH4U8SxkQ3TsS6iu46QpOiUzCMrGVKC19Lyami2yNwnDhkt_MH6XT9vzJzVHD-Hom0qUPWKXFqGDVRcOJk-5ELrBs5OQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Beruti 3759, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJK_CiRo21vJURNx6MCSbCFlo",
+    "notes": "",
+    "rating": 3.4,
+    "user_ratings_total": 111,
+    "stars": "★★★☆☆",
+    "description": "Современный бар с широким выбором коктейлей и живой музыкой.",
+    "short_description": "Современный бар с широким выбором коктейлей и живой музыкой....",
+    "place_type": "Бары",
+    "types": [
+      "бары"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJK_CiRo21vJURNx6MCSbCFlo/photos/ATKogpej0TJ8n5SHE0EOHqgb168rFCcd0n-CKBSWPJwuzHQvhRsJa0L9ycoYQqKjVbgLpL5B9LinU_3EioHuHA4dxdnEKKO5VQxBVyl-PIKuLys8OKeWjGZMDO7IB48p6_R4ei4-7fw2-ZD4xO463G8Mubx2gGK9FaWmhVXaiSAKSvBG1j8Z4zZxghSlnzIbumvjL_NkpnTX7ffB8U-L_rPdY78XmWBCIPIWmMPEIBwjYgnr7etgp7j09InEhbcLM5R8tZ4qirbHhdZiJpmI2elFXCa6dg3s4WwSPfpUBa3NlHgGW0LWXEUPzwg6qKhcebmt52inU6iyNYV_S5iH3MpH4U8SxkQ3TsS6iu46QpOiUzCMrGVKC19Lyami2yNwnDhkt_MH6XT9vzJzVHD-Hom0qUPWKXFqGDVRcOJk-5ELrBs5OQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745313915,
+    "name": "BUCAREST Gastro Bar",
+    "category": "Бары",
+    "subtype": "",
+    "lat": -34.597514,
+    "lng": -58.4347148,
+    "neighborhood": "Villa Crespo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://instagram.com/bucarest_bar?utm_source=qr&igshid=NGExMmI2YTkyZg==",
+    "phone": "+54 11 3278-8925",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJCyjZP8TLvJURuvGndAs0y-g/photos/ATKogpd0jx8pzjyzUY1gMn3bbP1mgOOyLEfmxc7kVd-f8r1x0AkcmJx6Dlz_PExCWQDoLjTn7as85bBKJ_dCQMMkgy5eoiep6feWMgHPjsYFf2OQ6PxS058kd8vzdTsiNcaj0YelGUwcOtdbTi1UGseUyBDwzj95FYPZvNvenqUZzZ2If-n-DFmU_wVjAZmdST2llsVLt8ZsHODr1bu3XInP0H6BDS-ikooH7aOq4HZTV0NoNzGBkwrjnNiHgYkFlRy1P-oV33iLxIEMTpOGC20homntEuYfplHwNS5kpPpIOxh_bg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Raúl Scalabrini Ortiz 659, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJCyjZP8TLvJURuvGndAs0y-g",
+    "notes": "",
+    "rating": 4,
+    "user_ratings_total": 57,
+    "stars": "★★★☆☆",
+    "description": "Уютный бар в стиле ретро с уникальной атмосферой и отличными напитками.",
+    "short_description": "Современный бар с широким выбором коктейлей и живой музыкой....",
+    "place_type": "Бары",
+    "types": [
+      "бары"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJCyjZP8TLvJURuvGndAs0y-g/photos/ATKogpd0jx8pzjyzUY1gMn3bbP1mgOOyLEfmxc7kVd-f8r1x0AkcmJx6Dlz_PExCWQDoLjTn7as85bBKJ_dCQMMkgy5eoiep6feWMgHPjsYFf2OQ6PxS058kd8vzdTsiNcaj0YelGUwcOtdbTi1UGseUyBDwzj95FYPZvNvenqUZzZ2If-n-DFmU_wVjAZmdST2llsVLt8ZsHODr1bu3XInP0H6BDS-ikooH7aOq4HZTV0NoNzGBkwrjnNiHgYkFlRy1P-oV33iLxIEMTpOGC20homntEuYfplHwNS5kpPpIOxh_bg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744899415,
+    "name": "Malas Hermanas, Bodegón ruso de cocina de autor",
+    "category": "Бары",
+    "subtype": "",
+    "lat": -34.609426899999995,
+    "lng": -58.377443,
+    "neighborhood": "Monserrat",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 11 2616-7774",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJsTzuY7-xvJUR916fTZann6k/photos/ATKogpfAIYU6PnrPChb4TsKFTBG_3VoK9roND8ZZtuKjyNm5tEktYbPbrjdr06RudqwCH1lbS0cHXywIMQ7Y40mQ5pWMjbKpJSQM2R3Zmx4t-fAVkgW7bYMAVYODWGaFTSzffYyvoEGv1quv8GXtgbZwQXQ5Ls655Upa2eVrfvayWzSKDDDvt87kNXZzfJKgE3wwJo0GK_d0zl6hw2ubULXzGllSwvjviVi4tNSO6yAoFZDcJEY_RcDHI9fOUZb0j0sdNc0k28lxcKsjKfTLkRecRKgAUYFCwYssLIDEdYJ4Yh3O1Q/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Hipólito Yrigoyen 782, C1086 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJsTzuY7-xvJUR916fTZann6k",
+    "notes": "",
+    "rating": 3.4,
+    "user_ratings_total": 48,
+    "stars": "★★★☆☆",
+    "description": "Современный бар с широким выбором коктейлей и живой музыкой.",
+    "short_description": "Трендовый бар с креативными коктейлями и дружелюбной атмосферой....",
+    "place_type": "Бары",
+    "types": [
+      "бары"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJsTzuY7-xvJUR916fTZann6k/photos/ATKogpfAIYU6PnrPChb4TsKFTBG_3VoK9roND8ZZtuKjyNm5tEktYbPbrjdr06RudqwCH1lbS0cHXywIMQ7Y40mQ5pWMjbKpJSQM2R3Zmx4t-fAVkgW7bYMAVYODWGaFTSzffYyvoEGv1quv8GXtgbZwQXQ5Ls655Upa2eVrfvayWzSKDDDvt87kNXZzfJKgE3wwJo0GK_d0zl6hw2ubULXzGllSwvjviVi4tNSO6yAoFZDcJEY_RcDHI9fOUZb0j0sdNc0k28lxcKsjKfTLkRecRKgAUYFCwYssLIDEdYJ4Yh3O1Q/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744048423,
+    "name": "TEKŌ Beer Culture Kiosk & Bar",
+    "category": "Бары",
+    "subtype": "",
+    "lat": -34.6106249,
+    "lng": -58.397595300000006,
+    "neighborhood": "Balvanera",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/teko_ba?igsh=MW13cTdvcTNxYzh4cA==",
+    "phone": "+54 11 6205-0252",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJGZoZ9ejKvJURRNtlaZphZ9Y/photos/ATKogpdQAQGosE-xC3t_FcCDJCNlZY-rWtXFHD2nYGFs1bvvqHtvaDzhWy59UL5GFdzrsnMTCuF5HUCa80MfK-sB68C8aUz_UZs0YbRAZ5myVI-p1cvPE-OQx9wOWk2EXH_qGWMW_E7ecKPFz0QDDWVaStTb0LIk5mIQxY2yP_l5wD-oJJt0CxqQBlIWwL7ObqZ0bd-EDqL198GCv_mACUZjEYWFsopJFeCdnTiejfKxqEwLDdY9DN-KOL9NXk7Z4w5Dv6L7Twh7PBo7fhiBdIb5n9hfA2MoPQwykN6ew6W3bwiQry4xy_HrpDxVnxm_EukXvFpuupWPTG02XKMA1Zm3AYduIo1CDECdmNEg86jHIhLx-pe251uo29QaV9SLs5s6TNE38PlpMvZPdo0TxoCnrSuNT-KoA_4kBB6_ylgG6mxAW-df/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Hipólito Yrigoyen 2201, C1089 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJGZoZ9ejKvJURRNtlaZphZ9Y",
+    "notes": "",
+    "rating": 4.8,
+    "user_ratings_total": 204,
+    "stars": "★★★★☆",
+    "description": "Современный бар с широким выбором коктейлей и живой музыкой.",
+    "short_description": "Уютный бар в стиле ретро с уникальной атмосферой и отличными напитками....",
+    "place_type": "Бары",
+    "types": [
+      "бары"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJGZoZ9ejKvJURRNtlaZphZ9Y/photos/ATKogpdQAQGosE-xC3t_FcCDJCNlZY-rWtXFHD2nYGFs1bvvqHtvaDzhWy59UL5GFdzrsnMTCuF5HUCa80MfK-sB68C8aUz_UZs0YbRAZ5myVI-p1cvPE-OQx9wOWk2EXH_qGWMW_E7ecKPFz0QDDWVaStTb0LIk5mIQxY2yP_l5wD-oJJt0CxqQBlIWwL7ObqZ0bd-EDqL198GCv_mACUZjEYWFsopJFeCdnTiejfKxqEwLDdY9DN-KOL9NXk7Z4w5Dv6L7Twh7PBo7fhiBdIb5n9hfA2MoPQwykN6ew6W3bwiQry4xy_HrpDxVnxm_EukXvFpuupWPTG02XKMA1Zm3AYduIo1CDECdmNEg86jHIhLx-pe251uo29QaV9SLs5s6TNE38PlpMvZPdo0TxoCnrSuNT-KoA_4kBB6_ylgG6mxAW-df/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744747829,
+    "name": "Kidsventors — Club de Tecnologías Creativas",
+    "category": "Дети",
+    "subtype": "",
+    "lat": -34.6133975,
+    "lng": -58.4283552,
+    "neighborhood": "Almagro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://kidsventors.com/",
+    "phone": "+54 11 6014-7949",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJY_kxm_bLvJURpIcgNNyg398/photos/ATKogpc_-LScHD5VyRmbQqLmyrYcx8zVKtfeDnlnb55F5PQuxud2EGcW6tfHFuCsVjSJhFA4akpbO3vDRSiwzJxH26exqm4XogzWU9UUPPiZQqmGi0dA0n5v9RvdfDfEcgmHIX-541SOjini9UkMJw4pKEMiB-ODK8ylyn9gRbyz0fLPToHVVkhST1tbeTnLwumRwZbTfmKm6uJpIFXpdFwn0-NZimeaNwoEoTALs7KEhidVf063dJNEbzZG0_xBZR9aIjywc3riG9fMOG4TmyPIj1clkxrsVriAkq2EOQRAe8xa-w/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Lezica 4406, C1205 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJY_kxm_bLvJURpIcgNNyg398",
+    "notes": "",
+    "rating": 3.9,
+    "user_ratings_total": 177,
+    "stars": "★★★☆☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Дети",
+    "types": [
+      "дети"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJY_kxm_bLvJURpIcgNNyg398/photos/ATKogpc_-LScHD5VyRmbQqLmyrYcx8zVKtfeDnlnb55F5PQuxud2EGcW6tfHFuCsVjSJhFA4akpbO3vDRSiwzJxH26exqm4XogzWU9UUPPiZQqmGi0dA0n5v9RvdfDfEcgmHIX-541SOjini9UkMJw4pKEMiB-ODK8ylyn9gRbyz0fLPToHVVkhST1tbeTnLwumRwZbTfmKm6uJpIFXpdFwn0-NZimeaNwoEoTALs7KEhidVf063dJNEbzZG0_xBZR9aIjywc3riG9fMOG4TmyPIj1clkxrsVriAkq2EOQRAe8xa-w/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745232974,
+    "name": "VR Arena",
+    "category": "Дети",
+    "subtype": "",
+    "lat": -34.604407699999996,
+    "lng": -58.4112055,
+    "neighborhood": "Balvanera",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://vrarena.ar/",
+    "phone": "+54 9 11 7104-0040",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJrQcQxS_LvJUR5oqdTmp7bTQ/photos/ATKogpdWXl8yKVYh5G9BO3dsQttQjVAjo3cw3WH_nQ7EXN1JIzb7VGmPEvF_-mTiyrvSMu64ONWXpSsOYUqjUeC8hmDgyBHXHR7kYRs4cjZZHMWAxUT-2Tww1pbYe8e17Rfakpk6C6SZ-8JlxYK7CwyptU2WHRg3J5IY4M_UfdQTK95ropx6YJ77cHQUXOy813DPaR0O6wxUcHbZWWIzWD2ZksYkziP78eVuPIgGoHLhwpYSsyJmhDLS1rb9vM9Fhg6gWE4NGJv2k-_Vaf0gwE1XSydm85OTJJTwtpl3is47_8c/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Corrientes 3266, C1193AAR Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJrQcQxS_LvJUR5oqdTmp7bTQ",
+    "notes": "",
+    "rating": 3.5,
+    "user_ratings_total": 168,
+    "stars": "★★★☆☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Дети",
+    "types": [
+      "дети"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJrQcQxS_LvJUR5oqdTmp7bTQ/photos/ATKogpdWXl8yKVYh5G9BO3dsQttQjVAjo3cw3WH_nQ7EXN1JIzb7VGmPEvF_-mTiyrvSMu64ONWXpSsOYUqjUeC8hmDgyBHXHR7kYRs4cjZZHMWAxUT-2Tww1pbYe8e17Rfakpk6C6SZ-8JlxYK7CwyptU2WHRg3J5IY4M_UfdQTK95ropx6YJ77cHQUXOy813DPaR0O6wxUcHbZWWIzWD2ZksYkziP78eVuPIgGoHLhwpYSsyJmhDLS1rb9vM9Fhg6gWE4NGJv2k-_Vaf0gwE1XSydm85OTJJTwtpl3is47_8c/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743141642,
+    "name": "DARKSKY Hookah Lounge",
+    "category": "Кальян",
+    "subtype": "",
+    "lat": -34.5870892,
+    "lng": -58.432415299999995,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/darkskyhookah?igsh=ZDU3aHB4YXh4cXN5&utm_source=qr",
+    "phone": "+54 11 6759-2064",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJTVOlBI61vJURuIrmOmcBAk8/photos/ATKogpdF6jqfn9lYDLUpqe_EUfmqH2zynM9WWuKXWpqKkUYJHfuUgbMNZXFTDqtnTUk1AwJsRxh72jtFO1vSnzSzWEljGFHc1gY_mv3cFDkxkDtowHBzfC3uxSl0je6xUBUMmU72GK8ADKWbI8fYSlbdE_DwOkuWrd9Yigq1PmOpn77wq-S4I9aUcQ08-2GtPjlU60rtM1CA3_ayu_pLFlrxzcF--BLz6w1pXKYCsR4lOh-p9iVUF88LssubmPzrpPexxGTHy5cBHZLfG6Ln45KdvtzT73IspI0lOLcAkAKndQZ-yg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Honduras 5255, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJTVOlBI61vJURuIrmOmcBAk8",
+    "notes": "",
+    "rating": 3.8,
+    "user_ratings_total": 63,
+    "stars": "★★★☆☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Кальян",
+    "types": [
+      "кальян"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJTVOlBI61vJURuIrmOmcBAk8/photos/ATKogpdF6jqfn9lYDLUpqe_EUfmqH2zynM9WWuKXWpqKkUYJHfuUgbMNZXFTDqtnTUk1AwJsRxh72jtFO1vSnzSzWEljGFHc1gY_mv3cFDkxkDtowHBzfC3uxSl0je6xUBUMmU72GK8ADKWbI8fYSlbdE_DwOkuWrd9Yigq1PmOpn77wq-S4I9aUcQ08-2GtPjlU60rtM1CA3_ayu_pLFlrxzcF--BLz6w1pXKYCsR4lOh-p9iVUF88LssubmPzrpPexxGTHy5cBHZLfG6Ln45KdvtzT73IspI0lOLcAkAKndQZ-yg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743953501,
+    "name": "GOLDEN HOOKAH Lounge bar",
+    "category": "Кальян",
+    "subtype": "",
+    "lat": -34.588517,
+    "lng": -58.4179834,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ__bpWgDLvJURH3LVrsvPGOw/photos/ATKogpcv1Et9kz49FvaBtJTWfHT5L33UvAJ9pSQK19aTQ2uV8E34gH91nYpIjBL2nrmm7MWynPhQ-5dTOp01w-eIDkICRxY-gK1N_m5hzJM1DzgkNxb3qkOWK1lK7UBRYM0JyK1DM2DaHbJ8AD3O3kc1U8znh0vgyVpIEDCp0YUPWEhuez-DDb-qqvBo4ZW8bURhhQwfC1-OhT73WmngddrwCsUhhldnRw7ZGSsh0-TXWxNN1CvSMVKgiuSdrYwe47kmLOT758o64TbvMmvmbqTiiJRdzCqjlWaeroY36dES2l3SDR8lGkQahtWjww-Ma-mohABq9FPMw2ELgdRe2j1WORkoJ1JYVC580piwLMF3GzOHDdXOVXFGgBKUjOgexSUVDR-fCAXqLvj19RCmTlgGnaEsTcz-_4tndo1tyJcy1wvRaA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Gral. Lucio Norberto Mansilla 3905, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ__bpWgDLvJURH3LVrsvPGOw",
+    "notes": "",
+    "rating": 4.9,
+    "user_ratings_total": 117,
+    "stars": "★★★★☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Кальян",
+    "types": [
+      "кальян"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJ__bpWgDLvJURH3LVrsvPGOw/photos/ATKogpcv1Et9kz49FvaBtJTWfHT5L33UvAJ9pSQK19aTQ2uV8E34gH91nYpIjBL2nrmm7MWynPhQ-5dTOp01w-eIDkICRxY-gK1N_m5hzJM1DzgkNxb3qkOWK1lK7UBRYM0JyK1DM2DaHbJ8AD3O3kc1U8znh0vgyVpIEDCp0YUPWEhuez-DDb-qqvBo4ZW8bURhhQwfC1-OhT73WmngddrwCsUhhldnRw7ZGSsh0-TXWxNN1CvSMVKgiuSdrYwe47kmLOT758o64TbvMmvmbqTiiJRdzCqjlWaeroY36dES2l3SDR8lGkQahtWjww-Ma-mohABq9FPMw2ELgdRe2j1WORkoJ1JYVC580piwLMF3GzOHDdXOVXFGgBKUjOgexSUVDR-fCAXqLvj19RCmTlgGnaEsTcz-_4tndo1tyJcy1wvRaA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745170259,
+    "name": "#BlinBlin",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5974983,
+    "lng": -58.3730048,
+    "neighborhood": "Retiro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 11 5316-0196",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJk3aXDcLLvJURyw7LtSymg30/photos/ATKogpfmNhEY1-K1Mj5FfKsLU-BgYJHN1Omc62HyWHm76g4T4ShLFgBfXQy4l6To64czyOq1HciWdmCCbHDZSH3CzxZnsPnUolgxBYK6Ca4lY0323zsUQbF2AydmPy3erp9xcanGFGhxJvq77DaEUHwhYsQe5ZTuOL52MqwyYNrND6xezE69rErmNAfgJoVzWh7TN52T5GIe5bImzFWchxUCLTME34ycH9cLnGf2NApfd6l1BEEaF-ljNd_seW4M9QeVxRgcAxa-OSBxobaqycK-jqWzKSVYaDEJY394WrJ3LGCElA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Reconquista 886 P. PB. D.0002, C1003 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJk3aXDcLLvJURyw7LtSymg30",
+    "notes": "",
+    "rating": 4.5,
+    "user_ratings_total": 65,
+    "stars": "★★★★☆",
+    "description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой.",
+    "short_description": "Современная кофейня с уютной атмосферой и профессиональными бариста....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJk3aXDcLLvJURyw7LtSymg30/photos/ATKogpfmNhEY1-K1Mj5FfKsLU-BgYJHN1Omc62HyWHm76g4T4ShLFgBfXQy4l6To64czyOq1HciWdmCCbHDZSH3CzxZnsPnUolgxBYK6Ca4lY0323zsUQbF2AydmPy3erp9xcanGFGhxJvq77DaEUHwhYsQe5ZTuOL52MqwyYNrND6xezE69rErmNAfgJoVzWh7TN52T5GIe5bImzFWchxUCLTME34ycH9cLnGf2NApfd6l1BEEaF-ljNd_seW4M9QeVxRgcAxa-OSBxobaqycK-jqWzKSVYaDEJY394WrJ3LGCElA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745287260,
+    "name": "Birdy Birds Café de especialidad y postres rusos",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.6000668,
+    "lng": -58.4329815,
+    "neighborhood": "Villa Crespo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://menusa.app/11efe2f90eaaf79780fb2161efdfcdae",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJlTkBDdrLvJURW7t_NrgxmRo/photos/ATKogpcn6usi3KQPLTIP74yZ2gggxR7L9L4eus3rYIsUTUDKPVFp8sfSK6eFb8_q-5JA1BQg6TG6iUN4qltc2YsbZSjHqXu1cYO4_E5-4xjdt03fcyLIx9_MEvyu57XgV5AzLQUzOQ3OsguH0pTK1nzMBwhlzdndKjY9YSJEvKWEDPf6Hx8Xse89E8HpzRWThw5yzCeQdjZsGHlboRBLwGCL8a_A1tmx43p6mKg5qvqBzw0u4vPLDf0a1TGE8659_a5zdDKkz3OvfcVbVH-418Aus8jTUrGo2VAfhW7kH27Zmcu7WQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Lavalleja 613, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJlTkBDdrLvJURW7t_NrgxmRo",
+    "notes": "",
+    "rating": 3.9,
+    "user_ratings_total": 117,
+    "stars": "★★★☆☆",
+    "description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой.",
+    "short_description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJlTkBDdrLvJURW7t_NrgxmRo/photos/ATKogpcn6usi3KQPLTIP74yZ2gggxR7L9L4eus3rYIsUTUDKPVFp8sfSK6eFb8_q-5JA1BQg6TG6iUN4qltc2YsbZSjHqXu1cYO4_E5-4xjdt03fcyLIx9_MEvyu57XgV5AzLQUzOQ3OsguH0pTK1nzMBwhlzdndKjY9YSJEvKWEDPf6Hx8Xse89E8HpzRWThw5yzCeQdjZsGHlboRBLwGCL8a_A1tmx43p6mKg5qvqBzw0u4vPLDf0a1TGE8659_a5zdDKkz3OvfcVbVH-418Aus8jTUrGo2VAfhW7kH27Zmcu7WQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756605821269,
+    "name": "Buró Árbol",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5850784,
+    "lng": -58.4391158,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 0,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://linktr.ee/buroarbol",
+    "phone": "+54 11 5888-7013",
+    "photo_url": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sATKogpfk8v1bF4ypV053P42jIYuhSkSt4KXFollUZsekxETbY7zSM2SVLb3edA-d9uMgyf9br0C5l-hTRP06eyjZ2o4uHsxF7vSX5DG-v9e0fYvGve4zwBSP6rp1c7RY_brY5WtrCosxsiODOqSNREV226wdUkRsN1L14GekupArxV6ZOiHzmIjokU-CckuA1pNEIrGaTrRgQXQeYidkFGrGt-lUWZfWq7MA_ALS-hlj47H1wp2aRm37BRAlBt8oJDl6anv0HYsqZ4wKVxWtJatmntnfcQuBsBENOculPknk6Ol0Ew&3u800&4u600&5m1&2e1&callback=none&r_url=http%3A%2F%2Frussian-community.com%2Fadd.html&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI&token=111178",
+    "address": "José A. Cabrera 5700, C1414BHF Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "",
+    "notes": "",
+    "rating": 3.3,
+    "user_ratings_total": 153,
+    "stars": "★★★☆☆",
+    "description": "Современная кофейня с уютной атмосферой и профессиональными бариста.",
+    "short_description": "Современная кофейня с уютной атмосферой и профессиональными бариста....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://maps.googleapis.com/maps/api/place/js/PhotoService.GetPhoto?1sATKogpfk8v1bF4ypV053P42jIYuhSkSt4KXFollUZsekxETbY7zSM2SVLb3edA-d9uMgyf9br0C5l-hTRP06eyjZ2o4uHsxF7vSX5DG-v9e0fYvGve4zwBSP6rp1c7RY_brY5WtrCosxsiODOqSNREV226wdUkRsN1L14GekupArxV6ZOiHzmIjokU-CckuA1pNEIrGaTrRgQXQeYidkFGrGt-lUWZfWq7MA_ALS-hlj47H1wp2aRm37BRAlBt8oJDl6anv0HYsqZ4wKVxWtJatmntnfcQuBsBENOculPknk6Ol0Ew&3u800&4u600&5m1&2e1&callback=none&r_url=http%3A%2F%2Frussian-community.com%2Fadd.html&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI&token=111178"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756612911538,
+    "name": "Cafe Babalu",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5974035,
+    "lng": -58.373145199999996,
+    "neighborhood": "Retiro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/cafe.babalu",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJK-zGMQDLvJURg-bG5PKYdzw/photos/ATKogpfVcgff-KD1748gGQ_Sq2Y5iMgj19lwUpjJHSsnZoz_5-zJ2zpDyiKTt8NiD-_XhxkTKV-5U2JyrlF3z6eMRIRFFo9eY3wcQD5dd8evijr4XHzVpTzH3ptS8JlegcTpJamwIwrVGX9T82oBjDtA4xyY5wL_ac8vJ5F8atIoOcX8rMEV_amRL2KEf2p7BurA-jpxpZ2xDBQK9uiM1WwGu6crijBBOEgVqt16esfLNSxdWe9EkPSn3E4uLIelaIifyTB30UCgiI8x1PRtVe0-QIuyl-8MFPk73uetM8gt5dPuoQ/media?maxWidthPx=800",
+    "address": "Paraguay 412, C1057AAD C1057AAD, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJK-zGMQDLvJURg-bG5PKYdzw",
+    "notes": "",
+    "rating": 3.7,
+    "user_ratings_total": 123,
+    "stars": "★★★☆☆",
+    "description": "Современная кофейня с уютной атмосферой и профессиональными бариста.",
+    "short_description": "Современная кофейня с уютной атмосферой и профессиональными бариста....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJK-zGMQDLvJURg-bG5PKYdzw/photos/ATKogpfVcgff-KD1748gGQ_Sq2Y5iMgj19lwUpjJHSsnZoz_5-zJ2zpDyiKTt8NiD-_XhxkTKV-5U2JyrlF3z6eMRIRFFo9eY3wcQD5dd8evijr4XHzVpTzH3ptS8JlegcTpJamwIwrVGX9T82oBjDtA4xyY5wL_ac8vJ5F8atIoOcX8rMEV_amRL2KEf2p7BurA-jpxpZ2xDBQK9uiM1WwGu6crijBBOEgVqt16esfLNSxdWe9EkPSn3E4uLIelaIifyTB30UCgiI8x1PRtVe0-QIuyl-8MFPk73uetM8gt5dPuoQ/media?maxWidthPx=800"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743080892,
+    "name": "Cafe Verano",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.577797,
+    "lng": -58.438895900000006,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJXzecbwC1vJURo1WVDUUmRyY/photos/ATKogpcUCprzuAvNG_kqbNKmtVUn5IqR71K5EXmzDapdjqRjDAhZIVMqeHrwUc63j-IIeozV2a0zEvCEexpJ8t_WRz9ZqJzvJUQjSlJQ91XpT61UEjjvdUkpgs72nSY04JQt0HzOt44nZTbVGTiNuDH7AXVraYEm-0Cso523aX_4bL0dQ0_e2Ndv5QgJxSMv-YloA9q9WAvkWGaHJnqY4UlQJv6_m9BVicEY_o2dkMgnJDP68v4s3o700CuYtzrPIuEYpIRES_QxHVww0l-LwWGNGBCNnD0HMTB1YeLutFWlAuaOXx3fUjACPxx23Zol-tcdveBgZJj7ASAGzh58lhDa8CzySBozLxAENvkjQ-CLGiG9MkVfQzU1oW39MqB2FGoLnSC-6YO5auOXZQtUVN5Pc4U9uuqWkVgMccC1cQ9zY23U2h_hqmYvxNzg4klb9BSZ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Dorrego 2187, C1414CLD Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJXzecbwC1vJURo1WVDUUmRyY",
+    "notes": "",
+    "rating": 3.2,
+    "user_ratings_total": 113,
+    "stars": "★★★☆☆",
+    "description": "Современная кофейня с уютной атмосферой и профессиональными бариста.",
+    "short_description": "Кофейня в стиле минимализм с качественным кофе и легкими закусками....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJXzecbwC1vJURo1WVDUUmRyY/photos/ATKogpcUCprzuAvNG_kqbNKmtVUn5IqR71K5EXmzDapdjqRjDAhZIVMqeHrwUc63j-IIeozV2a0zEvCEexpJ8t_WRz9ZqJzvJUQjSlJQ91XpT61UEjjvdUkpgs72nSY04JQt0HzOt44nZTbVGTiNuDH7AXVraYEm-0Cso523aX_4bL0dQ0_e2Ndv5QgJxSMv-YloA9q9WAvkWGaHJnqY4UlQJv6_m9BVicEY_o2dkMgnJDP68v4s3o700CuYtzrPIuEYpIRES_QxHVww0l-LwWGNGBCNnD0HMTB1YeLutFWlAuaOXx3fUjACPxx23Zol-tcdveBgZJj7ASAGzh58lhDa8CzySBozLxAENvkjQ-CLGiG9MkVfQzU1oW39MqB2FGoLnSC-6YO5auOXZQtUVN5Pc4U9uuqWkVgMccC1cQ9zY23U2h_hqmYvxNzg4klb9BSZ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756612662025,
+    "name": "Chaijaná",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5815619,
+    "lng": -58.434769700000004,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.chaijana.com/",
+    "phone": "+54 11 3053-7933",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJy0Pqc0y1vJURbB4iHLoF65c/photos/ATKogpe3EFFWeVOEkNNDlw_sTPPiS0S39xK5sryKh2jtR5ZUnb0982MdOfDEUpK_2J9tvlRKUzhPD1Wz-GNkhctkBoCw8YRl8uP6Wq4Hm7HDm3hHyjzGdiS5UicjmkdIH8z7cyNBYgl9RGfcFcSxf0e2MDTVjAblDq-DHtL9REFsIlSTh3jrxQ_BEaN3xTbEvaGfLOz6WVWR-lPPfMqZQEl7mblpU37auaMazNQSrR8SYa7pRL4GrUBrsQlVUGd8FrRDwTW2sXvq6cdYfyelnYMzNm8SOwYstwtCxS4a5YphArqeb7E2CNpFDANpX4ZWlydV2ufWc9vdGH0yYrhwc-QwX_JaB2IpLFj9yFXb2if1fgiqzZtZ_jHNfPmjO4AerFSdKYpBU2NH8ecWYkfYAxa8CuvU11xyRXUCEsPK82ejN0RqC_QQAjfpJL8SYuFIfA/media?maxWidthPx=800",
+    "address": "Bonpland 1965, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJy0Pqc0y1vJURbB4iHLoF65c",
+    "notes": "",
+    "rating": 3.2,
+    "user_ratings_total": 30,
+    "stars": "★★★☆☆",
+    "description": "Современная кофейня с уютной атмосферой и профессиональными бариста.",
+    "short_description": "Кофейня в стиле минимализм с качественным кофе и легкими закусками....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJy0Pqc0y1vJURbB4iHLoF65c/photos/ATKogpe3EFFWeVOEkNNDlw_sTPPiS0S39xK5sryKh2jtR5ZUnb0982MdOfDEUpK_2J9tvlRKUzhPD1Wz-GNkhctkBoCw8YRl8uP6Wq4Hm7HDm3hHyjzGdiS5UicjmkdIH8z7cyNBYgl9RGfcFcSxf0e2MDTVjAblDq-DHtL9REFsIlSTh3jrxQ_BEaN3xTbEvaGfLOz6WVWR-lPPfMqZQEl7mblpU37auaMazNQSrR8SYa7pRL4GrUBrsQlVUGd8FrRDwTW2sXvq6cdYfyelnYMzNm8SOwYstwtCxS4a5YphArqeb7E2CNpFDANpX4ZWlydV2ufWc9vdGH0yYrhwc-QwX_JaB2IpLFj9yFXb2if1fgiqzZtZ_jHNfPmjO4AerFSdKYpBU2NH8ecWYkfYAxa8CuvU11xyRXUCEsPK82ejN0RqC_QQAjfpJL8SYuFIfA/media?maxWidthPx=800"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744784337,
+    "name": "Che Crepe",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5914844,
+    "lng": -58.405202,
+    "neighborhood": "Barrio Norte",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://checrepe.tilda.ws/",
+    "phone": "+54 11 7174-9132",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJocQjR4rLvJURRPCvk7-mGA0/photos/ATKogpdzX90rBqq75GA_MGAdQ0bck-xJtst_o5G_INugdViMTqN9YUM7EXzrSzRu_T-SHPI9IgPz53Xip4gO-Yu9IlgF05CsEJRLaiAacbVxHv5VJalRx5rlqk9F_43e6BC7dRtufAcT3-bRASN8tTDqvzCQ5gILJXmXA-2V6DjIK1WpcKbIHdRpLN-TbUfGy9wH1dPHDryLAR0OZsvrtsjcomIEZxEJnrMdzVHwel79UxatUWSJuNgWb7K9z-JaYmmB6M_rwiLtP6DBgBkdM4jXRDJOhtyDWF2Hg7fSWoRA_vE1dw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Arenales 2817, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJocQjR4rLvJURRPCvk7-mGA0",
+    "notes": "",
+    "rating": 4.3,
+    "user_ratings_total": 170,
+    "stars": "★★★★☆",
+    "description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой.",
+    "short_description": "Современная кофейня с уютной атмосферой и профессиональными бариста....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJocQjR4rLvJURRPCvk7-mGA0/photos/ATKogpdzX90rBqq75GA_MGAdQ0bck-xJtst_o5G_INugdViMTqN9YUM7EXzrSzRu_T-SHPI9IgPz53Xip4gO-Yu9IlgF05CsEJRLaiAacbVxHv5VJalRx5rlqk9F_43e6BC7dRtufAcT3-bRASN8tTDqvzCQ5gILJXmXA-2V6DjIK1WpcKbIHdRpLN-TbUfGy9wH1dPHDryLAR0OZsvrtsjcomIEZxEJnrMdzVHwel79UxatUWSJuNgWb7K9z-JaYmmB6M_rwiLtP6DBgBkdM4jXRDJOhtyDWF2Hg7fSWoRA_vE1dw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745480373,
+    "name": "Ciao Cacao Specialty coffee",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5824408,
+    "lng": -58.4422545,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://menusa.app/11f06800dd7aae69a90916e19cb63237",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ9SAGg4m1vJURTgnbaa593To/photos/ATKogpcFpJXHiUgtjognR4IOc843ui_hKBqqx6tVriwKYSuHV-iNrCyauf3wVEInH8AdJgTHQzj98Tsq4fjfMoha9kRo03zyTDHHRWwkxagaDFasd75-WTreyVPNg5mqTiohVaNOowCTnUb6i3muQfUPdj8CYXLkKabtll-TOPHRd3SQqQIzTW8JNIk3tet1ryEnS6MGPVUPvEJv7YTHIOZGhggwf6RrHhIYlSDoUnkG1BR6ZsJkPF0oqQxIeU_CTyoQ0tcqvEEqkFjRbRh-dbwM_SO12BqwIpFAQWUl76AsuKoSow/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Arévalo 1506, C1414CQF Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ9SAGg4m1vJURTgnbaa593To",
+    "notes": "",
+    "rating": 4.3,
+    "user_ratings_total": 113,
+    "stars": "★★★★☆",
+    "description": "Кофейня в стиле минимализм с качественным кофе и легкими закусками.",
+    "short_description": "Современная кофейня с уютной атмосферой и профессиональными бариста....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 2,
+    "price_text": "Умеренно",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJ9SAGg4m1vJURTgnbaa593To/photos/ATKogpcFpJXHiUgtjognR4IOc843ui_hKBqqx6tVriwKYSuHV-iNrCyauf3wVEInH8AdJgTHQzj98Tsq4fjfMoha9kRo03zyTDHHRWwkxagaDFasd75-WTreyVPNg5mqTiohVaNOowCTnUb6i3muQfUPdj8CYXLkKabtll-TOPHRd3SQqQIzTW8JNIk3tet1ryEnS6MGPVUPvEJv7YTHIOZGhggwf6RrHhIYlSDoUnkG1BR6ZsJkPF0oqQxIeU_CTyoQ0tcqvEEqkFjRbRh-dbwM_SO12BqwIpFAQWUl76AsuKoSow/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745535433,
+    "name": "Expresso Oriental",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5869223,
+    "lng": -58.4476807,
+    "neighborhood": "Chacarita",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 9 11 7623-0964",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJL660Nya1vJURnTcyBa-DdDs/photos/ATKogpcoqAILFDK3ZWaVG_KdjqhYwiWJAgT0owm3Np42k4YYVFu0873BilWlRfV3v1oaDnTyoHXnpGPG4fUP-6IytBJppMdY7gf7yC11VwHUEdOv48_99MMeyqgHFFJ-UQbZ8eD_GDxHs5kVHiwFz0DYPekaiFZp3CWQlhR7aCeNF99UFxxFN-oE1rwhVKVGvt41UabPwE-s74fqzxHHKzPfO2gZSy7VMQ3K2WYoW4dftYlXPMXb9Hf_EEjttAj8R-ODFQ2aA8SNMfk74-lT5LlEav0ETfcwAfVANvNaeBeK7EQ7Va6lq793oSnqJZs01mgF_6yTrc-hLVAPN_AwM2R5wBIxGay270hvIo_a0Vv8_M3-E63HvTb7WtdyMrYCke1pUY5-10plV4OCR6Bi7qVbChx42Kzxc2mpBOA83lztfe46aEkP/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Fraga 200, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJL660Nya1vJURnTcyBa-DdDs",
+    "notes": "",
+    "rating": 4.7,
+    "user_ratings_total": 171,
+    "stars": "★★★★☆",
+    "description": "Современная кофейня с уютной атмосферой и профессиональными бариста.",
+    "short_description": "Кофейня в стиле минимализм с качественным кофе и легкими закусками....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJL660Nya1vJURnTcyBa-DdDs/photos/ATKogpcoqAILFDK3ZWaVG_KdjqhYwiWJAgT0owm3Np42k4YYVFu0873BilWlRfV3v1oaDnTyoHXnpGPG4fUP-6IytBJppMdY7gf7yC11VwHUEdOv48_99MMeyqgHFFJ-UQbZ8eD_GDxHs5kVHiwFz0DYPekaiFZp3CWQlhR7aCeNF99UFxxFN-oE1rwhVKVGvt41UabPwE-s74fqzxHHKzPfO2gZSy7VMQ3K2WYoW4dftYlXPMXb9Hf_EEjttAj8R-ODFQ2aA8SNMfk74-lT5LlEav0ETfcwAfVANvNaeBeK7EQ7Va6lq793oSnqJZs01mgF_6yTrc-hLVAPN_AwM2R5wBIxGay270hvIo_a0Vv8_M3-E63HvTb7WtdyMrYCke1pUY5-10plV4OCR6Bi7qVbChx42Kzxc2mpBOA83lztfe46aEkP/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756612421427,
+    "name": "Gafarov Sauna/Spa/Русские Бани",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.61139000000001,
+    "lng": -58.371376999999995,
+    "neighborhood": "Monserrat",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.gafarovspa.com/",
+    "phone": "+54 9 11 3477-6606",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ4fx-dNg1o5URmGkFTFCgGWg/photos/ATKogpdb_huH1g2YmtdJmxM7Eka8fFL4U_BlVWRtD8EoxQY7Y2tV2e7wYrQZnAFfvTu8tIEHwsCg50eMtL6ETwF9JwNKn2UyHU99IHuM9WTm6kH5S8FESz9krcG1ltkn6XLFxVV-KWE-mOteKuBMah8eBkxTrY0730eAq256TYsn_q-dbkCoVi-skyb0HclNyg4ld9oXfDBMppSV5g46MgpylDPESWwg4w9ys6kP-eMVlXdOR-1JAUiGgwH4FUoEBzALR8gNVpOe9QNw9HIYS2SADoHG7ONgc6mCM9hypD7-1JYy_Yy1MPUY-PYbMq6-2HvQWBEa8Ow1FSEVSqrhrf5cDhVhJgNWTKw9wDRKpXrU20YxBe1TM6whm8JBzbjXzLyWNkt5stTsX2kgBm3fIXT4Kj_OW5UlM7v7QCa8--TrjIpTRA/media?maxWidthPx=800",
+    "address": "Moreno 354, C1091 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ4fx-dNg1o5URmGkFTFCgGWg",
+    "notes": "",
+    "rating": 4.3,
+    "user_ratings_total": 119,
+    "stars": "★★★★☆",
+    "description": "Современная кофейня с уютной атмосферой и профессиональными бариста.",
+    "short_description": "Современная кофейня с уютной атмосферой и профессиональными бариста....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJ4fx-dNg1o5URmGkFTFCgGWg/photos/ATKogpdb_huH1g2YmtdJmxM7Eka8fFL4U_BlVWRtD8EoxQY7Y2tV2e7wYrQZnAFfvTu8tIEHwsCg50eMtL6ETwF9JwNKn2UyHU99IHuM9WTm6kH5S8FESz9krcG1ltkn6XLFxVV-KWE-mOteKuBMah8eBkxTrY0730eAq256TYsn_q-dbkCoVi-skyb0HclNyg4ld9oXfDBMppSV5g46MgpylDPESWwg4w9ys6kP-eMVlXdOR-1JAUiGgwH4FUoEBzALR8gNVpOe9QNw9HIYS2SADoHG7ONgc6mCM9hypD7-1JYy_Yy1MPUY-PYbMq6-2HvQWBEa8Ow1FSEVSqrhrf5cDhVhJgNWTKw9wDRKpXrU20YxBe1TM6whm8JBzbjXzLyWNkt5stTsX2kgBm3fIXT4Kj_OW5UlM7v7QCa8--TrjIpTRA/media?maxWidthPx=800"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745144318,
+    "name": "hermana de las focas amiga de los peces",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.609648299999996,
+    "lng": -58.37363549999999,
+    "neighborhood": "Monserrat",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/hermana_de_las_focas",
+    "phone": "+54 9 11 5016-8773",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJc7UBdsLLvJURUeAasmDSJyk/photos/ATKogpe6B8Aw9jLwZt_NrOl8oj63lTma5BsyYLoqTveLMLRKZfJdVYacIc4AcGvQCStBmF43tGMT_yg1W2mhN8QAZurLtAdq1FKmhwmnmc0TRrS9LH5APmAvwekgDbbDFV4eogjYSf5Ldtmx8nEQQbkrlY9jvJvEjTQUZKQlsXMnPmC3vBmik6yA7TWVHINNqyUVv4IYeQttvWTfxPDhrkKZfF9g4kN9Wm-863e2F_WpHdHj1tQbSuYtp2Fc7ZP9HD-0FGNJc_W2W1vFYn6dMdwKkG-kNUsjzXhD24DGNcuHuh_cCw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Bolívar 153, C1066 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJc7UBdsLLvJURUeAasmDSJyk",
+    "notes": "",
+    "rating": 4.8,
+    "user_ratings_total": 29,
+    "stars": "★★★★☆",
+    "description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой.",
+    "short_description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJc7UBdsLLvJURUeAasmDSJyk/photos/ATKogpe6B8Aw9jLwZt_NrOl8oj63lTma5BsyYLoqTveLMLRKZfJdVYacIc4AcGvQCStBmF43tGMT_yg1W2mhN8QAZurLtAdq1FKmhwmnmc0TRrS9LH5APmAvwekgDbbDFV4eogjYSf5Ldtmx8nEQQbkrlY9jvJvEjTQUZKQlsXMnPmC3vBmik6yA7TWVHINNqyUVv4IYeQttvWTfxPDhrkKZfF9g4kN9Wm-863e2F_WpHdHj1tQbSuYtp2Fc7ZP9HD-0FGNJc_W2W1vFYn6dMdwKkG-kNUsjzXhD24DGNcuHuh_cCw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756612519473,
+    "name": "Ivan Juan",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5805787,
+    "lng": -58.432367400000004,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/ivanjuan_ba",
+    "phone": "+54 11 3302-8558",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJt2nCra-1vJURF5nWoSYKs2E/photos/ATKogpdEYAXyhu_-jLE8NLqITwqeVGRrU8Dsyin_OZCvhst_tl4JWWq3kbYXAWOKFTcmQQGYQ4JQ6OYfe9YFIypivIfFsweWpCloDbZ3Vs_YCj3HlxGbaLV5qzO3QLpuVX4gn0St71rK31ZnV2I6lhX5uV3wnPEjAJ7EpdaNDpaFW4DpVGSmuLAmKo5Xm4S9Chq9JowaLUvZvMBPB5P5LIJmK5ALqVfaZCaGYXNzc_aQ8mmzA1ViqVnj3Cmdfci3eLa2HTASt2w6EG3XxqOzFIPgY67PnmtPyhVRkbJBJNt2-JMvxg/media?maxWidthPx=800",
+    "address": "Fitz Roy 2168, C1425FVB C1425FVA, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJt2nCra-1vJURF5nWoSYKs2E",
+    "notes": "",
+    "rating": 4.5,
+    "user_ratings_total": 73,
+    "stars": "★★★★☆",
+    "description": "Современная кофейня с уютной атмосферой и профессиональными бариста.",
+    "short_description": "Современная кофейня с уютной атмосферой и профессиональными бариста....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJt2nCra-1vJURF5nWoSYKs2E/photos/ATKogpdEYAXyhu_-jLE8NLqITwqeVGRrU8Dsyin_OZCvhst_tl4JWWq3kbYXAWOKFTcmQQGYQ4JQ6OYfe9YFIypivIfFsweWpCloDbZ3Vs_YCj3HlxGbaLV5qzO3QLpuVX4gn0St71rK31ZnV2I6lhX5uV3wnPEjAJ7EpdaNDpaFW4DpVGSmuLAmKo5Xm4S9Chq9JowaLUvZvMBPB5P5LIJmK5ALqVfaZCaGYXNzc_aQ8mmzA1ViqVnj3Cmdfci3eLa2HTASt2w6EG3XxqOzFIPgY67PnmtPyhVRkbJBJNt2-JMvxg/media?maxWidthPx=800"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745392950,
+    "name": "mi oshka (postres rusos: ponchecos)",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.6001725,
+    "lng": -58.43863879999999,
+    "neighborhood": "Villa Crespo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 11 2708-3639",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJn88cUgDLvJUREQ1aQPRxseI/photos/ATKogpfLZ6xKKF9bugX4psNZJPyGFQdcQbKli7w0-oK1hpF8DgDKQX8GhXti6I4sZwRe9aOV_HC4gDwzz1l0K7ZAka3U1hxZ1-CNXDT3tSRs4IUmfpDlkREPrjiy6ibS6IxVadwWIbly8Z_f_whBGo_PWzip_1_7OO1gGFUbpSLvNQJxH8G6dafXN7D48r5vkrJ3Py0u8tR91P5kuEk0eQEUkPsS9kDi3cEwx86toTXMsNeJ5E_Ktj0zOGsXKnXZg6iD-Hs3a2j7Y_zPiydyOHMbFg7f7mkXZRECt0oAsnCzWTPWIsgOnAxDwiZmW5UCooNWH1SDCe3r02333ueWGWaQkdZEPJTjTJTI5Ji-x20cwB9Dw_sXaBHLEmPWYi6twpM504-kBxzd55x5ry7oenzIeDwImyThVPvi2FoTdUoIdpuWR0rjKLtxP_IXIi1BEw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Luis María Drago 482, C1414AIJ C1414AIJ, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJn88cUgDLvJUREQ1aQPRxseI",
+    "notes": "",
+    "rating": 4.5,
+    "user_ratings_total": 143,
+    "stars": "★★★★☆",
+    "description": "Современная кофейня с уютной атмосферой и профессиональными бариста.",
+    "short_description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJn88cUgDLvJUREQ1aQPRxseI/photos/ATKogpfLZ6xKKF9bugX4psNZJPyGFQdcQbKli7w0-oK1hpF8DgDKQX8GhXti6I4sZwRe9aOV_HC4gDwzz1l0K7ZAka3U1hxZ1-CNXDT3tSRs4IUmfpDlkREPrjiy6ibS6IxVadwWIbly8Z_f_whBGo_PWzip_1_7OO1gGFUbpSLvNQJxH8G6dafXN7D48r5vkrJ3Py0u8tR91P5kuEk0eQEUkPsS9kDi3cEwx86toTXMsNeJ5E_Ktj0zOGsXKnXZg6iD-Hs3a2j7Y_zPiydyOHMbFg7f7mkXZRECt0oAsnCzWTPWIsgOnAxDwiZmW5UCooNWH1SDCe3r02333ueWGWaQkdZEPJTjTJTI5Ji-x20cwB9Dw_sXaBHLEmPWYi6twpM504-kBxzd55x5ry7oenzIeDwImyThVPvi2FoTdUoIdpuWR0rjKLtxP_IXIi1BEw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745055328,
+    "name": "PATO CON BOTAS café de especialidad",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.6012012,
+    "lng": -58.3957754,
+    "neighborhood": "Balvanera",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJW9EyTwDLvJURwWgTcxqHNTw/photos/ATKogpcs0gFwhF8blQmEOc-BZ3dYR9ZpBroGksF79wcrl6semB1772kD8kBm6yqbyvhhTFni_2eRKOUjRBOY4Bu76-Kfo_iStQkEyccLEB6qyzMfmcOoxevFDY3ZBVT5niCeF81UlCXRYnALSfzeGLiTgNgvFAlu4x0UOCHuAlZxnkism7ks0yiluwOmEYuLW8ipe84Ybv-3RNETQQKFENHP7umWM6KqXXnCgALnfeohy3gluArE_ZcsnAaitU1PKMIu2UrKexbJtfHZN4jIBNhYbaS4A7wmLkeEuEveKS2sBk8oVtt5DzD50HnjapziuG5XGRyJep81rXnRbo1IiJyI1POdFBq1S_UqrWshwOmjhSJHtrPUyz5tYCUQWg9OcLjAzCCF5Srs0bXR13HMBrNTT-4W0s2PTUtgOUMRZxV3hUQv7g/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Ayacucho 678, C1026AAF C1026AAF, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJW9EyTwDLvJURwWgTcxqHNTw",
+    "notes": "",
+    "rating": 3,
+    "user_ratings_total": 39,
+    "stars": "★★★☆☆",
+    "description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой.",
+    "short_description": "Кофейня в стиле минимализм с качественным кофе и легкими закусками....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 2,
+    "price_text": "Умеренно",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJW9EyTwDLvJURwWgTcxqHNTw/photos/ATKogpcs0gFwhF8blQmEOc-BZ3dYR9ZpBroGksF79wcrl6semB1772kD8kBm6yqbyvhhTFni_2eRKOUjRBOY4Bu76-Kfo_iStQkEyccLEB6qyzMfmcOoxevFDY3ZBVT5niCeF81UlCXRYnALSfzeGLiTgNgvFAlu4x0UOCHuAlZxnkism7ks0yiluwOmEYuLW8ipe84Ybv-3RNETQQKFENHP7umWM6KqXXnCgALnfeohy3gluArE_ZcsnAaitU1PKMIu2UrKexbJtfHZN4jIBNhYbaS4A7wmLkeEuEveKS2sBk8oVtt5DzD50HnjapziuG5XGRyJep81rXnRbo1IiJyI1POdFBq1S_UqrWshwOmjhSJHtrPUyz5tYCUQWg9OcLjAzCCF5Srs0bXR13HMBrNTT-4W0s2PTUtgOUMRZxV3hUQv7g/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743558657,
+    "name": "Rossini Pasteleria Cafeteria",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.627549,
+    "lng": -58.462522,
+    "neighborhood": "Flores",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJl7ixFwDLvJURjfagHkIdapw/photos/ATKogpeKChT-lzbrYWu3Tt8H6zphQZLnU9IQwojgCJ0iZNkNGUO0kgpWzKReIREEdwNeZXKgGQCFL8mksMrYyP3R8BgJWrgGnL4bSMRJek6r3blKIptEs_gVtfQdpDQRX3MNfI2nVpfVoY7KIuICyNJ3rY8rtc3_U3x_wVEpIQq7Z-lTDKr_NDqNh71kFDmU25RDBr5Xju_QlZEWRFwUFspj1M9oHbn21ClFQmfTWxq-sS0SVkjeV_5uevuF4uAiN0AqzrKsfq2-HNv6spBPFMG94EXGXvidOalQLuE4QY8-eO9r4nMT2ZNp5ltAh1iGEwXqAVSwsqgxpZYVyWwsDaxCPcu5vsZPetexcIPnIPyKMbskP7PbJf2cG4cmnh9X4_fm3mp9Y-EOK95Xr6gwdGnEmv3xEURx-neO3AtjmRX5xgCXDa4IhaEEizuQeEMmHdZE/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Yerbal 2358, C1406 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJl7ixFwDLvJURjfagHkIdapw",
+    "notes": "",
+    "rating": 3.6,
+    "user_ratings_total": 89,
+    "stars": "★★★☆☆",
+    "description": "Современная кофейня с уютной атмосферой и профессиональными бариста.",
+    "short_description": "Кофейня в стиле минимализм с качественным кофе и легкими закусками....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJl7ixFwDLvJURjfagHkIdapw/photos/ATKogpeKChT-lzbrYWu3Tt8H6zphQZLnU9IQwojgCJ0iZNkNGUO0kgpWzKReIREEdwNeZXKgGQCFL8mksMrYyP3R8BgJWrgGnL4bSMRJek6r3blKIptEs_gVtfQdpDQRX3MNfI2nVpfVoY7KIuICyNJ3rY8rtc3_U3x_wVEpIQq7Z-lTDKr_NDqNh71kFDmU25RDBr5Xju_QlZEWRFwUFspj1M9oHbn21ClFQmfTWxq-sS0SVkjeV_5uevuF4uAiN0AqzrKsfq2-HNv6spBPFMG94EXGXvidOalQLuE4QY8-eO9r4nMT2ZNp5ltAh1iGEwXqAVSwsqgxpZYVyWwsDaxCPcu5vsZPetexcIPnIPyKMbskP7PbJf2cG4cmnh9X4_fm3mp9Y-EOK95Xr6gwdGnEmv3xEURx-neO3AtjmRX5xgCXDa4IhaEEizuQeEMmHdZE/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743041644,
+    "name": "UMKA Café de especialidad y postres rusos",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5840582,
+    "lng": -58.43803679999999,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/umka.argentina",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJKWalrVO1vJURax31spn3QQI/photos/ATKogpevYzXUSx0LTzNm6i8TOpGEtesKdWeEaag7J02LAXLX6_pZwKGIqW83bEM02JfTJoCaliB1LPFmxvdmKcV3NKGtyZpEOODcxMp4o03AoPoTc-KApxrAm89RjRQRKNqMStW6gDsXjS6s4TsB7Ew_7UdAvEl02F6SSg1XVGEX7YtrtRS_ovCaFwfpgUNvQCbutqzVGJ9sFJLUCrxSL2XywRi12gRRysU7xFpWuolxRgPVd9M2gIpx20BFB03ik8UJPhzOACD5ZLqvvN_pkB8I4f10f4wfzuVvmXCJurXYRtPla1t6LPEcqahoMyfRZKGIyXkeysvpwUmC8uzTSraJOp1GG_vClhXrHVDUH4kUf7PGE_55zXb1ORVog5MKC4WLp2tEOEGLzNlbHP6_3Lw42gTng3ccFLvTUY_oLO9DgclOJQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Bonpland 1611, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJKWalrVO1vJURax31spn3QQI",
+    "notes": "",
+    "rating": 3.8,
+    "user_ratings_total": 47,
+    "stars": "★★★☆☆",
+    "description": "Кофейня в стиле минимализм с качественным кофе и легкими закусками.",
+    "short_description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJKWalrVO1vJURax31spn3QQI/photos/ATKogpevYzXUSx0LTzNm6i8TOpGEtesKdWeEaag7J02LAXLX6_pZwKGIqW83bEM02JfTJoCaliB1LPFmxvdmKcV3NKGtyZpEOODcxMp4o03AoPoTc-KApxrAm89RjRQRKNqMStW6gDsXjS6s4TsB7Ew_7UdAvEl02F6SSg1XVGEX7YtrtRS_ovCaFwfpgUNvQCbutqzVGJ9sFJLUCrxSL2XywRi12gRRysU7xFpWuolxRgPVd9M2gIpx20BFB03ik8UJPhzOACD5ZLqvvN_pkB8I4f10f4wfzuVvmXCJurXYRtPla1t6LPEcqahoMyfRZKGIyXkeysvpwUmC8uzTSraJOp1GG_vClhXrHVDUH4kUf7PGE_55zXb1ORVog5MKC4WLp2tEOEGLzNlbHP6_3Lw42gTng3ccFLvTUY_oLO9DgclOJQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756611784552,
+    "name": "Консульский отдел посольства Российской федерации",
+    "category": "Кофе",
+    "subtype": "",
+    "lat": -34.5910192,
+    "lng": -58.38849569999999,
+    "neighborhood": "Barrio Norte",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://argentina.mid.ru/es/",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ9X2_jkPLvJURdWtfKIco1pI/photos/ATKogpfHKZebiqCgeNffmO1iK4ZsLSaKEV-h0e21XvbJjlqLRHoKGzNj2eBDTYlBcwRKnQcoKoBHtA7epSEs4VGwTNysZvG80lCjelcXaJMKOA3veTvVpMbxtXn05eyLMYOg7_dUrO7bEorChfo3TIkJSAAqrbV6XSFCZdMoLm6UNlibNEaMPuT-hPprL-QODX2-xjEgpyXUlmKRFswnLiUYNipQ-mll3d-69B6quJxMTXJX0Bu6p1TspeIp2nmSqNhzFxRwflAuD33aMa_NTAi_mjKp-tzZVsWsCF4G6gNj6xIhkiVjdioerPMSOsXjH7ZRqK7Ez154NoseJIkDbwWwkVZw0pUPD6QnS06bMaOb_a1wHUv05ykK1hF8S_eYja9yJQi7owpyUqlR5-HYa14h3VMuBlaX4uKBeWscyTVHIBI8Ww/media?maxWidthPx=800",
+    "address": "Guido 1677, C1016AAC C1016AAC, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ9X2_jkPLvJURdWtfKIco1pI",
+    "notes": "",
+    "rating": 4.2,
+    "user_ratings_total": 120,
+    "stars": "★★★★☆",
+    "description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой.",
+    "short_description": "Специализированная кофейня с зернами собственной обжарки и домашней выпечкой....",
+    "place_type": "Кофе",
+    "types": [
+      "кофе"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJ9X2_jkPLvJURdWtfKIco1pI/photos/ATKogpfHKZebiqCgeNffmO1iK4ZsLSaKEV-h0e21XvbJjlqLRHoKGzNj2eBDTYlBcwRKnQcoKoBHtA7epSEs4VGwTNysZvG80lCjelcXaJMKOA3veTvVpMbxtXn05eyLMYOg7_dUrO7bEorChfo3TIkJSAAqrbV6XSFCZdMoLm6UNlibNEaMPuT-hPprL-QODX2-xjEgpyXUlmKRFswnLiUYNipQ-mll3d-69B6quJxMTXJX0Bu6p1TspeIp2nmSqNhzFxRwflAuD33aMa_NTAi_mjKp-tzZVsWsCF4G6gNj6xIhkiVjdioerPMSOsXjH7ZRqK7Ez154NoseJIkDbwWwkVZw0pUPD6QnS06bMaOb_a1wHUv05ykK1hF8S_eYja9yJQi7owpyUqlR5-HYa14h3VMuBlaX4uKBeWscyTVHIBI8Ww/media?maxWidthPx=800"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745208703,
+    "name": "frijoles y mermelada",
+    "category": "Магазин",
+    "subtype": "",
+    "lat": -34.610622,
+    "lng": -58.3733784,
+    "neighborhood": "Monserrat",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://frijolesymermelada.empretienda.com.ar/",
+    "phone": "+54 9 11 5016-8773",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJzYwIY8DLvJUR37iSl--2k1s/photos/ATKogpdbFJ485IU7rdw4tQ8xGnM1QWxwPnDQKTuhxNN1PJV-xFMhM_Z_4ovqk6bS36BV59h1GqnDfHPEm_0WMqOUbWjRoQEPWY0_kJls9nabjh8Q0UORp733HWggcmAe3lvuQvek535NfC56gelU-6LzhZ2-yMbYuUPpcrmBxDO-3Wavt2JE3C7jad30xb5b1zSVNQ1MGRHT93z6EDwUyGYGQXivL1x5QEgMX3e--UpTjayd8FJWaN9fyLsidzCE2eeBzlwdjRZIBMioCdSdLysBpReQnONM863vevX7ZW3o1jB8dQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Bolívar 228, C1066AAF Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJzYwIY8DLvJUR37iSl--2k1s",
+    "notes": "",
+    "rating": 4.3,
+    "user_ratings_total": 23,
+    "stars": "★★★★☆",
+    "description": "Семейный магазин с многолетней историей и внимательным обслуживанием.",
+    "short_description": "Специализированный магазин с широким ассортиментом качественных товаров....",
+    "place_type": "Магазин",
+    "types": [
+      "магазин"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJzYwIY8DLvJUR37iSl--2k1s/photos/ATKogpdbFJ485IU7rdw4tQ8xGnM1QWxwPnDQKTuhxNN1PJV-xFMhM_Z_4ovqk6bS36BV59h1GqnDfHPEm_0WMqOUbWjRoQEPWY0_kJls9nabjh8Q0UORp733HWggcmAe3lvuQvek535NfC56gelU-6LzhZ2-yMbYuUPpcrmBxDO-3Wavt2JE3C7jad30xb5b1zSVNQ1MGRHT93z6EDwUyGYGQXivL1x5QEgMX3e--UpTjayd8FJWaN9fyLsidzCE2eeBzlwdjRZIBMioCdSdLysBpReQnONM863vevX7ZW3o1jB8dQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744656207,
+    "name": "No cualquier verdura - organic store and cafe",
+    "category": "Магазин",
+    "subtype": "",
+    "lat": -34.582254899999995,
+    "lng": -58.4409261,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://menu.fu.do/ncvpalermo",
+    "phone": "+54 11 3273-6065",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJM4J11lW1vJURwg3_bv1T868/photos/ATKogpfx3_eDji5C_0l74p9FiZ2PwyzL4wx_mEDtq0wtD7Mm106eNC0YmjjOE75M9duvcKz_ryeRCFP613ZBaEHBe3sIuyEO8Rs2tKLpclXe2agrWvBLA3DvAhuO-VAkfN004RDuaHhbJIkk2PChtGAvhx56w_j09ATJVjXzQvg-24uauf_IwiuzZmbnjqIreetMGxZPiOFLmTfqGThmQIP730PbLH3Ug3Ib8jq9Dl2mfbKJb8FUI87w7ezOyoY5d_dqZKFk8y_a9d8vss5v2IB5ht4LgkwhEjO5J7lf4PKCP1MSTA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Gorriti 5950, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJM4J11lW1vJURwg3_bv1T868",
+    "notes": "",
+    "rating": 3.1,
+    "user_ratings_total": 58,
+    "stars": "★★★☆☆",
+    "description": "Современный магазин с актуальными товарами и удобным расположением.",
+    "short_description": "Семейный магазин с многолетней историей и внимательным обслуживанием....",
+    "place_type": "Магазин",
+    "types": [
+      "магазин"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJM4J11lW1vJURwg3_bv1T868/photos/ATKogpfx3_eDji5C_0l74p9FiZ2PwyzL4wx_mEDtq0wtD7Mm106eNC0YmjjOE75M9duvcKz_ryeRCFP613ZBaEHBe3sIuyEO8Rs2tKLpclXe2agrWvBLA3DvAhuO-VAkfN004RDuaHhbJIkk2PChtGAvhx56w_j09ATJVjXzQvg-24uauf_IwiuzZmbnjqIreetMGxZPiOFLmTfqGThmQIP730PbLH3Ug3Ib8jq9Dl2mfbKJb8FUI87w7ezOyoY5d_dqZKFk8y_a9d8vss5v2IB5ht4LgkwhEjO5J7lf4PKCP1MSTA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743984595,
+    "name": "Russian food store Avoskya",
+    "category": "Магазин",
+    "subtype": "",
+    "lat": -34.6106008,
+    "lng": -58.394726899999995,
+    "neighborhood": "Balvanera",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://instagram.com/avoska.rusa.arg?igshid=OGQ5ZDc2ODk2ZA==&utm_source=qr",
+    "phone": "+54 9 11 6499-2249",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ9RMc5IvLvJURomfoVXq1_KA/photos/ATKogpeipZvvF9iUI-wlWNZChZCfMUFc4vJK2ntJo7mpkA8sTS8WcWU0XuVUlEynhJ1eD5GPfVJMerVE9s9r44s5Kw_3Gg9rHumFQZS3quh4_nx6E2v38LG8q6BplK69v02q8Xo2GFOGhTVhjQChx0RM6EwIMFaZnNm2-EsgxFMWcx1qGVAQqSwkYaNjTyMYeoTO9j5X5cFfQtA5COdbown3JlnoEYOEk4T3qQ3HGWBe0NKFKYbQs-IxdYtkBlqeK56dK16s_mvNSQB33jrXPVB95QdNxiS9eb033WY0M34GaGq275EDnlOYyJL5AXU5uDxvCimQHbFbN0yly3f5r3-KYPSWVUlzG271ytPcBF7Gq7tZSUDrKfTE8zN5dR6U5103mmRoq5Tx8Zm38Ff7hZQl2s-QOjseZwHYd-_DOiDcumPtFA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Hipólito Yrigoyen 2000, C1089AAL, C1089AAL Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ9RMc5IvLvJURomfoVXq1_KA",
+    "notes": "",
+    "rating": 4.7,
+    "user_ratings_total": 117,
+    "stars": "★★★★☆",
+    "description": "Современный магазин с актуальными товарами и удобным расположением.",
+    "short_description": "Семейный магазин с многолетней историей и внимательным обслуживанием....",
+    "place_type": "Магазин",
+    "types": [
+      "магазин"
+    ],
+    "price_level": 2,
+    "price_text": "Умеренно",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJ9RMc5IvLvJURomfoVXq1_KA/photos/ATKogpeipZvvF9iUI-wlWNZChZCfMUFc4vJK2ntJo7mpkA8sTS8WcWU0XuVUlEynhJ1eD5GPfVJMerVE9s9r44s5Kw_3Gg9rHumFQZS3quh4_nx6E2v38LG8q6BplK69v02q8Xo2GFOGhTVhjQChx0RM6EwIMFaZnNm2-EsgxFMWcx1qGVAQqSwkYaNjTyMYeoTO9j5X5cFfQtA5COdbown3JlnoEYOEk4T3qQ3HGWBe0NKFKYbQs-IxdYtkBlqeK56dK16s_mvNSQB33jrXPVB95QdNxiS9eb033WY0M34GaGq275EDnlOYyJL5AXU5uDxvCimQHbFbN0yly3f5r3-KYPSWVUlzG271ytPcBF7Gq7tZSUDrKfTE8zN5dR6U5103mmRoq5Tx8Zm38Ff7hZQl2s-QOjseZwHYd-_DOiDcumPtFA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744868351,
+    "name": "ST casa",
+    "category": "Магазин",
+    "subtype": "",
+    "lat": -34.5807992,
+    "lng": -58.4339448,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/st_casaa/profilecard/?igsh=aWg1OHljaTV0OWt4",
+    "phone": "+54 11 3232-9825",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJJQUQOf61vJURRkBCjY64Os4/photos/ATKogpe2YFHJTscSirbPembhDumr02o6t8V5ifN-rFTwHH6UyTHdG21asABAQjqYl39YoYwKxemlaAi2rVHIgZbUvoq6-GQlkx_YhtCZ-deS9It4UlaXGMEdj4azK8uegABsZTp6r_tfHiRBSXfOFgPMHYWjgCB1FX41hPDqYDbcUBD9ddeU0mYxZbhAGtLfjHRZ04Vra-FNMjmQJdA_phRb-0V9LtZnq97_KKpBEHmmmo-VLFiG2s_nOoFRRMRJvCMli_h8vBFgO7u8NA2NwuwSPqPXZjrI9x7g7fhiJyvFypNEwA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Bonpland 2029, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJJQUQOf61vJURRkBCjY64Os4",
+    "notes": "",
+    "rating": 4.8,
+    "user_ratings_total": 67,
+    "stars": "★★★★☆",
+    "description": "Специализированный магазин с широким ассортиментом качественных товаров.",
+    "short_description": "Специализированный магазин с широким ассортиментом качественных товаров....",
+    "place_type": "Магазин",
+    "types": [
+      "магазин"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJJQUQOf61vJURRkBCjY64Os4/photos/ATKogpe2YFHJTscSirbPembhDumr02o6t8V5ifN-rFTwHH6UyTHdG21asABAQjqYl39YoYwKxemlaAi2rVHIgZbUvoq6-GQlkx_YhtCZ-deS9It4UlaXGMEdj4azK8uegABsZTp6r_tfHiRBSXfOFgPMHYWjgCB1FX41hPDqYDbcUBD9ddeU0mYxZbhAGtLfjHRZ04Vra-FNMjmQJdA_phRb-0V9LtZnq97_KKpBEHmmmo-VLFiG2s_nOoFRRMRJvCMli_h8vBFgO7u8NA2NwuwSPqPXZjrI9x7g7fhiJyvFypNEwA/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744926012,
+    "name": "Tolstoyevski",
+    "category": "Магазин",
+    "subtype": "",
+    "lat": -34.5972799,
+    "lng": -58.3843023,
+    "neighborhood": "Barrio Norte",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/tolstoyevski.ba",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJkzQtdgDLvJURMAOz3sAFfa0/photos/ATKogpdGPEpkHpyj8_fhjMBAh1qJsEuRuiWx0k-kq-5Bn3svzx_180vlHB3JE3JKebk6cJcU6Xrv_WLCR6mL37Rd5ZfXdm6qcYYcqglPUaPpLvZWseAf-g2u0ZLG3Fb2crf0DQ9pVMIBomvbA57goma9G_GinrY-ctwPkjwGi4cQLPEzTGDQf8Dr0m18kr7DaDbWsM8JyRW2AdPfldnHfVhaNpC5NV3GI5XItCPliQ0S2pcqOmh2tDEStN-k8N-PVREAkR6PeGuNANH9KCH9DwqMgjiu-zzxDopB5gCtNosrToIHC68UHefXAJMAGkHjw3otOP1XnlbL1EobhjM2xPghJxX1jKuzdW6oL5ncYqPBPl-Jq5_IA8ezVP8X71nsrUfOjo48yDqKHYE6ma--dhTABMDhPePChThYGUxalexHs3mx-Vc/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Libertad 970, C1012 AAT, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJkzQtdgDLvJURMAOz3sAFfa0",
+    "notes": "",
+    "rating": 3.2,
+    "user_ratings_total": 65,
+    "stars": "★★★☆☆",
+    "description": "Специализированный магазин с широким ассортиментом качественных товаров.",
+    "short_description": "Специализированный магазин с широким ассортиментом качественных товаров....",
+    "place_type": "Магазин",
+    "types": [
+      "магазин"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJkzQtdgDLvJURMAOz3sAFfa0/photos/ATKogpdGPEpkHpyj8_fhjMBAh1qJsEuRuiWx0k-kq-5Bn3svzx_180vlHB3JE3JKebk6cJcU6Xrv_WLCR6mL37Rd5ZfXdm6qcYYcqglPUaPpLvZWseAf-g2u0ZLG3Fb2crf0DQ9pVMIBomvbA57goma9G_GinrY-ctwPkjwGi4cQLPEzTGDQf8Dr0m18kr7DaDbWsM8JyRW2AdPfldnHfVhaNpC5NV3GI5XItCPliQ0S2pcqOmh2tDEStN-k8N-PVREAkR6PeGuNANH9KCH9DwqMgjiu-zzxDopB5gCtNosrToIHC68UHefXAJMAGkHjw3otOP1XnlbL1EobhjM2xPghJxX1jKuzdW6oL5ncYqPBPl-Jq5_IA8ezVP8X71nsrUfOjo48yDqKHYE6ma--dhTABMDhPePChThYGUxalexHs3mx-Vc/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743303750,
+    "name": "Algorithmics Belgrano | Escuela internacional de programación para niños",
+    "category": "Обучение",
+    "subtype": "",
+    "lat": -34.5547819,
+    "lng": -58.4595762,
+    "neighborhood": "Belgrano",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://belgrano.alg.academy/",
+    "phone": "+54 11 6693-5876",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJLTgveeC1vJURV1qua9JG9-w/photos/ATKogpdnGVBwVUa0tdHcFKCSRiLNBrIdbJHfPj4UnNgI7d6y5jm1yY8azIYhiZF3n_ndqZ_SC_h8CotUYZzSf40i8_etIuZwUljNU5tdLRaXACcTQaUNYhimaN5hzgiGvEGFF5Bb5iZh5b2UhObnXGorNTEFeOlXTTRyUAqFn6qusn23V4kItXDtM62yZ9v9nQzWm9yKRkbXbp-SlEq4uWwSg92Ymv9YhFkOwQml8ZQluw3gPMlXkVqaQuwCtcwR5PGfGGxhMWB9XeAb7KvsVCi2XZzKMS6JSVPgvLs6MlsWLMwC2e2YgSNs_as64TOeuIum_NeMiV4P_c7qkOShID6Wq73RZLq3KmBXKKAWxSxWSthV_hyhjUeTxITjft5SlOZK6Jfd8rydNS-8pF09ONpgSFfdTYDqVePocYi7kt-Qaa8PfQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Cuba 2737, C1428 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJLTgveeC1vJURV1qua9JG9-w",
+    "notes": "",
+    "rating": 4.4,
+    "user_ratings_total": 155,
+    "stars": "★★★★☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Обучение",
+    "types": [
+      "обучение"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJLTgveeC1vJURV1qua9JG9-w/photos/ATKogpdnGVBwVUa0tdHcFKCSRiLNBrIdbJHfPj4UnNgI7d6y5jm1yY8azIYhiZF3n_ndqZ_SC_h8CotUYZzSf40i8_etIuZwUljNU5tdLRaXACcTQaUNYhimaN5hzgiGvEGFF5Bb5iZh5b2UhObnXGorNTEFeOlXTTRyUAqFn6qusn23V4kItXDtM62yZ9v9nQzWm9yKRkbXbp-SlEq4uWwSg92Ymv9YhFkOwQml8ZQluw3gPMlXkVqaQuwCtcwR5PGfGGxhMWB9XeAb7KvsVCi2XZzKMS6JSVPgvLs6MlsWLMwC2e2YgSNs_as64TOeuIum_NeMiV4P_c7qkOShID6Wq73RZLq3KmBXKKAWxSxWSthV_hyhjUeTxITjft5SlOZK6Jfd8rydNS-8pF09ONpgSFfdTYDqVePocYi7kt-Qaa8PfQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743522853,
+    "name": "Ballet in B.A.",
+    "category": "Обучение",
+    "subtype": "",
+    "lat": -34.5814341,
+    "lng": -58.4489975,
+    "neighborhood": "Chacarita",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "+54 11 2764-7151",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJnQL85l23vJURWdr5GWmDZLM/photos/ATKogperfZwlhBQ75P66Ez_CSdFuu6SnfTYDupKZa_MkIhR0YNkrG9QFSJA3R8GWgM-oFmK_poyR4h9KWKzQRlOARbAzZqGZq-HpTfOB7d-EZnwH_aVm6eUHB-Tsa1TGV-fGIucErT2HsvCeKoZjVuPENEaH3pE76U33cr1z5ekCax6zL-51Uw2d0IuaOVUQbajlIgXdrV4UKmdZWfLUiAfscHprug3CHmEAwfdBVGPQ7SDPIsVF5eibMPKgIln-JM1AtCKgn5i5vKtsZUFbx5mLrGDllkL20C_Pop3WB0r956VjlVryYWnkecgph0PKuHADDlF_uKBNFKHObYYWHqN7NxIUTLEbQmcgiTXk86wYEo78be-lvm2nNNI86DoayfRHMbtErBh7yoLmTUnxxXxwE_PZwqI4iywdf9yQuBAbtpQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Av. Álvarez Thomas 362, C1430 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJnQL85l23vJURWdr5GWmDZLM",
+    "notes": "",
+    "rating": 3.6,
+    "user_ratings_total": 100,
+    "stars": "★★★☆☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Обучение",
+    "types": [
+      "обучение"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJnQL85l23vJURWdr5GWmDZLM/photos/ATKogperfZwlhBQ75P66Ez_CSdFuu6SnfTYDupKZa_MkIhR0YNkrG9QFSJA3R8GWgM-oFmK_poyR4h9KWKzQRlOARbAzZqGZq-HpTfOB7d-EZnwH_aVm6eUHB-Tsa1TGV-fGIucErT2HsvCeKoZjVuPENEaH3pE76U33cr1z5ekCax6zL-51Uw2d0IuaOVUQbajlIgXdrV4UKmdZWfLUiAfscHprug3CHmEAwfdBVGPQ7SDPIsVF5eibMPKgIln-JM1AtCKgn5i5vKtsZUFbx5mLrGDllkL20C_Pop3WB0r956VjlVryYWnkecgph0PKuHADDlF_uKBNFKHObYYWHqN7NxIUTLEbQmcgiTXk86wYEo78be-lvm2nNNI86DoayfRHMbtErBh7yoLmTUnxxXxwE_PZwqI4iywdf9yQuBAbtpQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744121427,
+    "name": "Дикая природа Аргентины",
+    "category": "Обучение",
+    "subtype": "",
+    "lat": -34.6166092,
+    "lng": -58.3564354,
+    "neighborhood": "Puerto Madero",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/argentina_nature",
+    "phone": "+54 9 11 7127-8842",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJEeCLg8A1o5URtbtZC7UEQF0/photos/ATKogpeEBzPtkGShKHHRTZW98yc6UgbSoioo2ZKMCwudvi7wUwwwaM7D1gMw-bQtm5jKmJK3TJ77P_RQp3BoEJ0yXNEqYEjaMmMHMD7Cib5UHvhZWCwGIdinOwBU1owUuF-5nrpBQk4Cp1GerKdcib5s2OOGxVrjrTR40h-YriJ9CWsygKUA2TD7xvBpzHAyfraqQgIb-_SUKlmQ8_pSJoHQN7KpGQHN4AlsUQAOsaixh1vGHJNtr_fT5sUhOz81wBsawXnzgeXRldNTUtnhDFXmaYic1kU9v2_lZ5lChM-qkapn-A/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Costanera sur, C1107 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJEeCLg8A1o5URtbtZC7UEQF0",
+    "notes": "",
+    "rating": 4.9,
+    "user_ratings_total": 39,
+    "stars": "★★★★☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Обучение",
+    "types": [
+      "обучение"
+    ],
+    "price_level": 2,
+    "price_text": "Умеренно",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJEeCLg8A1o5URtbtZC7UEQF0/photos/ATKogpeEBzPtkGShKHHRTZW98yc6UgbSoioo2ZKMCwudvi7wUwwwaM7D1gMw-bQtm5jKmJK3TJ77P_RQp3BoEJ0yXNEqYEjaMmMHMD7Cib5UHvhZWCwGIdinOwBU1owUuF-5nrpBQk4Cp1GerKdcib5s2OOGxVrjrTR40h-YriJ9CWsygKUA2TD7xvBpzHAyfraqQgIb-_SUKlmQ8_pSJoHQN7KpGQHN4AlsUQAOsaixh1vGHJNtr_fT5sUhOz81wBsawXnzgeXRldNTUtnhDFXmaYic1kU9v2_lZ5lChM-qkapn-A/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756612843272,
+    "name": "WeWork Espacio de Oficinas & Coworking",
+    "category": "Работа",
+    "subtype": "",
+    "lat": -34.6036651,
+    "lng": -58.377891,
+    "neighborhood": "San Nicolás",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.wework.com/es-LA/buildings/corrientes-800--buenos-aires",
+    "phone": "+54 11 2041-6127",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJk8GIYAjLvJURT2jfEJYBIGI/photos/ATKogpfgRNKtdTRPihOCu78bcOsKR_wJ-3PUteSQzKiHTOVIbZy7iHSR7tVDgehc1imo6lF0sPxfbrrG-ufRzsUj77bUTVvGIkhpL7Ok7jqM45n2iB0AhsIeuMfH0rJayjSVoo0CZcNfA1rNrdZuyApvh7BVms4S38o4WdHDs28axgAIQKoyFhtTOETPVtx_VMYsM4n1OO-vEIbF17jH5WTLbQRfURM8RGolbvUt6k-554muqhe55TOXxG95ZdGhOkxaxoZBB21ypeIGW3U8u-XzfbDuck4Ayy9Yk7GlPjnINhGFAA/media?maxWidthPx=800",
+    "address": "Av. Corrientes 800, C1008 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJk8GIYAjLvJURT2jfEJYBIGI",
+    "notes": "",
+    "rating": 4.2,
+    "user_ratings_total": 53,
+    "stars": "★★★★☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Работа",
+    "types": [
+      "работа"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJk8GIYAjLvJURT2jfEJYBIGI/photos/ATKogpfgRNKtdTRPihOCu78bcOsKR_wJ-3PUteSQzKiHTOVIbZy7iHSR7tVDgehc1imo6lF0sPxfbrrG-ufRzsUj77bUTVvGIkhpL7Ok7jqM45n2iB0AhsIeuMfH0rJayjSVoo0CZcNfA1rNrdZuyApvh7BVms4S38o4WdHDs28axgAIQKoyFhtTOETPVtx_VMYsM4n1OO-vEIbF17jH5WTLbQRfURM8RGolbvUt6k-554muqhe55TOXxG95ZdGhOkxaxoZBB21ypeIGW3U8u-XzfbDuck4Ayy9Yk7GlPjnINhGFAA/media?maxWidthPx=800"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745505690,
+    "name": "Alicia y el Gato",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.565191399999996,
+    "lng": -58.4546041,
+    "neighborhood": "Belgrano",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/aliciayelgato",
+    "phone": "+54 11 7214-3333",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ6cb2UgC1vJURrovI22WlLT8/photos/ATKogpe1Sdp6ndrIKsiuIzfHLUB6fAlIIGJACfTdaCyL7847JitgjHquxrZxPf-aPB7hoeqkP-OTltMEuLoiiQ8X1HYKLOCrHosMMCAMkPQIa7cSQSVXhYyyLWY-eVLTBiCLu9zXES-f1r3qXdXWqESOBY8WomwNIjj0UYUB8CVgLGUMc_sQLUcWmw4tUFWoqREjwLd4OdAcYvH8CQpuepe3QUflvM0mnyPORgjEL_3P_RCLuSck27i5Y55ul31wffTA110JpUC6Zy2FYEKwwMbYi3I0nzozLITqeYHV-6kL3vC5xw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "La Pampa 2430, C1428EAR Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ6cb2UgC1vJURrovI22WlLT8",
+    "notes": "",
+    "rating": 3.1,
+    "user_ratings_total": 16,
+    "stars": "★★★☆☆",
+    "description": "Уютный ресторан с традиционной кухней и современным подходом к приготовлению блюд.",
+    "short_description": "Семейный ресторан, специализирующийся на домашней кухне и свежих продуктах....",
+    "place_type": "Рестораны",
+    "types": [
+      "рестораны"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJ6cb2UgC1vJURrovI22WlLT8/photos/ATKogpe1Sdp6ndrIKsiuIzfHLUB6fAlIIGJACfTdaCyL7847JitgjHquxrZxPf-aPB7hoeqkP-OTltMEuLoiiQ8X1HYKLOCrHosMMCAMkPQIa7cSQSVXhYyyLWY-eVLTBiCLu9zXES-f1r3qXdXWqESOBY8WomwNIjj0UYUB8CVgLGUMc_sQLUcWmw4tUFWoqREjwLd4OdAcYvH8CQpuepe3QUflvM0mnyPORgjEL_3P_RCLuSck27i5Y55ul31wffTA110JpUC6Zy2FYEKwwMbYi3I0nzozLITqeYHV-6kL3vC5xw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744949659,
+    "name": "Barís",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.596258899999995,
+    "lng": -58.378282,
+    "neighborhood": "Retiro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.facebook.com/baris.kharlamov",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJJ-yJHLbKvJUREmZUpoxH69c/photos/ATKogpebBZ4U5sKVmwSPHDkhRRECONfyfEHR86cjqm4PNxhnTxFoi5Zjoi0PorPmRtdeJ-g4xnM7zGZAr2YiJyqlB5Kb_g9ykBawqfxkfZTj42-7EsGY-QE0SxxsY-8Bkv9nkwlqHuZEeEiSm86Kd7VrPqo4c-W6bMel-nXrD4mlzIkwrkHw4NPvMUYn0p-JU7W2dG6j-Pv0Eo4HNYzID6AyH1G4IBV7KgXTZMijDaI0MJSMX9GOC8rgPKqz5rPbO_0Xl8G3ARlvQdOYChYVtuHSqOcxQcbLhfxOT2zCiHLZhqvx0d0VJE75MTwHVPYw_Dgibw7BM7cTG9F6cq48UblTXa1t2Bl4XvRASqs1DmwSGpK7kLxzCXj7zSEVW7gfnhSTn5t7NnDfeJhQ7b1ppcysJwBtZZEX81FWItw0GKA0sxf-SQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Marcelo Torcuato de Alvear 789, C1058 AAI, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJJ-yJHLbKvJUREmZUpoxH69c",
+    "notes": "",
+    "rating": 3.4,
+    "user_ratings_total": 140,
+    "stars": "★★★☆☆",
+    "description": "Уютный ресторан с традиционной кухней и современным подходом к приготовлению блюд.",
+    "short_description": "Элегантный ресторан с изысканным меню и профессиональным обслуживанием....",
+    "place_type": "Рестораны",
+    "types": [
+      "рестораны"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJJ-yJHLbKvJUREmZUpoxH69c/photos/ATKogpebBZ4U5sKVmwSPHDkhRRECONfyfEHR86cjqm4PNxhnTxFoi5Zjoi0PorPmRtdeJ-g4xnM7zGZAr2YiJyqlB5Kb_g9ykBawqfxkfZTj42-7EsGY-QE0SxxsY-8Bkv9nkwlqHuZEeEiSm86Kd7VrPqo4c-W6bMel-nXrD4mlzIkwrkHw4NPvMUYn0p-JU7W2dG6j-Pv0Eo4HNYzID6AyH1G4IBV7KgXTZMijDaI0MJSMX9GOC8rgPKqz5rPbO_0Xl8G3ARlvQdOYChYVtuHSqOcxQcbLhfxOT2zCiHLZhqvx0d0VJE75MTwHVPYw_Dgibw7BM7cTG9F6cq48UblTXa1t2Bl4XvRASqs1DmwSGpK7kLxzCXj7zSEVW7gfnhSTn5t7NnDfeJhQ7b1ppcysJwBtZZEX81FWItw0GKA0sxf-SQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744078257,
+    "name": "Cuchara del mundo",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.6033372,
+    "lng": -58.4682792,
+    "neighborhood": "Villa General Mitre",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://t.me/hOla_carne_and_pescado_Argentina",
+    "phone": "+54 11 3248-7598",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJwZfVVQDJvJURdMP4MT5ODcc/photos/ATKogpeSORzQSQkzRfQKu2L0RKfWbtQgTyt3WATKTqbfrgS3hhJgA4Uuz6H6hm5d0w6hgwwwfzETTKdbzX0hNhP2hZzcxP216w96CWF1K9M6T4UiNjUV-MbXcnoini2hX-fng0Pv9_c0H3bOyNG8UUyqp7QWHkR3kU2PC5r8w-AgnByxiO3O6zjorHSd2u6SzOmpAYGNU-uE2D8fy1ctszp3tzACIG8-eouTrJFpOJRbCZMiLWY8RGHscrlALbWTjhL2AMcYk6_tPqpvuIaBK7WtNZpKuxuyqTqSm9W3xyoAmmgRPg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Sánchez 2205, C1416 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJwZfVVQDJvJURdMP4MT5ODcc",
+    "notes": "",
+    "rating": 4.6,
+    "user_ratings_total": 46,
+    "stars": "★★★★☆",
+    "description": "Элегантный ресторан с изысканным меню и профессиональным обслуживанием.",
+    "short_description": "Уютный ресторан с традиционной кухней и современным подходом к приготовлению блюд....",
+    "place_type": "Рестораны",
+    "types": [
+      "рестораны"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJwZfVVQDJvJURdMP4MT5ODcc/photos/ATKogpeSORzQSQkzRfQKu2L0RKfWbtQgTyt3WATKTqbfrgS3hhJgA4Uuz6H6hm5d0w6hgwwwfzETTKdbzX0hNhP2hZzcxP216w96CWF1K9M6T4UiNjUV-MbXcnoini2hX-fng0Pv9_c0H3bOyNG8UUyqp7QWHkR3kU2PC5r8w-AgnByxiO3O6zjorHSd2u6SzOmpAYGNU-uE2D8fy1ctszp3tzACIG8-eouTrJFpOJRbCZMiLWY8RGHscrlALbWTjhL2AMcYk6_tPqpvuIaBK7WtNZpKuxuyqTqSm9W3xyoAmmgRPg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744971610,
+    "name": "Faro",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.5831661,
+    "lng": -58.43934050000001,
+    "neighborhood": "Palermo Hollywood",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://linktr.ee/faro.local",
+    "phone": "+54 9 11 6690-0131",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJhZy5VOO1vJUR2DMFoTD8C5c/photos/ATKogpeSptGaZSkyusGFCg8al2D31CI4xBRIpMwqqyXLCFNEjlH4AYSI02cbJvB3uwsmnZ2xCCJG_7tc7sK4VYgIJyhoCzzzzKYujMYzl2zFmZXCB4lURSaaB3sawFtSSMvyi4EcJJAH4oulKvlZB3B1qVsBmIMdcViW_mltujxKACHaGUm2BIQ-88axRk5fsUej3AkIErQFaNDr2yIHiuoUbcAL30MLCqawLQzzVzrHMrmiDzQCNMQsntIBiN4wen8zP0HE5PVESEew8i_zSPTYZc_t4nGdglsbNZtbo1K-GDNfdQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Gorriti 5801, C1414 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJhZy5VOO1vJUR2DMFoTD8C5c",
+    "notes": "",
+    "rating": 3.6,
+    "user_ratings_total": 209,
+    "stars": "★★★☆☆",
+    "description": "Уютный ресторан с традиционной кухней и современным подходом к приготовлению блюд.",
+    "short_description": "Уютный ресторан с традиционной кухней и современным подходом к приготовлению блюд....",
+    "place_type": "Рестораны",
+    "types": [
+      "рестораны"
+    ],
+    "price_level": 2,
+    "price_text": "Умеренно",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJhZy5VOO1vJUR2DMFoTD8C5c/photos/ATKogpeSptGaZSkyusGFCg8al2D31CI4xBRIpMwqqyXLCFNEjlH4AYSI02cbJvB3uwsmnZ2xCCJG_7tc7sK4VYgIJyhoCzzzzKYujMYzl2zFmZXCB4lURSaaB3sawFtSSMvyi4EcJJAH4oulKvlZB3B1qVsBmIMdcViW_mltujxKACHaGUm2BIQ-88axRk5fsUej3AkIErQFaNDr2yIHiuoUbcAL30MLCqawLQzzVzrHMrmiDzQCNMQsntIBiN4wen8zP0HE5PVESEew8i_zSPTYZc_t4nGdglsbNZtbo1K-GDNfdQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745002620,
+    "name": "GYROS-SHAWARMA",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.5946662,
+    "lng": -58.4148862,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://t.me/Gyros_BA",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJHbDdUfHLvJURn70dBRJGn78/photos/ATKogpe-2vZdZh8M8UtnzS1JyzSZdZDdqvQhnJYNNFaXGJS_ASgqF81Jj8CU0LB7d14U_9XpkSK0u6sQmooP7YLu4jYupqDNnejRAtO5yKLes7ANY1nbr74cRUZTmDOw6maTYXhGyk5_Xtnm_jvokEPdJe0QIiZ6MCsQwxvbS8JSa31ciRGpxQJvKI8qOe-Z0l6uuhf_nLcJaQja26tB-oYfin-QQVoYRv6kZ1TY_wm3XI60Av6n6cPMu8jlbi_JRCWiguyUSKdMmcdZrTeA4HNULCkJGG3MsAPt3AlEEJE_76hwTg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Mario Bravo 1298, C1175 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJHbDdUfHLvJURn70dBRJGn78",
+    "notes": "",
+    "rating": 3.8,
+    "user_ratings_total": 140,
+    "stars": "★★★☆☆",
+    "description": "Элегантный ресторан с изысканным меню и профессиональным обслуживанием.",
+    "short_description": "Семейный ресторан, специализирующийся на домашней кухне и свежих продуктах....",
+    "place_type": "Рестораны",
+    "types": [
+      "рестораны"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJHbDdUfHLvJURn70dBRJGn78/photos/ATKogpe-2vZdZh8M8UtnzS1JyzSZdZDdqvQhnJYNNFaXGJS_ASgqF81Jj8CU0LB7d14U_9XpkSK0u6sQmooP7YLu4jYupqDNnejRAtO5yKLes7ANY1nbr74cRUZTmDOw6maTYXhGyk5_Xtnm_jvokEPdJe0QIiZ6MCsQwxvbS8JSa31ciRGpxQJvKI8qOe-Z0l6uuhf_nLcJaQja26tB-oYfin-QQVoYRv6kZ1TY_wm3XI60Av6n6cPMu8jlbi_JRCWiguyUSKdMmcdZrTeA4HNULCkJGG3MsAPt3AlEEJE_76hwTg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745340404,
+    "name": "MUSGO — Fine Dining · Restaurante de Alta Cocina en Palermo",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.5871237,
+    "lng": -58.42694419999999,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://musgoba.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "phone": "+54 9 11 6407-3841",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJBxEgp7a1vJURgyGrFBmbLm4/photos/ATKogpemb1UwYgHjReV2RDhNWUo2L6TMefO4UFTyLsxcu2veEnAuR3CPcFi0kb3rMH8O0RBGzRusZqQaKTL1uUt1xYe_Ot-BUVfV2pa4mABFxlFdf3JmYubZVAOBmiatNozCligrpkqtqnHs2AzELToAONachjqxSa4lrjUh1aIrS1cKRNhnD6XsioJKMG0MZ_9icAhJfPl-RRpnDvNXstU3qAvqZQLXoE-VvDmctdt7Sd8Ov0hxMQ9spT8p4HCcSdl039d_Tu7F7KrK2eYKdAyx74Ph5gaDVtUQiw3kNQ2fYe6-rQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Nicaragua 4758, C1004 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJBxEgp7a1vJURgyGrFBmbLm4",
+    "notes": "",
+    "rating": 3.8,
+    "user_ratings_total": 86,
+    "stars": "★★★☆☆",
+    "description": "Уютный ресторан с традиционной кухней и современным подходом к приготовлению блюд.",
+    "short_description": "Семейный ресторан, специализирующийся на домашней кухне и свежих продуктах....",
+    "place_type": "Рестораны",
+    "types": [
+      "рестораны"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJBxEgp7a1vJURgyGrFBmbLm4/photos/ATKogpemb1UwYgHjReV2RDhNWUo2L6TMefO4UFTyLsxcu2veEnAuR3CPcFi0kb3rMH8O0RBGzRusZqQaKTL1uUt1xYe_Ot-BUVfV2pa4mABFxlFdf3JmYubZVAOBmiatNozCligrpkqtqnHs2AzELToAONachjqxSa4lrjUh1aIrS1cKRNhnD6XsioJKMG0MZ_9icAhJfPl-RRpnDvNXstU3qAvqZQLXoE-VvDmctdt7Sd8Ov0hxMQ9spT8p4HCcSdl039d_Tu7F7KrK2eYKdAyx74Ph5gaDVtUQiw3kNQ2fYe6-rQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756745114025,
+    "name": "Pizza Nika",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.5949804,
+    "lng": -58.3736878,
+    "neighborhood": "Retiro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJcao87g7LvJURKONsnXIMkNM/photos/ATKogpfvP8B6ODwG3WsmDIvvKdwcAtozOC3X4pWzAbbCN6IH319tMkuHl8woYl-74FampPVYJPzF9tfBuelQ9Gw9_mTN2u69KXNYpheeTHUyGymD7Ry8GKywJHqgN0o0KiD7mpgnd2oJOcleOPhI6bicA9SroZF1vA-Wxw9pLICwdXRZZmJAtd7E_IDMUvFKzs3ETAoEijWCR1bhUCdt-y0gfZXfRiK8lOo1Wz4rJQyVbK8Aq3_7y3WOBVSgyCaxF0GwzwQd76di444Hh-bBxdx9pvAAzeYfFThZsA6c8ONGMqoW6w/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Dr. Ricardo Rojas 451, C1001 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJcao87g7LvJURKONsnXIMkNM",
+    "notes": "",
+    "rating": 4.7,
+    "user_ratings_total": 62,
+    "stars": "★★★★☆",
+    "description": "Элегантный ресторан с изысканным меню и профессиональным обслуживанием.",
+    "short_description": "Семейный ресторан, специализирующийся на домашней кухне и свежих продуктах....",
+    "place_type": "Рестораны",
+    "types": [
+      "рестораны"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJcao87g7LvJURKONsnXIMkNM/photos/ATKogpfvP8B6ODwG3WsmDIvvKdwcAtozOC3X4pWzAbbCN6IH319tMkuHl8woYl-74FampPVYJPzF9tfBuelQ9Gw9_mTN2u69KXNYpheeTHUyGymD7Ry8GKywJHqgN0o0KiD7mpgnd2oJOcleOPhI6bicA9SroZF1vA-Wxw9pLICwdXRZZmJAtd7E_IDMUvFKzs3ETAoEijWCR1bhUCdt-y0gfZXfRiK8lOo1Wz4rJQyVbK8Aq3_7y3WOBVSgyCaxF0GwzwQd76di444Hh-bBxdx9pvAAzeYfFThZsA6c8ONGMqoW6w/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743655195,
+    "name": "Taproom DaLi Brewery",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.5876355,
+    "lng": -58.41827670000001,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ-xK3KgC1vJUR7WJg4tvRZmc/photos/ATKogpd-3jemgHDvdtS9ibyRfRfFazSFo3lm-lZH3WuYWhC0YdKiqpE92PyKYbGsr1S9Rl1blQMQFe-9KUprCKuT0hjgoIwi4b5rxFS8Crsv52XxG11vSJ9yKzQKPTASDDu9jJkJmwguSiHuKPjpbs6I7fekrOHueJEhw22yBDSeS3lXVYz_CMcnwinnp6Di0eMEbu_vHmgeNkkkRAM0_jCDsszWmph8fjz4HYqQQi-JSJKyA3KZuGfwDz2Z3HjG13_767sneHhqjdEH8Z2V5TgojXcxzA9W_l9iXvlcbQxmNFiFK_wCzNxLF4U69WRdRpyEYlfUfLkYxmaYZncfBI7zdN9lzqbNDY1OYay25xseAHjAUsoaPe65f00cU6EcKa6RdcwnZIJKaOLVnDLzQv41vDtw5kjmEQFWApYFHcJsywyi7190-sGQZUV85pqy2mEp/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Aráoz 2272, C1425DGH C1425DGH, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ-xK3KgC1vJUR7WJg4tvRZmc",
+    "notes": "",
+    "rating": 3.7,
+    "user_ratings_total": 171,
+    "stars": "★★★☆☆",
+    "description": "Уютный ресторан с традиционной кухней и современным подходом к приготовлению блюд.",
+    "short_description": "Семейный ресторан, специализирующийся на домашней кухне и свежих продуктах....",
+    "place_type": "Рестораны",
+    "types": [
+      "рестораны"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJ-xK3KgC1vJUR7WJg4tvRZmc/photos/ATKogpd-3jemgHDvdtS9ibyRfRfFazSFo3lm-lZH3WuYWhC0YdKiqpE92PyKYbGsr1S9Rl1blQMQFe-9KUprCKuT0hjgoIwi4b5rxFS8Crsv52XxG11vSJ9yKzQKPTASDDu9jJkJmwguSiHuKPjpbs6I7fekrOHueJEhw22yBDSeS3lXVYz_CMcnwinnp6Di0eMEbu_vHmgeNkkkRAM0_jCDsszWmph8fjz4HYqQQi-JSJKyA3KZuGfwDz2Z3HjG13_767sneHhqjdEH8Z2V5TgojXcxzA9W_l9iXvlcbQxmNFiFK_wCzNxLF4U69WRdRpyEYlfUfLkYxmaYZncfBI7zdN9lzqbNDY1OYay25xseAHjAUsoaPe65f00cU6EcKa6RdcwnZIJKaOLVnDLzQv41vDtw5kjmEQFWApYFHcJsywyi7190-sGQZUV85pqy2mEp/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756747276989,
+    "name": "The Golden Windmill",
+    "category": "Рестораны",
+    "subtype": "",
+    "lat": -34.617024,
+    "lng": -58.42433679999999,
+    "neighborhood": "Almagro",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://instagram.com/elmolino.dorado?utm_medium=copy_link",
+    "phone": "+54 11 6260-7418",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJI8r1yVvKvJUR2NmlOwoPASE/photos/ATKogpepRaJirN8xbvRbzziyzONCkFkE4yy_n8PA_PnyuASsuXHwujBDT-rp34mRlDQSBAxBeZiskfL9t7xuT-U-OEBtHuyczHL51KGZuY7RS20974xHYJgOMBjvIDeoma-2GCNsxjNdtRpFAhnGvDsq-4tMxJIGsM4m7Mm5WvGDQ-zobrcf6SNF4nnGfSWfXuyrh9YEoN2rJL5piNPXEotJYHb-G4RuMS63_s9Agr3kxeC8nDQ1nsDDHg3m9I7Yg6OpQo-6a0kpB-UqpbbM8HJyBOqOx8cH8btxeah8LT-xW_zrjEgZ3XDvsL_vyqSc4ku2qXrjIfI4xTA0TT7kkH10vfAqPAyn9MkzM9RWBixa7_lIm3MUdJNdRT1D6q0DBDYu1P5Nqhdo0_tImbL9SHTh0wc8Jfp7LrSdddlPP4MSkzVw5maHxIBL_ULPJe8_gcgT/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Quito 4100, C1212 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJI8r1yVvKvJUR2NmlOwoPASE",
+    "notes": "",
+    "rating": 3.6,
+    "user_ratings_total": 43,
+    "stars": "★★★☆☆",
+    "description": "Семейный ресторан, специализирующийся на домашней кухне и свежих продуктах.",
+    "short_description": "Семейный ресторан, специализирующийся на домашней кухне и свежих продуктах....",
+    "place_type": "Рестораны",
+    "types": [
+      "рестораны"
+    ],
+    "price_level": 2,
+    "price_text": "Умеренно",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJI8r1yVvKvJUR2NmlOwoPASE/photos/ATKogpepRaJirN8xbvRbzziyzONCkFkE4yy_n8PA_PnyuASsuXHwujBDT-rp34mRlDQSBAxBeZiskfL9t7xuT-U-OEBtHuyczHL51KGZuY7RS20974xHYJgOMBjvIDeoma-2GCNsxjNdtRpFAhnGvDsq-4tMxJIGsM4m7Mm5WvGDQ-zobrcf6SNF4nnGfSWfXuyrh9YEoN2rJL5piNPXEotJYHb-G4RuMS63_s9Agr3kxeC8nDQ1nsDDHg3m9I7Yg6OpQo-6a0kpB-UqpbbM8HJyBOqOx8cH8btxeah8LT-xW_zrjEgZ3XDvsL_vyqSc4ku2qXrjIfI4xTA0TT7kkH10vfAqPAyn9MkzM9RWBixa7_lIm3MUdJNdRT1D6q0DBDYu1P5Nqhdo0_tImbL9SHTh0wc8Jfp7LrSdddlPP4MSkzVw5maHxIBL_ULPJe8_gcgT/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743205660,
+    "name": "Парк Лас Эрас",
+    "category": "Спорт",
+    "subtype": "",
+    "lat": -34.5838884,
+    "lng": -58.408831899999996,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://mapa.buenosaires.gob.ar/informacion/?lat=-34.584018&lng=-58.408708&zl=15&modo=transporte&dir=Parque+Las+Heras&ilat=-34.584018&ilng=-58.408708&fid=espacios_verdes_publicos|1107",
+    "phone": "",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJzUXgvH21vJURmgmG5hpUBCc/photos/ATKogpedPCYDEir01snS9gAC21-bNn1q21pJvyMC8f5CvMpdbecVoe2mRGGG0gybkpTsH8jTyMy9cZkTeweyV5_3IiorYsaH2OiR3QbVbDIA2UNn6JyfB9fzGThislZn_QYiVbjNSuy42lKzEK_q5Vb_BSld8B5ZAR91qBw5Ef-nSjGbKoF_577hJZ8CROwaoGRMtD6T1ffhDsH215AE0WOrlkrLVc-Rid0-MnBsnO03ckU2a9G7mPGXAHCDDRx0HEb1YmnupLlV5XMd9f6auOFWQqs0dYX7vLmRbrEr-wlXGMxkI7Q2otQpDjY2gB5oWirV6vF_R3GTeEVcke-pfXU5UkmvBl9RY8kbSHsgm-e07fuUvUWlb_cG9NMOgfwz5GPLsKVTGDY4mUaNIJrpW6GOOdohE1hk9AXq9UBCYKGXJrCp9Wco/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "French, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJzUXgvH21vJURmgmG5hpUBCc",
+    "notes": "",
+    "rating": 3.1,
+    "user_ratings_total": 31,
+    "stars": "★★★☆☆",
+    "description": "Спортивный клуб с дружелюбной атмосферой и опытными инструкторами.",
+    "short_description": "Современный спортивный комплекс с профессиональным оборудованием и тренерами....",
+    "place_type": "Спорт",
+    "types": [
+      "спорт"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJzUXgvH21vJURmgmG5hpUBCc/photos/ATKogpedPCYDEir01snS9gAC21-bNn1q21pJvyMC8f5CvMpdbecVoe2mRGGG0gybkpTsH8jTyMy9cZkTeweyV5_3IiorYsaH2OiR3QbVbDIA2UNn6JyfB9fzGThislZn_QYiVbjNSuy42lKzEK_q5Vb_BSld8B5ZAR91qBw5Ef-nSjGbKoF_577hJZ8CROwaoGRMtD6T1ffhDsH215AE0WOrlkrLVc-Rid0-MnBsnO03ckU2a9G7mPGXAHCDDRx0HEb1YmnupLlV5XMd9f6auOFWQqs0dYX7vLmRbrEr-wlXGMxkI7Q2otQpDjY2gB5oWirV6vF_R3GTeEVcke-pfXU5UkmvBl9RY8kbSHsgm-e07fuUvUWlb_cG9NMOgfwz5GPLsKVTGDY4mUaNIJrpW6GOOdohE1hk9AXq9UBCYKGXJrCp9Wco/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756659110442,
+    "name": "Algorithmics Belgrano | Escuela internacional de programación para niños",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.556420599999996,
+    "lng": -58.463153999999996,
+    "neighborhood": "Belgrano",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://belgrano.alg.academy/",
+    "phone": "+54 11 6693-5876",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJzRb1GYS3vJURDvDr0i-qaFk/photos/ATKogpd537-HeVoUv0qnChLHMbOvS7UArtkwRGaU2pOwsn8GsNm2QWtse-B_qHid03-vS5OOBuxdYao3-GRjZnK-JTQKalwrc7iG9aRdhmV7Kv4dkyJXt9pQI51XKrHOvvALoWZKdZbeaiPVx7obCmHfKMeG-P9vpZnLK4kLOuShSUxHKTe-HAyIxavyfHV4aYeiYG22lfww66FoVLFB4qrBbujWY75MzYaxBES4KGjHIookZVQ46J2FvPwdKYyrFaR0XAcU3K3Rke4uS5hdn7A4zJb0SH9YYyPieNqbGvG7Vu0MFw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Cdad. de la Paz 2846, C1428 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJzRb1GYS3vJURDvDr0i-qaFk",
+    "notes": "",
+    "rating": 3,
+    "user_ratings_total": 167,
+    "stars": "★★★☆☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Услуги",
+    "types": [
+      "услуги"
+    ],
+    "price_level": 3,
+    "price_text": "Дорого",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJzRb1GYS3vJURDvDr0i-qaFk/photos/ATKogpd537-HeVoUv0qnChLHMbOvS7UArtkwRGaU2pOwsn8GsNm2QWtse-B_qHid03-vS5OOBuxdYao3-GRjZnK-JTQKalwrc7iG9aRdhmV7Kv4dkyJXt9pQI51XKrHOvvALoWZKdZbeaiPVx7obCmHfKMeG-P9vpZnLK4kLOuShSUxHKTe-HAyIxavyfHV4aYeiYG22lfww66FoVLFB4qrBbujWY75MzYaxBES4KGjHIookZVQ46J2FvPwdKYyrFaR0XAcU3K3Rke4uS5hdn7A4zJb0SH9YYyPieNqbGvG7Vu0MFw/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744815865,
+    "name": "AMO Estudio fotográfico sin fotógrafo",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.5895839,
+    "lng": -58.404146999999995,
+    "neighborhood": "Barrio Norte",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/amo.estudio?igsh=b2NteGhyYmJmcGw1",
+    "phone": "+54 9 11 2174-4314",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJd671hlLLvJURlxdeqoz4Hhg/photos/ATKogpeDMF8n_LnmsTKx6CRkgEzEB3ty-At14vVXSvveqvphH7GA3Hnl9quGtW0Zp1RdLJdtm7DnOHgeLDDf2d-izc7nY8xuRm8pSw_CEu1ewb-ouyveeNzXozFZdMCcqVY8y3JmvR97jJrkVl0uOK7Gz7dTXHhP_SZ76Vmv00iV2YGzbsaguzIHbxAiUEkUOUOPIRdsOFutgFlgb_9Djf--Y4uibC_WT7U0tM3O3aruPP6VtHH1fp1LbasIHnsMu7BXL4Caw8CGtGvoktbOoHZxke05Jt7Xdij90H2tVo0Gl8wUlg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Juncal 2699, C1425 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJd671hlLLvJURlxdeqoz4Hhg",
+    "notes": "",
+    "rating": 4.9,
+    "user_ratings_total": 173,
+    "stars": "★★★★☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Услуги",
+    "types": [
+      "услуги"
+    ],
+    "price_level": 2,
+    "price_text": "Умеренно",
+    "opening_hours": [
+      "Понедельник: 9:00 - 22:00",
+      "Вторник: 9:00 - 22:00",
+      "Среда: 9:00 - 22:00",
+      "Четверг: 9:00 - 22:00",
+      "Пятница: 9:00 - 23:00",
+      "Суббота: 10:00 - 23:00",
+      "Воскресенье: 10:00 - 21:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJd671hlLLvJURlxdeqoz4Hhg/photos/ATKogpeDMF8n_LnmsTKx6CRkgEzEB3ty-At14vVXSvveqvphH7GA3Hnl9quGtW0Zp1RdLJdtm7DnOHgeLDDf2d-izc7nY8xuRm8pSw_CEu1ewb-ouyveeNzXozFZdMCcqVY8y3JmvR97jJrkVl0uOK7Gz7dTXHhP_SZ76Vmv00iV2YGzbsaguzIHbxAiUEkUOUOPIRdsOFutgFlgb_9Djf--Y4uibC_WT7U0tM3O3aruPP6VtHH1fp1LbasIHnsMu7BXL4Caw8CGtGvoktbOoHZxke05Jt7Xdij90H2tVo0Gl8wUlg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743615425,
+    "name": "Henry_Barber",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.6116131,
+    "lng": -58.3706847,
+    "neighborhood": "Monserrat",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://dikidi.net/1780304",
+    "phone": "+54 11 2765-3514",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ7xxL6xY1o5UR-uLk0Vq0tqA/photos/ATKogpfCH2RUBatQISemaZk8dGx9ePMkxDigKhMFmaQ2UUmxdzE5roCsS1lBLkaLbSeXn3Vz3TklRTEeQMTl2PiTr8IyLW3cwI-TYoDRSBiNYYeBbFs4vle_vnf0t1hhTEWOnr8y3CKQ46Q93FbAllEBjOSw3MvyGr2I8rnuGHNNnwFgf64qOvKekZZOGx-vEYsIYpfkEZCvODEp3WGkwI2exOaoocT3J-iAXEKFtFE4vksEKnTOKQ3ncvfezBIBlST7GxJNb4nurPDdO1Viqj2Ac9BoM_Gv9rpw3R9G7eOyaLkXmQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Balcarce 329, C1064AAH Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ7xxL6xY1o5UR-uLk0Vq0tqA",
+    "notes": "",
+    "rating": 4.4,
+    "user_ratings_total": 115,
+    "stars": "★★★★☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Услуги",
+    "types": [
+      "услуги"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJ7xxL6xY1o5UR-uLk0Vq0tqA/photos/ATKogpfCH2RUBatQISemaZk8dGx9ePMkxDigKhMFmaQ2UUmxdzE5roCsS1lBLkaLbSeXn3Vz3TklRTEeQMTl2PiTr8IyLW3cwI-TYoDRSBiNYYeBbFs4vle_vnf0t1hhTEWOnr8y3CKQ46Q93FbAllEBjOSw3MvyGr2I8rnuGHNNnwFgf64qOvKekZZOGx-vEYsIYpfkEZCvODEp3WGkwI2exOaoocT3J-iAXEKFtFE4vksEKnTOKQ3ncvfezBIBlST7GxJNb4nurPDdO1Viqj2Ac9BoM_Gv9rpw3R9G7eOyaLkXmQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744843508,
+    "name": "Luma Estudio Fotográfico",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.5579029,
+    "lng": -58.4485871,
+    "neighborhood": "Belgrano",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.lumaphoto.me/",
+    "phone": "+54 9 11 6820-4672",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJEb_O7Du1vJURcnZXCG3iGIw/photos/ATKogpdENCkMvZKldyAnZjcA2KAA1kGsaSBUUhNkWfFORHj5dnTftrsIIEA_9Sc27PPO-2O7K786hONSe04fJQZfCen1GIaIsG7ww0MQr9cxepcEMa_sPKl9_2yNhWyOcYJmH274PIy4g-tqNomukmdIUSbp2B9XpFdeABojH7hzWghvYoHuAO8i3ANrygGfoB6oAdiqcLDUNEXbfpuqsOkpuyhW8SLUHRHSmSohUNegsYQ6rOYpe2Cw6aAAPX9IC8I4XgVdUQYthgk9oIS_wylByEn7FCp5WaYv8-rprKMfa7pOD-fZqbiUB70gWPxtCmxLrxSY0hKbF54n10LYhG7au6kRySXl1OxxICiEjBYFD82SLY6jVZ0LzxgRgzjIl0m-nWEKx13Mdyw3ZfRw9SDQu6LBtlu9C0olmqZIXU3HEhkryg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Montañeses 2056, C1428 Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJEb_O7Du1vJURcnZXCG3iGIw",
+    "notes": "",
+    "rating": 5,
+    "user_ratings_total": 26,
+    "stars": "★★★★☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Услуги",
+    "types": [
+      "услуги"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJEb_O7Du1vJURcnZXCG3iGIw/photos/ATKogpdENCkMvZKldyAnZjcA2KAA1kGsaSBUUhNkWfFORHj5dnTftrsIIEA_9Sc27PPO-2O7K786hONSe04fJQZfCen1GIaIsG7ww0MQr9cxepcEMa_sPKl9_2yNhWyOcYJmH274PIy4g-tqNomukmdIUSbp2B9XpFdeABojH7hzWghvYoHuAO8i3ANrygGfoB6oAdiqcLDUNEXbfpuqsOkpuyhW8SLUHRHSmSohUNegsYQ6rOYpe2Cw6aAAPX9IC8I4XgVdUQYthgk9oIS_wylByEn7FCp5WaYv8-rprKMfa7pOD-fZqbiUB70gWPxtCmxLrxSY0hKbF54n10LYhG7au6kRySXl1OxxICiEjBYFD82SLY6jVZ0LzxgRgzjIl0m-nWEKx13Mdyw3ZfRw9SDQu6LBtlu9C0olmqZIXU3HEhkryg/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756743903043,
+    "name": "Mint Lounge",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.584225200000006,
+    "lng": -58.420840999999996,
+    "neighborhood": "Palermo",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/mint_lounge_ar",
+    "phone": "+54 9 11 6681-8821",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJ3_FlSI61vJURJ0JHQyus850/photos/ATKogpeWK5NdHukwe8EMNIrKkeB5HWQllqRkZIxWKuRF0Uh-MPOxZ8IWwNL4IH3Bunetbak23HtEzgcD2BAjiVvyWOQg66sRgIdH81bwNQJftENEVMP2-NglAf_X-JJ1b9TcDd_KPq-3LcjKVLbS9IakMMi9DOHKly0em7n9adMt11jXCaric15V4wYRlJNrjsaR_r2_tEyoBRyvXLKL0mpgf2UOYEz9HTcWO9un1GDPWMNcx86RKEPPzcqQ--DtQJRPVJGG0rFUo-oZO4tdgvAXp91AwrupKKcYig0PBCN5nltwSQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Pje. Virasoro 2367, C1425FDA Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJ3_FlSI61vJURJ0JHQyus850",
+    "notes": "",
+    "rating": 3.6,
+    "user_ratings_total": 16,
+    "stars": "★★★☆☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Услуги",
+    "types": [
+      "услуги"
+    ],
+    "price_level": 0,
+    "price_text": "Бесплатно",
+    "opening_hours": [
+      "Понедельник: 10:00 - 24:00",
+      "Вторник: 10:00 - 24:00",
+      "Среда: 10:00 - 24:00",
+      "Четверг: 10:00 - 24:00",
+      "Пятница: 10:00 - 02:00",
+      "Суббота: 10:00 - 02:00",
+      "Воскресенье: 10:00 - 24:00"
+    ],
+    "is_open_now": true,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJ3_FlSI61vJURJ0JHQyus850/photos/ATKogpeWK5NdHukwe8EMNIrKkeB5HWQllqRkZIxWKuRF0Uh-MPOxZ8IWwNL4IH3Bunetbak23HtEzgcD2BAjiVvyWOQg66sRgIdH81bwNQJftENEVMP2-NglAf_X-JJ1b9TcDd_KPq-3LcjKVLbS9IakMMi9DOHKly0em7n9adMt11jXCaric15V4wYRlJNrjsaR_r2_tEyoBRyvXLKL0mpgf2UOYEz9HTcWO9un1GDPWMNcx86RKEPPzcqQ--DtQJRPVJGG0rFUo-oZO4tdgvAXp91AwrupKKcYig0PBCN5nltwSQ/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  },
+  {
+    "id": 1756744014778,
+    "name": "Peluquería Letto",
+    "category": "Услуги",
+    "subtype": "",
+    "lat": -34.5655721,
+    "lng": -58.46868849999999,
+    "neighborhood": "Belgrano Residencial",
+    "russian_score": 3,
+    "peak_hours": "",
+    "instagram": "",
+    "website": "https://www.instagram.com/aleksandrletto?igsh=MXF6M2NpbGJ3bDB4OQ%3D%3D&utm_source=qr",
+    "phone": "+54 9 11 3352-5787",
+    "photo_url": "https://places.googleapis.com/v1/places/ChIJG1t9bKmquyoRoN0frzNN34M/photos/ATKogpdacZG6XhjOtrur9E9GFU4eZqzspJh6B9zJxZPh3NXgs4Mr3TFBwMSezLAre7twhgpa-1q6k1H7_FRRkTdcPvyoICeYOTewB_jZ0CVW8OCUYxbb7v2_ZPkLv6F0dvhNSI8XgqmR7ViMiHHhqSRephESXIT1QeRE-sxMTwOybNqiJ8q_y3UhH6JtCEGemIcWHlP8FmEHsOHdds2ZxHrGkFF2PbPscEbFdu51a3-4kFMqkbZnjljyYHHO03hpqQNdKvBRO_hkzxsqOQFbRCOewSd7fPLLAcLbiEuf3KaPU9Kde-mgwjziPgfVrgZ_sKRCkBDpxftkHHLX6-WRSd3uS65hCngfbuKK369pAdv-EXUt6jQDMJxUVCiiKdh9C41qj7OxnojPRhIZCh2Pivclg7YOr-IiPwqEkpf_kj0E2b4oDaR0/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI",
+    "address": "Superí 2332, C1428 Autónoma de Buenos Aires, Cdad. Autónoma de Buenos Aires, Аргентина",
+    "place_id": "ChIJG1t9bKmquyoRoN0frzNN34M",
+    "notes": "",
+    "rating": 3.7,
+    "user_ratings_total": 100,
+    "stars": "★★★☆☆",
+    "description": "Качественное заведение с хорошим обслуживанием.",
+    "short_description": "Качественное заведение с хорошим обслуживанием....",
+    "place_type": "Услуги",
+    "types": [
+      "услуги"
+    ],
+    "price_level": 1,
+    "price_text": "Недорого",
+    "opening_hours": [
+      "Понедельник: 8:00 - 20:00",
+      "Вторник: 8:00 - 20:00",
+      "Среда: 8:00 - 20:00",
+      "Четверг: 8:00 - 20:00",
+      "Пятница: 8:00 - 21:00",
+      "Суббота: 9:00 - 21:00",
+      "Воскресенье: 9:00 - 19:00"
+    ],
+    "is_open_now": false,
+    "reviews": [],
+    "photos": [
+      {
+        "reference": "demo_photo",
+        "url": "https://places.googleapis.com/v1/places/ChIJG1t9bKmquyoRoN0frzNN34M/photos/ATKogpdacZG6XhjOtrur9E9GFU4eZqzspJh6B9zJxZPh3NXgs4Mr3TFBwMSezLAre7twhgpa-1q6k1H7_FRRkTdcPvyoICeYOTewB_jZ0CVW8OCUYxbb7v2_ZPkLv6F0dvhNSI8XgqmR7ViMiHHhqSRephESXIT1QeRE-sxMTwOybNqiJ8q_y3UhH6JtCEGemIcWHlP8FmEHsOHdds2ZxHrGkFF2PbPscEbFdu51a3-4kFMqkbZnjljyYHHO03hpqQNdKvBRO_hkzxsqOQFbRCOewSd7fPLLAcLbiEuf3KaPU9Kde-mgwjziPgfVrgZ_sKRCkBDpxftkHHLX6-WRSd3uS65hCngfbuKK369pAdv-EXUt6jQDMJxUVCiiKdh9C41qj7OxnojPRhIZCh2Pivclg7YOr-IiPwqEkpf_kj0E2b4oDaR0/media?maxWidthPx=800&key=AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI"
+      }
+    ],
+    "last_updated": "2025-10-02T02:20:52.278Z",
+    "enriched": true,
+    "demo_data": true
+  }
+];

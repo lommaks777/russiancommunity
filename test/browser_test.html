@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Tests - Russian Community Map</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #0f0f0f;
+            color: #eee;
+        }
+        .test-section {
+            background: #121212;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .test-result {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        .test-pass {
+            background: #1a4d1a;
+            border: 1px solid #2d5a2d;
+        }
+        .test-fail {
+            background: #4d1a1a;
+            border: 1px solid #5a2d2d;
+        }
+        button {
+            background: #0b57d0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0d4bb8;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Browser Tests - Russian Community Map</h1>
+    
+    <div class="test-section">
+        <h2>Тестирование функций карты</h2>
+        <button onclick="testMapFunctions()">Запустить тесты карты</button>
+        <div id="map-results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Тестирование функций событий</h2>
+        <button onclick="testEventFunctions()">Запустить тесты событий</button>
+        <div id="event-results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Тестирование функций формы</h2>
+        <button onclick="testFormFunctions()">Запустить тесты формы</button>
+        <div id="form-results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Тестирование обработки текста</h2>
+        <button onclick="testTextProcessing()">Запустить тесты текста</button>
+        <div id="text-results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Все тесты</h2>
+        <button onclick="runAllBrowserTests()">Запустить все тесты</button>
+        <div id="all-results"></div>
+    </div>
+
+    <script>
+        // Тестовые данные
+        const mockEvents = [
+            {
+                id: "event1",
+                title: "Концерт русской музыки",
+                description: "Вечер русской музыки в центре Буэнос-Айреса",
+                url: "https://example.com/event1",
+                start: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+                end: new Date(Date.now() + 24 * 60 * 60 * 1000 + 3 * 60 * 60 * 1000).toISOString(),
+                venue: { name: "Teatro Colón", address: "Cerrito 628, C1010 Cdad. Autónoma de Buenos Aires" },
+                location: { lat: -34.6037, lng: -58.3816 },
+                tags: ["музыка", "концерт", "русскоязычное"],
+                price: { is_free: false, text: "ARS 5000" }
+            },
+            {
+                id: "event2",
+                title: "Бесплатная ярмарка для детей",
+                description: "Семейная ярмарка с развлечениями для детей",
+                url: "https://example.com/event2",
+                start: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString(),
+                end: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000 + 4 * 60 * 60 * 1000).toISOString(),
+                venue: { name: "Parque Las Heras", address: "French, C1425 Cdad. Autónoma de Buenos Aires" },
+                location: { lat: -34.5838884, lng: -58.408831899999996 },
+                tags: ["ярмарка", "детям", "бесплатно"],
+                price: { is_free: true, text: "Бесплатно" }
+            }
+        ];
+
+        // Функции из проекта (копии для тестирования)
+        function withKeyForPlacesMedia(url) {
+            if (!url) return "";
+            try {
+                const u = new URL(url);
+                if (u.hostname === "places.googleapis.com" && u.pathname.includes("/v1/") && u.pathname.endsWith("/media")) {
+                    if (!u.searchParams.has("key")) u.searchParams.set("key", "AIzaSyB7-RgotVuWFR6qMvr_Alf8nQvkYd7I3WI");
+                    return u.toString();
+                }
+            } catch {}
+            return url;
+        }
+
+        function emojiFor(event) {
+            const TAG_EMOJI = { 
+                музыка: "🎵", концерт: "🎤", ярмарка: "🛍️", вечеринка: "🎉", 
+                кино: "🎬", театр: "🎭", бесплатно: "🆓", детям: "👶", 
+                русскоязычное: "🇷🇺" 
+            };
+            if (event.tags?.length) {
+                for (const t of event.tags) {
+                    if (TAG_EMOJI[t]) return TAG_EMOJI[t];
+                }
+            }
+            return "🎟️";
+        }
+
+        function whenText(event) {
+            const start = new Date(event.start);
+            const end = new Date(event.end || event.start);
+            const sameDay = start.toDateString() === end.toDateString();
+            const d = start.toLocaleDateString('ru-RU', { day: '2-digit', month: 'short', year: 'numeric' });
+            const t1 = start.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+            const t2 = end.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+            return sameDay ? `${d}, ${t1}${event.end ? '–' + t2 : ''}` : `${d}, ${t1} → ${end.toLocaleString('ru-RU', { day: '2-digit', month: 'short' })} ${t2}`;
+        }
+
+        function upcomingOnly(events) {
+            const now = Date.now();
+            return events.filter(e => new Date(e.end || e.start).getTime() >= now);
+        }
+
+        function filtered(events, tagFilter, priceFilter, query) {
+            return upcomingOnly(events || []).filter(e => {
+                const byTag = !tagFilter || (e.tags || []).includes(tagFilter);
+                const byPrice = !priceFilter || (priceFilter === 'free' ? e.price?.is_free : !e.price?.is_free);
+                const byQuery = !query || (e.title || '').toLowerCase().includes(query);
+                return byTag && byPrice && byQuery;
+            }).sort((a, b) => new Date(a.start) - new Date(b.start));
+        }
+
+        const TAG_RULES = [
+            { tag: 'музыка', rx: /\b(music|música|musica|dj|band|live|recital)\b/i },
+            { tag: 'концерт', rx: /\b(concert|recital|gig)\b/i },
+            { tag: 'ярмарка', rx: /\b(fair|feria|market|mercado|ярмарка)\b/i },
+            { tag: 'вечеринка', rx: /\b(party|fiesta|rave)\b/i },
+            { tag: 'кино', rx: /\b(cinema|cine|film|pel[ií]cula|кино)\b/i },
+            { tag: 'театр', rx: /\b(theatre|teatro)\b/i },
+            { tag: 'детям', rx: /\b(kids|niñ|infantil|дет(ям|и))\b/i },
+            { tag: 'русскоязычное', rx: /\b(rus|ruso|rusa|русск|russian)\b/i },
+            { tag: 'бесплатно', rx: /\b(free|gratis|gratuito|бесплат)/i }
+        ];
+
+        function tagify(text) {
+            const tags = [];
+            for (const r of TAG_RULES) {
+                if (r.rx.test(text || '')) tags.push(r.tag);
+            }
+            return [...new Set(tags)];
+        }
+
+        function priceFrom(text) {
+            if (!text) return { is_free: false, text: '' };
+            if (/\b(free|gratis|gratuito|бесплат)/i.test(text)) return { is_free: true, text: 'Бесплатно' };
+            const m = text.match(/(?:ARS|\$|usd|u\$s)\s?\d[\d.,]*/i);
+            return { is_free: false, text: m ? m[0].replace(/usd/i, 'USD').replace(/u\$s/i, 'USD') : '' };
+        }
+
+        // Утилиты для тестирования
+        function addResult(containerId, testName, passed, message) {
+            const container = document.getElementById(containerId);
+            const div = document.createElement('div');
+            div.className = `test-result ${passed ? 'test-pass' : 'test-fail'}`;
+            div.innerHTML = `${passed ? '✅' : '❌'} ${testName}: ${message}`;
+            container.appendChild(div);
+        }
+
+        function clearResults(containerId) {
+            document.getElementById(containerId).innerHTML = '';
+        }
+
+        // Тесты функций карты
+        function testMapFunctions() {
+            clearResults('map-results');
+            
+            // Тест withKeyForPlacesMedia
+            const urlWithoutKey = "https://places.googleapis.com/v1/places/ChIJTest/photos/ATKogpe/media?maxWidthPx=800";
+            const result1 = withKeyForPlacesMedia(urlWithoutKey);
+            addResult('map-results', 'withKeyForPlacesMedia - добавление ключа', result1.includes('key='), 
+                result1.includes('key=') ? 'Ключ добавлен' : 'Ключ не добавлен');
+            
+            const urlWithKey = "https://places.googleapis.com/v1/places/ChIJTest/photos/ATKogpe/media?maxWidthPx=800&key=test";
+            const result2 = withKeyForPlacesMedia(urlWithKey);
+            addResult('map-results', 'withKeyForPlacesMedia - URL с ключом', result2 === urlWithKey, 
+                result2 === urlWithKey ? 'URL не изменен' : 'URL изменен');
+            
+            const emptyUrl = withKeyForPlacesMedia("");
+            addResult('map-results', 'withKeyForPlacesMedia - пустой URL', emptyUrl === "", 
+                emptyUrl === "" ? 'Пустой URL обработан' : 'Ошибка с пустым URL');
+        }
+
+        // Тесты функций событий
+        function testEventFunctions() {
+            clearResults('event-results');
+            
+            // Тест emojiFor
+            const eventWithTags = { tags: ['музыка', 'концерт'] };
+            const emoji1 = emojiFor(eventWithTags);
+            addResult('event-results', 'emojiFor - событие с тегами', emoji1 === '🎵', 
+                emoji1 === '🎵' ? 'Правильный эмодзи' : `Получен: ${emoji1}`);
+            
+            const eventWithoutTags = { tags: [] };
+            const emoji2 = emojiFor(eventWithoutTags);
+            addResult('event-results', 'emojiFor - событие без тегов', emoji2 === '🎟️', 
+                emoji2 === '🎟️' ? 'Эмодзи по умолчанию' : `Получен: ${emoji2}`);
+            
+            // Тест whenText
+            const event = mockEvents[0];
+            const when = whenText(event);
+            addResult('event-results', 'whenText - форматирование времени', when.includes(':'), 
+                when.includes(':') ? 'Время отформатировано' : 'Ошибка форматирования');
+            
+            // Тест upcomingOnly
+            const upcoming = upcomingOnly(mockEvents);
+            addResult('event-results', 'upcomingOnly - фильтрация', upcoming.length === 2, 
+                upcoming.length === 2 ? 'Будущие события найдены' : `Найдено: ${upcoming.length}`);
+            
+            // Тест filtered
+            const musicEvents = filtered(mockEvents, 'музыка', '', '');
+            addResult('event-results', 'filtered - фильтр по тегу', musicEvents.length === 1, 
+                musicEvents.length === 1 ? 'Фильтр по тегу работает' : `Найдено: ${musicEvents.length}`);
+            
+            const freeEvents = filtered(mockEvents, '', 'free', '');
+            addResult('event-results', 'filtered - фильтр по цене', freeEvents.length === 1, 
+                freeEvents.length === 1 ? 'Фильтр по цене работает' : `Найдено: ${freeEvents.length}`);
+        }
+
+        // Тесты функций формы
+        function testFormFunctions() {
+            clearResults('form-results');
+            
+            const mockFormData = {
+                name: "Test Place",
+                category: "Кофе",
+                lat: "-34.6037",
+                lng: "-58.3816",
+                neighborhood: "Palermo",
+                rus: "3"
+            };
+            
+            function buildJson(formData) {
+                return {
+                    id: Date.now(),
+                    name: formData.name?.trim() || '',
+                    category: formData.category || '',
+                    lat: Number(formData.lat) || 0,
+                    lng: Number(formData.lng) || 0,
+                    neighborhood: formData.neighborhood?.trim() || '',
+                    russian_score: Number(formData.rus) || 0
+                };
+            }
+            
+            const json = buildJson(mockFormData);
+            addResult('form-results', 'buildJson - создание JSON', json.name === 'Test Place', 
+                json.name === 'Test Place' ? 'JSON создан правильно' : 'Ошибка создания JSON');
+            
+            addResult('form-results', 'buildJson - числовые поля', json.lat === -34.6037, 
+                json.lat === -34.6037 ? 'Координаты правильные' : `Получено: ${json.lat}`);
+            
+            addResult('form-results', 'buildJson - ID', typeof json.id === 'number', 
+                typeof json.id === 'number' ? 'ID числовой' : 'ID не числовой');
+        }
+
+        // Тесты обработки текста
+        function testTextProcessing() {
+            clearResults('text-results');
+            
+            // Тест tagify
+            const text1 = 'Concert de música rusa en Buenos Aires';
+            const tags1 = tagify(text1);
+            addResult('text-results', 'tagify - определение тегов', tags1.includes('музыка'), 
+                tags1.includes('музыка') ? 'Теги определены' : `Теги: ${tags1.join(', ')}`);
+            
+            const text2 = 'Free kids party with live music';
+            const tags2 = tagify(text2);
+            addResult('text-results', 'tagify - английский текст', tags2.includes('бесплатно'), 
+                tags2.includes('бесплатно') ? 'Английские теги найдены' : `Теги: ${tags2.join(', ')}`);
+            
+            // Тест priceFrom
+            const freeText = 'Evento gratuito para toda la familia';
+            const price1 = priceFrom(freeText);
+            addResult('text-results', 'priceFrom - бесплатное событие', price1.is_free, 
+                price1.is_free ? 'Бесплатное событие определено' : 'Ошибка определения цены');
+            
+            const paidText = 'Entrada: ARS 5000 por persona';
+            const price2 = priceFrom(paidText);
+            addResult('text-results', 'priceFrom - платное событие', !price2.is_free, 
+                !price2.is_free ? 'Платное событие определено' : 'Ошибка определения цены');
+        }
+
+        // Запуск всех тестов
+        function runAllBrowserTests() {
+            clearResults('all-results');
+            addResult('all-results', 'Запуск тестов', true, 'Начинаем тестирование...');
+            
+            testMapFunctions();
+            testEventFunctions();
+            testFormFunctions();
+            testTextProcessing();
+            
+            addResult('all-results', 'Завершение тестов', true, 'Все тесты завершены');
+        }
+    </script>
+</body>
+</html>
+

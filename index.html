@@ -7,30 +7,212 @@
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="%230b57d0"/><text x="32" y="40" font-size="28" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif">R</text></svg>' />
   <style>
     :root { color-scheme: dark; }
-    html, body { height:100%; margin:0; background:#0f0f0f; color:#eee; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; }
+    html, body { height:100%; margin:0; background:#0f0f0f; color:#e0e0e0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; font-size: 15px; line-height: 1.6; }
     header {
       position: fixed; top:0; left:0; right:0; z-index:1000;
       background:#111; border-bottom:1px solid #222;
-      display:flex; gap:12px; align-items:center; padding:10px 16px; font-size:15px;
+      display:flex; gap:12px; align-items:center; padding:12px 16px; font-size:16px;
     }
     header a { color:#9ecbff; text-decoration:none; font-weight:500; }
     header a:hover { text-decoration:underline; }
     .wrap { position:absolute; top:44px; left:0; right:0; bottom:0; }
     #map  { width:100%; height:100%; }
     .err { position:fixed; left:10px; bottom:10px; background:#1e1e1e; border:1px solid #333; color:#f66; padding:8px 10px; border-radius:8px; font-size:12px; max-width:90vw; display:none; }
+    
+    /* Компактные фильтры и панель управления */
+    .controls {
+      position: fixed; top: 44px; left: 10px; z-index: 999;
+      background: rgba(26, 26, 26, 0.9); border: 1px solid #444; border-radius: 8px;
+      padding: 12px; min-width: 200px; max-width: 250px; backdrop-filter: blur(10px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .controls h3 { 
+      margin: 0 0 8px 0; font-size: 14px; color: #fff; 
+      border-bottom: 1px solid #0b57d0; padding-bottom: 4px;
+    }
+    .controls select, .controls input { 
+      width: 100%; padding: 8px; margin: 4px 0; background: #2a2a2a; border: 1px solid #555; 
+      color: #e0e0e0; border-radius: 6px; font-size: 12px; transition: all 0.2s;
+    }
+    .controls select:focus, .controls input:focus {
+      border-color: #0b57d0; box-shadow: 0 0 0 2px rgba(11, 87, 208, 0.2);
+    }
+    .controls button { 
+      width: 100%; padding: 8px; margin: 4px 0; background: linear-gradient(135deg, #0b57d0, #1e88e5); 
+      border: none; color: white; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 500;
+      transition: all 0.2s; box-shadow: 0 2px 8px rgba(11, 87, 208, 0.3);
+    }
+    .controls button:hover { 
+      background: linear-gradient(135deg, #0d4fb8, #1976d2); 
+      transform: translateY(-1px); box-shadow: 0 4px 12px rgba(11, 87, 208, 0.4);
+    }
+    
+    /* Компактная панель событий */
+    .events-panel {
+      position: fixed; top: 44px; right: 10px; z-index: 999;
+      background: rgba(26, 26, 26, 0.9); border: 1px solid #444; border-radius: 8px;
+      padding: 12px; width: 280px; max-height: 400px; overflow-y: auto; backdrop-filter: blur(10px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .events-panel h3 { 
+      margin: 0 0 8px 0; font-size: 14px; color: #fff; 
+      border-bottom: 1px solid #0b57d0; padding-bottom: 4px;
+    }
+    .event-item { 
+      background: linear-gradient(135deg, #2a2a2a, #333); border: 1px solid #555; border-radius: 6px; 
+      padding: 8px; margin: 4px 0; cursor: pointer; transition: all 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    .event-item:hover { 
+      background: linear-gradient(135deg, #333, #444); 
+      transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .event-title { 
+      font-weight: 600; color: #9ecbff; margin-bottom: 4px; font-size: 12px;
+      line-height: 1.3;
+    }
+    .event-date { color: #aaa; font-size: 10px; margin-bottom: 2px; }
+    .event-tags { margin-top: 4px; }
+    .event-tag { 
+      display: inline-block; background: linear-gradient(135deg, #444, #555); color: #e0e0e0; 
+      padding: 2px 6px; border-radius: 4px; font-size: 9px; margin: 1px; font-weight: 500;
+    }
+    
+    /* Стили для InfoWindow */
+    .gm-style .gm-style-iw {
+      background-color: #1a1a1a !important;
+      border: 1px solid #444 !important;
+      border-radius: 12px !important;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+    }
+    .gm-style .gm-style-iw-c {
+      padding: 0 !important;
+    }
+    .gm-style .gm-style-iw-d {
+      overflow: hidden !important;
+    }
+    .gm-style .gm-style-iw-tc {
+      display: none !important;
+    }
+    
+    /* Компактные стили для содержимого InfoWindow */
+    .place-info {
+      background: #1a1a1a; color: #e0e0e0; padding: 12px; max-width: 280px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    .place-info h3 {
+      color: #fff; margin: 0 0 8px 0; font-size: 14px; font-weight: 600;
+      border-bottom: 1px solid #0b57d0; padding-bottom: 4px;
+    }
+    .place-info .rating {
+      display: flex; align-items: center; margin: 4px 0;
+      font-size: 12px; color: #e0e0e0;
+    }
+    .place-info .rating .stars {
+      color: #ffd700; margin-right: 6px; font-size: 12px;
+    }
+    .place-info .rating .reviews {
+      color: #aaa; font-size: 10px;
+    }
+    .place-info .description {
+      margin: 6px 0; line-height: 1.4; color: #ccc; font-size: 11px;
+    }
+    .place-info .address {
+      margin: 4px 0; color: #aaa; font-size: 10px;
+    }
+    .place-info .contact {
+      margin: 4px 0; display: flex; flex-direction: column; gap: 2px;
+    }
+    .place-info .contact a {
+      color: #9ecbff; text-decoration: none; font-size: 10px;
+    }
+    .place-info .contact a:hover {
+      text-decoration: underline;
+    }
+    .place-info .tags {
+      margin: 6px 0; display: flex; flex-wrap: wrap; gap: 2px;
+    }
+    .place-info .tag {
+      background: linear-gradient(135deg, #444, #555); color: #e0e0e0;
+      padding: 2px 6px; border-radius: 4px; font-size: 9px; font-weight: 500;
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .controls, .events-panel { 
+        position: relative; margin: 10px; width: calc(100% - 20px); 
+        top: auto; left: auto; right: auto; bottom: auto;
+        max-width: none;
+      }
+      .wrap { top: 0; }
+      .place-info { max-width: 250px; padding: 10px; }
+    }
+    
+    /* Скрытие панелей по умолчанию на планшетах */
+    @media (max-width: 1024px) {
+      .events-panel { display: none; }
+      .controls { max-width: 200px; }
+    }
   </style>
 </head>
 <body>
 <header>
   <div style="flex:1;font-weight:600">Русская карта БА</div>
   <a href="add.html">Добавить место</a>
+  <a href="events.html">События</a>
 </header>
+
+<!-- Панель фильтров -->
+<div class="controls">
+  <h3>🔍 Фильтры</h3>
+  <select id="categoryFilter">
+    <option value="">Все категории</option>
+    <option value="Кофе">☕ Кофе</option>
+    <option value="Рестораны">🍽️ Рестораны</option>
+    <option value="Бары">🍸 Бары</option>
+    <option value="Кальян">💨 Кальян</option>
+    <option value="Спорт">🏟️ Спорт</option>
+    <option value="Работа">💼 Работа</option>
+    <option value="Магазин">🛍️ Магазин</option>
+    <option value="Ивенты">🎉 Ивенты</option>
+    <option value="Услуги">🧰 Услуги</option>
+    <option value="Дети">👶 Дети</option>
+    <option value="Красота">🌼 Красота</option>
+    <option value="Обучение">🎓 Обучение</option>
+  </select>
+  
+  <select id="neighborhoodFilter">
+    <option value="">Все районы</option>
+    <option value="Palermo">Palermo</option>
+    <option value="Recoleta">Recoleta</option>
+    <option value="San Telmo">San Telmo</option>
+    <option value="Puerto Madero">Puerto Madero</option>
+    <option value="Belgrano">Belgrano</option>
+    <option value="Villa Crespo">Villa Crespo</option>
+    <option value="Caballito">Caballito</option>
+  </select>
+  
+  <input type="text" id="searchInput" placeholder="Поиск по названию..." />
+  
+  <button onclick="clearFilters()">Очистить фильтры</button>
+  <button onclick="toggleEventsPanel()">Показать события</button>
+</div>
+
+<!-- Панель событий -->
+<div class="events-panel" id="eventsPanel" style="display: none;">
+  <h3>🎭 События</h3>
+  <div id="eventsList">
+    <div style="text-align: center; color: #999; padding: 20px;">
+      Загрузка событий...
+    </div>
+  </div>
+</div>
 
 <div class="wrap"><div id="map"></div></div>
 <div id="err" class="err"></div>
 
 <!-- Данные точек (генерируются Actions). Файл ДОЛЖЕН существовать -->
-<script src="data/places.js"></script>
+<script src="data/places_enriched.js"></script>
 
 <script>
 /* === Встроенный map.js === */
@@ -45,6 +227,21 @@ const CATEGORY_EMOJI = {
 
 const ERR = (t)=>{ const el=document.getElementById('err'); el.textContent=t; el.style.display='block'; };
 
+// Функция для генерации звездного рейтинга
+function generateStars(rating) {
+  if (!rating) return '';
+  
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 >= 0.5;
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+  
+  let stars = '★'.repeat(fullStars);
+  if (hasHalfStar) stars += '☆';
+  stars += '☆'.repeat(emptyStars);
+  
+  return stars;
+}
+
 (function loadMaps(){
   // если data/places.js не успел загрузиться — не критично
   if (!Array.isArray(window.PLACES)) window.PLACES = [];
@@ -53,6 +250,18 @@ const ERR = (t)=>{ const el=document.getElementById('err'); el.textContent=t; el
   s.src=url; s.defer=true; s.async=true;
   s.onerror = ()=>ERR('Не удалось загрузить Google Maps JS (проверь ключ/домен/интернет).');
   document.head.appendChild(s);
+})();
+
+// Загружаем события
+(function loadEvents() {
+  const script = document.createElement('script');
+  script.src = 'data/events.js';
+  script.onload = () => {
+    if (window.EVENTS && Array.isArray(window.EVENTS)) {
+      renderEvents();
+    }
+  };
+  document.head.appendChild(script);
 })();
 
 function withKeyForPlacesMedia(url){
@@ -78,6 +287,9 @@ async function initMap(){
 
     const infowin = new google.maps.InfoWindow();
 
+    // Очищаем предыдущие маркеры
+    allMarkers = [];
+
     (window.PLACES || []).forEach(p => {
       const emoji = CATEGORY_EMOJI[p.category] || "📍";
 
@@ -94,6 +306,9 @@ async function initMap(){
         map, position:{lat:+p.lat,lng:+p.lng}, content: pin.element, title: p.name
       });
 
+      // Сохраняем данные места в маркере для фильтрации
+      marker.place = p;
+
       const photo = withKeyForPlacesMedia(p.photo_url);
       const img = photo
         ? `<img src="${photo}" alt="" style="width:100%;max-height:180px;object-fit:cover;border-radius:10px"
@@ -104,24 +319,181 @@ async function initMap(){
       const insta = p.instagram ? `<div><a href="${p.instagram}" target="_blank" rel="noopener">Instagram</a></div>` : "";
       const phone = p.phone     ? `<div>☎ ${p.phone}</div>` : "";
 
+      // Создаем обогащенный HTML для InfoWindow
+      const ratingHtml = p.rating ? `
+        <div class="rating">
+          <span class="stars">${p.stars || generateStars(p.rating)}</span>
+          <span class="rating-value">${p.rating.toFixed(1)}</span>
+          <span class="reviews">(${p.user_ratings_total || 0} отзывов)</span>
+        </div>
+      ` : '';
+      
+      const descriptionHtml = p.description ? `
+        <div class="description">${p.description}</div>
+      ` : '';
+      
+      const priceHtml = p.price_text ? `
+        <div style="color:#aaa;font-size:12px;margin:4px 0">💰 ${p.price_text}</div>
+      ` : '';
+      
+      const typeHtml = p.place_type ? `
+        <div style="color:#9ecbff;font-size:12px;margin:4px 0">🏷️ ${p.place_type}</div>
+      ` : '';
+      
+      const reviewsHtml = p.reviews && p.reviews.length > 0 && !p.demo_data ? `
+        <div style="margin:8px 0">
+          <div style="color:#ccc;font-size:12px;margin-bottom:4px">💬 Последние отзывы:</div>
+          ${p.reviews.slice(0, 2).map(review => `
+            <div style="background:#333;padding:6px;border-radius:4px;margin:4px 0;font-size:11px">
+              <div style="color:#ffd700">${generateStars(review.rating)} ${review.author}</div>
+              <div style="color:#ccc;margin-top:2px">${review.text.substring(0, 100)}${review.text.length > 100 ? '...' : ''}</div>
+            </div>
+          `).join('')}
+        </div>
+      ` : '';
+      
+      const openingHoursHtml = p.opening_hours && p.opening_hours.length > 0 ? `
+        <div style="margin:8px 0">
+          <div style="color:#ccc;font-size:12px;margin-bottom:4px">🕒 Часы работы:</div>
+          <div style="font-size:11px;color:#aaa">
+            ${p.opening_hours.slice(0, 3).map(hour => `
+              <div>${hour}</div>
+            `).join('')}
+          </div>
+        </div>
+      ` : '';
+
       const html = `
-        <div style="width:320px">
-          ${img}
-          <div style="margin-top:8px;font-weight:700;font-size:18px">${emoji} ${p.name || ""}</div>
-          <div style="color:#999;margin:2px 0">${p.address || ""}</div>
-          ${site}${insta}${phone}
+        <div class="place-info">
+          <h3>${emoji} ${p.name || ""}</h3>
+          ${ratingHtml}
+          ${typeHtml}
+          ${priceHtml}
+          <div class="address">📍 <a href="https://maps.google.com/maps?q=${encodeURIComponent(p.address || '')}" target="_blank" style="color: #9ecbff; text-decoration: none;">${p.address || ""}</a></div>
+          ${descriptionHtml}
+          ${reviewsHtml}
+          ${openingHoursHtml}
+          <div class="contact">
+            ${site}${insta}${phone}
+          </div>
         </div>`;
 
       marker.addListener("click", () => {
         infowin.setContent(html);
         infowin.open({anchor: marker, map});
       });
+      
+      // Добавляем маркер в массив для фильтрации
+      allMarkers.push(marker);
     });
+    
+    // Инициализируем фильтры
+    filteredMarkers = [...allMarkers];
+    window.map = map;
   }catch(e){
     console.error(e);
     ERR('Карта не инициализировалась. Открой консоль (F12) → Console: проверь ошибки ключа/ограничений.');
   }
 }
+
+// Глобальные переменные для фильтров
+let allMarkers = [];
+let filteredMarkers = [];
+
+// Функции для фильтров
+function applyFilters() {
+  const category = document.getElementById('categoryFilter').value;
+  const neighborhood = document.getElementById('neighborhoodFilter').value;
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  
+  // Скрываем все маркеры
+  allMarkers.forEach(marker => marker.setMap(null));
+  
+  // Фильтруем маркеры
+  filteredMarkers = allMarkers.filter(marker => {
+    const place = marker.place;
+    if (!place) return false;
+    
+    // Фильтр по категории
+    if (category && place.category !== category) return false;
+    
+    // Фильтр по району
+    if (neighborhood && place.neighborhood !== neighborhood) return false;
+    
+    // Фильтр по поиску
+    if (search && !place.name.toLowerCase().includes(search)) return false;
+    
+    return true;
+  });
+  
+  // Показываем отфильтрованные маркеры
+  filteredMarkers.forEach(marker => marker.setMap(window.map));
+  
+  // Обновляем статистику
+  updateStats();
+}
+
+function clearFilters() {
+  document.getElementById('categoryFilter').value = '';
+  document.getElementById('neighborhoodFilter').value = '';
+  document.getElementById('searchInput').value = '';
+  applyFilters();
+}
+
+function updateStats() {
+  const total = allMarkers.length;
+  const filtered = filteredMarkers.length;
+  console.log(`Показано ${filtered} из ${total} мест`);
+}
+
+// Функции для событий
+function renderEvents() {
+  const eventsList = document.getElementById('eventsList');
+  if (!window.EVENTS || !Array.isArray(window.EVENTS)) {
+    eventsList.innerHTML = '<div style="text-align: center; color: #999; padding: 20px;">События не найдены</div>';
+    return;
+  }
+  
+  const events = window.EVENTS.slice(0, 5); // Показываем только первые 5 событий
+  eventsList.innerHTML = events.map(event => {
+    const date = new Date(event.start);
+    const dateStr = date.toLocaleDateString('ru-RU', { 
+      day: 'numeric', 
+      month: 'short', 
+      hour: '2-digit', 
+      minute: '2-digit' 
+    });
+    
+    const tags = event.tags ? event.tags.map(tag => 
+      `<span class="event-tag">${tag}</span>`
+    ).join('') : '';
+    
+    return `
+      <div class="event-item" onclick="openEvent('${event.url}')">
+        <div class="event-title">${event.title}</div>
+        <div class="event-date">${dateStr}</div>
+        <div class="event-tags">${tags}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function openEvent(url) {
+  window.open(url, '_blank');
+}
+
+function toggleEventsPanel() {
+  const panel = document.getElementById('eventsPanel');
+  panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+}
+
+// Инициализация фильтров
+document.addEventListener('DOMContentLoaded', function() {
+  // Добавляем обработчики событий для фильтров
+  document.getElementById('categoryFilter').addEventListener('change', applyFilters);
+  document.getElementById('neighborhoodFilter').addEventListener('change', applyFilters);
+  document.getElementById('searchInput').addEventListener('input', applyFilters);
+});
 </script>
 </body>
 </html>

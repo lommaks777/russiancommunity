@@ -1,0 +1,41 @@
+{
+  "name": "russian-community-map",
+  "version": "1.0.0",
+  "description": "Карта русской общины Буэнос-Айреса с событиями",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "build": "npm run build-events && npm run translate-events && npm run demo-enriched",
+    "build-events": "node scripts/build_events.mjs",
+    "ai-events": "node scripts/ai_events_search.mjs",
+    "deep-events": "node scripts/deep_events_search.mjs",
+    "enrich-places": "node scripts/enrich_places.mjs",
+    "demo-enriched": "node scripts/create_demo_enriched_places.mjs",
+    "translate-events": "node scripts/translate_events.mjs",
+    "discover-sources": "node scripts/discover_sources.mjs",
+    "update-events": "./scripts/update_events.sh",
+    "test": "cd test && node test_suite.js",
+    "test-browser": "open test/browser_test.html"
+  },
+  "keywords": [
+    "buenos-aires",
+    "russian-community",
+    "events",
+    "map",
+    "argentina"
+  ],
+  "author": "Russian Community BA",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "jsdom": "^24.0.0",
+    "dayjs": "^1.11.10"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
