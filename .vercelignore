@@ -24,7 +24,5 @@ Thumbs.db
 *.tmp
 *.temp
 
-# Скрипты разработки
-scripts/
-package-lock.json
+# Файлы блокировки (оставляем package-lock.json для стабильности)
 yarn.lock
