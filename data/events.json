@@ -4,8 +4,8 @@
     "title": "Фестиваль русской культуры в Буэнос-Айресе",
     "description": "Ежегодный фестиваль русской культуры с концертами, выставками и традиционной кухней.",
     "url": "https://example.com/ruso-festival",
-    "start": "2026-02-23T06:57:20.659Z",
-    "end": "2026-02-23T10:57:20.659Z",
+    "start": "2026-02-25T07:04:52.736Z",
+    "end": "2026-02-25T11:04:52.736Z",
     "venue": {
       "name": "Centro Cultural Recoleta",
       "address": "Junín 1930, C1113 Cdad. Autónoma de Buenos Aires"
@@ -29,8 +29,8 @@
     "title": "Концерт классической музыки в Teatro Colón",
     "description": "Симфонический оркестр Teatro Colón представляет произведения Чайковского и Рахманинова.",
     "url": "https://example.com/teatro-colon",
-    "start": "2026-02-24T06:57:20.659Z",
-    "end": "2026-02-24T08:57:20.659Z",
+    "start": "2026-02-26T07:04:52.736Z",
+    "end": "2026-02-26T09:04:52.736Z",
     "venue": {
       "name": "Teatro Colón",
       "address": "Cerrito 628, C1010 Cdad. Autónoma de Buenos Aires"
@@ -54,8 +54,8 @@
     "title": "Бесплатная ярмарка ремесел в Palermo",
     "description": "Еженедельная ярмарка с изделиями местных мастеров, едой и развлечениями для всей семьи.",
     "url": "https://example.com/feria-palermo",
-    "start": "2026-02-25T06:57:20.659Z",
-    "end": "2026-02-25T12:57:20.659Z",
+    "start": "2026-02-27T07:04:52.736Z",
+    "end": "2026-02-27T13:04:52.736Z",
     "venue": {
       "name": "Plaza Serrano",
       "address": "Plaza Cortázar, Palermo, Buenos Aires"
@@ -80,8 +80,8 @@
     "title": "Мастер-класс по русской кухне",
     "description": "Учитесь готовить традиционные русские блюда: борщ, пельмени, блины и многое другое.",
     "url": "https://example.com/cocina-rusa",
-    "start": "2026-02-26T06:57:20.659Z",
-    "end": "2026-02-26T09:57:20.659Z",
+    "start": "2026-02-28T07:04:52.736Z",
+    "end": "2026-02-28T10:04:52.736Z",
     "venue": {
       "name": "Escuela de Cocina",
       "address": "Av. Santa Fe 1234, C1060 Cdad. Autónoma de Buenos Aires"
@@ -105,8 +105,8 @@
     "title": "Выставка современного искусства",
     "description": "Экспозиция работ аргентинских и международных художников в MALBA.",
     "url": "https://example.com/malba-expo",
-    "start": "2026-02-27T06:57:20.659Z",
-    "end": "2026-02-27T10:57:20.659Z",
+    "start": "2026-03-01T07:04:52.736Z",
+    "end": "2026-03-01T11:04:52.736Z",
     "venue": {
       "name": "MALBA",
       "address": "Av. Figueroa Alcorta 3415, C1425 Cdad. Autónoma de Buenos Aires"
